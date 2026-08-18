@@ -8,7 +8,6 @@
     <title>CSS Background</title>
 
     <style>
-
         .bg-color {
             background-color: aquamarine;
         }
@@ -22,20 +21,43 @@
             background-position: center;
             background-size: cover;
 
+
             /* Background scroll with move */
             background-attachment: scroll;
+            /* background-attachment: fixed; */
+
+
+            /* Background Shorthand 
+            background: color image repeat position / size attachment; */
 
             margin: 30px auto;
             padding: 20px;
             box-sizing: border-box;
         }
 
-        .content {
-            height: 600px;
-            padding: 30px;
-            background-color: lightgray;
+        /* linear-gradient → in one direction (to top, to buttom, to right, to left) */
+        .linear-gradient {
+            background: linear-gradient(60deg, red, aqua, green);
+            margin: 30px auto;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
+        /* linear-gradient → in one direction (to top, to bottom, to right, to left) */
+        .radial-gradient {
+            background: radial-gradient(circle, red, yellow, blue);
+            margin: 30px auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* conic-gradient() → smooth color transition around a central point */
+        .conic-gradient {
+            background: conic-gradient(red, yellow, green, aqua, red);
+            margin: 30px auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
     </style>
 
 </head>
@@ -74,45 +96,41 @@
 
     </div>
 
-
-    <!-- Extra content to make the page scrollable -->
-
-    <div class="content">
-
-        <h2>Scroll Down</h2>
+    <div class="linear-gradient">
+        <h2>Linear Gradient</h2>
 
         <p>
-            Scroll the page up and down and observe the background
-            image above.
+            A <strong>linear gradient</strong> in CSS creates a smooth transition between two or more colors along a
+            straight line.
+            You can control the direction of the gradient, such as from left to right, top to bottom, or at a specific
+            angle. It is commonly used for backgrounds, buttons, cards, and other UI elements to create attractive
+            visual effects without using an image. The `linear-gradient()` function is used with the `background` or
+            `background-image` property.
         </p>
-
-        <p>
-            This extra content makes the webpage long enough to
-            demonstrate background-attachment: scroll.
-        </p>
-
     </div>
 
-
-    <div class="content">
-
-        <h2>More Content</h2>
-
+    <div class="radial-gradient">
+        <h2>Radial Gradient</h2>
         <p>
-            Keep scrolling to see how the background behaves.
+            A <strong>radial gradient</strong> in CSS creates a smooth transition between two or more colors that
+            spreads outward
+            from a central point in a circular or elliptical shape. Unlike a linear gradient, which moves in a straight
+            line, a radial gradient starts from the center and gradually changes colors toward the edges. It is created
+            using the `radial-gradient()` function and is commonly used for backgrounds, glowing effects, highlights,
+            and modern UI designs.
         </p>
-
     </div>
 
-
-    <div class="content">
-
-        <h2>End of Page</h2>
-
+    <div class="conic-gradient">
+        <h2>Conic Gradient</h2>
         <p>
-            You have reached the end of the page.
+            A <strong>conic gradient</strong> in CSS creates a smooth color transition around a central point, similar
+            to the hands
+            of a clock moving in a circular direction. Unlike a linear gradient that moves in a straight line or a
+            radial gradient that spreads outward from the center, a conic gradient rotates around the center point. It
+            is created using the `conic-gradient()` function and is commonly used for pie charts, color wheels, loading
+            indicators, borders, and creative backgrounds.
         </p>
-
     </div>
 
 </body>
