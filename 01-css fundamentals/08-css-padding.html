@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Padding</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .box {
+            width: 80%;
+            margin: 30px auto;
+            border: 3px solid black;
+            box-sizing: border-box;
+        }
+
+
+        /* 01 - Individual Padding */
+
+        .individual-padding {
+            padding-top: 20px;
+            padding-right: 30px;
+            padding-bottom: 40px;
+            padding-left: 50px;
+        }
+
+
+        /* 02 - Padding Shorthand - 1 Value */
+
+        .padding-one {
+            padding: 30px;
+        }
+
+
+        /* 03 - Padding Shorthand - 2 Values */
+
+        .padding-two {
+            padding: 20px 40px;
+        }
+
+
+        /* 04 - Padding Shorthand - 3 Values */
+
+        .padding-three {
+            padding: 10px 30px 50px;
+        }
+
+
+        /* 05 - Padding Shorthand - 4 Values */
+
+        .padding-four {
+            padding: 10px 20px 30px 40px;
+        }
+
+
+        /* 06 - Padding vs Margin */
+
+        .padding-margin {
+            padding: 30px;
+            margin: 50px auto;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1 style="text-align: center;">
+        CSS Padding
+    </h1>
+
+    <hr>
+
+
+    <!-- 01 - Individual Padding -->
+
+    <div class="box individual-padding">
+
+        <h2>01 - Individual Padding</h2>
+
+        <p>
+            Padding can be applied separately to the top, right,
+            bottom, and left sides of an element.
+        </p>
+
+    </div>
+
+
+    <!-- 02 - Padding Shorthand - 1 Value -->
+
+    <div class="box padding-one">
+
+        <h2>02 - Padding Shorthand - 1 Value</h2>
+
+        <p>
+            When one value is used, the same padding is applied
+            to all four sides.
+        </p>
+
+    </div>
+
+
+    <!-- 03 - Padding Shorthand - 2 Values -->
+
+    <div class="box padding-two">
+
+        <h2>03 - Padding Shorthand - 2 Values</h2>
+
+        <p>
+            The first value applies to top and bottom,
+            while the second value applies to left and right.
+        </p>
+
+    </div>
+
+
+    <!-- 04 - Padding Shorthand - 3 Values -->
+
+    <div class="box padding-three">
+
+        <h2>04 - Padding Shorthand - 3 Values</h2>
+
+        <p>
+            Three values represent top, left/right, and bottom.
+        </p>
+
+    </div>
+
+
+    <!-- 05 - Padding Shorthand - 4 Values -->
+
+    <div class="box padding-four">
+
+        <h2>05 - Padding Shorthand - 4 Values</h2>
+
+        <p>
+            Four values represent top, right, bottom, and left.
+        </p>
+
+    </div>
+
+
+    <!-- 06 - Padding vs Margin -->
+
+    <div class="box padding-margin">
+
+        <h2>06 - Padding vs Margin</h2>
+
+        <p>
+            <strong>Padding</strong> creates space inside an element,
+            between the content and border.
+        </p>
+
+        <p>
+            <strong>Margin</strong> creates space outside an element,
+            between the element and other elements.
+        </p>
+
+    </div>
+
+</body>
+
+</html>
