@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Width - Height</title>
+    <style>
+        .box {
+            border: 2px solid rgb(66, 29, 198);
+            margin-top: 20px;
+        }
+
+        /* 1 - Width of an element */
+        .width {
+            width: 300px;
+            padding: 10px;
+        }
+
+        /* 2 - Height of an element */
+        .height {
+            height: 150px;
+            padding: 10px;
+        }
+
+        /* 3 - min-width of an element */
+        .min-width {
+            width: 50%;
+            min-width: 300px;
+        }
+
+        /* 4 - max-width of an element */
+        .max-width {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        /* 4 - min-height of an element */
+        .min-height {
+            min-height: 200px;
+        }
+
+        /* max-height of an element */
+        .max-height {
+            max-height: 400px;
+            overflow: auto;
+        }
+
+        /* content-box */
+        .content-box {
+            width: 300px;
+            padding: 20px;
+            border: 5px solid red;
+
+            box-sizing: content-box;
+        }
+
+        /* border-box */
+        .border-box {
+            width: 300px;
+            padding: 20px;
+            border: 5px solid red;
+
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">CSS Width - Height</h1>
+
+    <hr style="border-top: 2px solid aqua; width: 90%;">
+
+    <div class="box width">
+        <h2>1 - Width Property</h2>
+        <p>
+            The width property defines the width (chaurayi) of an element.
+        </p>
+    </div>
+
+    <div class="box height">
+        <h2>2 - Height Property</h2>
+        <p>
+            The height property defines the height (unchai) of an element.
+        </p>
+    </div>
+
+    <div class="box min-width">
+        <h2>3 - Min-Width Property</h2>
+        <p>
+            `min-width` sets the <mark>minimum allowed width</mark> of an element.
+        </p>
+    </div>
+
+    <div class="box max-width">
+        <h2>4 - Max-Width Property</h2>
+        <p>
+            `max-width` sets the <mark>maximum allowed width</mark> of an element.
+        </p>
+    </div>
+
+    <div class="box min-height">
+        <h2>5 - Min-Height Property</h2>
+        <p>
+            `min-height` sets the <mark>minimum allowed height</mark> of an element.
+        </p>
+    </div>
+
+    <div class="box max-height">
+        <h2>6 - Max-Height Property</h2>
+        <p>
+            `max-height` sets the <mark>maximum allowed height</mark> of an element.
+        </p>
+    </div>
+
+    <div class="box content-box">
+        <h2>07 - Content Box</h2>
+        <p>
+            With <strong>content-box</strong>, width applies only
+            to the content. Padding and border are added separately.
+        </p>
+    </div>
+
+    <div class="box border-box">
+        <h2>08 - Border Box</h2>
+        <p>
+            With <strong>border-box</strong>, width includes
+            content, padding, and border.
+        </p>
+    </div>
+</body>
+
+
+</html>
