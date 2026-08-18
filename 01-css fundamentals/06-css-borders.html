@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Borders</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .box {
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            box-sizing: border-box;
+        }
+
+
+        /* ==================================================
+           01 - border-style
+        ================================================== */
+
+        .border-style {
+            border-style: solid;
+        }
+
+
+        /* ==================================================
+           02 - border-width
+        ================================================== */
+
+        .border-width {
+            border-style: solid;
+            border-width: 10px;
+        }
+
+
+        /* ==================================================
+           03 - border-color
+        ================================================== */
+
+        .border-color {
+            border-style: solid;
+            border-width: 5px;
+            border-color: red;
+        }
+
+
+        /* ==================================================
+           04 - Individual Borders
+        ================================================== */
+
+        .individual-borders {
+            border-top: 5px solid red;
+            border-right: 4px dashed blue;
+            border-bottom: 6px dotted green;
+            border-left: 3px double black;
+        }
+
+
+        /* ==================================================
+           05 - border Shorthand
+        ================================================== */
+
+        .border-shorthand {
+            border: 5px solid purple;
+        }
+
+
+        /* ==================================================
+           06 - border-radius
+        ================================================== */
+
+        .border-radius {
+            border: 4px solid orange;
+            border-radius: 20px;
+        }
+
+
+        /* ==================================================
+           07 - Rounded Corners
+        ================================================== */
+
+        .rounded-corners {
+            border: 5px solid brown;
+            border-radius: 10px 20px 30px 40px;
+        }
+
+
+        /* ==================================================
+           08 - Circle using border-radius
+        ================================================== */
+
+        .circle {
+            width: 200px;
+            height: 200px;
+
+            border: 5px solid blue;
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        /* ==================================================
+           09 - Individual Corner Radius
+        ================================================== */
+
+        .individual-radius {
+            border: 5px solid green;
+
+            border-top-left-radius: 30px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 30px;
+            border-bottom-left-radius: 10px;
+        }
+
+
+        /* ==================================================
+           10 - Border Image
+        ================================================== */
+
+        .border-image {
+            border: 10px solid transparent;
+
+            border-image: url("../media/border-img.png") 30 round;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1 style="text-align: center;">
+        CSS Borders
+    </h1>
+
+    <hr style="border-top: 2px solid aqua; width: 90%;">
+
+
+    <!-- 01 - border-style -->
+
+    <div class="box border-style">
+
+        <h2>01 - Border Style</h2>
+
+        <p>
+            The <strong>border-style</strong> property is used to define
+            the style of a border.
+        </p>
+
+    </div>
+
+
+    <!-- 02 - border-width -->
+
+    <div class="box border-width">
+
+        <h2>02 - Border Width</h2>
+
+        <p>
+            The <strong>border-width</strong> property is used to control
+            the thickness of a border.
+        </p>
+
+    </div>
+
+
+    <!-- 03 - border-color -->
+
+    <div class="box border-color">
+
+        <h2>03 - Border Color</h2>
+
+        <p>
+            The <strong>border-color</strong> property is used to set
+            the color of a border.
+        </p>
+
+    </div>
+
+
+    <!-- 04 - Individual Borders -->
+
+    <div class="box individual-borders">
+
+        <h2>04 - Individual Borders</h2>
+
+        <p>
+            CSS allows you to style the top, right, bottom, and left
+            borders separately.
+        </p>
+
+    </div>
+
+
+    <!-- 05 - border shorthand -->
+
+    <div class="box border-shorthand">
+
+        <h2>05 - Border Shorthand</h2>
+
+        <p>
+            The <strong>border</strong> shorthand allows you to set
+            border width, style, and color in one line.
+        </p>
+
+    </div>
+
+
+    <!-- 06 - border-radius -->
+
+    <div class="box border-radius">
+
+        <h2>06 - Border Radius</h2>
+
+        <p>
+            The <strong>border-radius</strong> property is used to
+            create rounded corners.
+        </p>
+
+    </div>
+
+
+    <!-- 07 - Rounded Corners -->
+
+    <div class="box rounded-corners">
+
+        <h2>07 - Rounded Corners</h2>
+
+        <p>
+            Different radius values can be used to create different
+            shapes for each corner.
+        </p>
+
+    </div>
+
+
+    <!-- 08 - Circle -->
+
+    <div class="box circle">
+
+        <strong>Circle</strong>
+
+    </div>
+
+
+    <!-- 09 - Individual Corner Radius -->
+
+    <div class="box individual-radius">
+
+        <h2>09 - Individual Corner Radius</h2>
+
+        <p>
+            Each corner can also be controlled separately using
+            individual border-radius properties.
+        </p>
+
+    </div>
+
+
+    <!-- 10 - Border Image -->
+
+    <div class="box border-image">
+
+        <h2>10 - Border Image</h2>
+
+        <p>
+            The <strong>border-image</strong> property allows an image
+            to be used as a border.
+        </p>
+
+    </div>
+
+</body>
+
+</html>
