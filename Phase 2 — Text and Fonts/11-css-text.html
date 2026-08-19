@@ -60,6 +60,26 @@
             text-indent: 50px;
             line-height: 30px;
         }
+
+        /* 09 - word-spacing */
+        .word-spacing p {
+            word-spacing: 15px;
+        }
+
+        /* 10 - text-shadow */
+        .text-shadow {
+            /* text-shadow: horizontal vertical blur color; */
+            text-shadow: 3px 3px 5px gray;
+        }
+
+        /* 11 - text-overflow */
+        .text-overflow p {
+            width: 400px;
+
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
     </style>
 </head>
 
@@ -136,11 +156,41 @@
     <div class="box line-height">
         <h2>08 - line-height</h2>
         <p>
-            The <strong>`line-height`</strong> property in CSS controls the amount of vertical space between lines of text. It helps
+            The <strong>`line-height`</strong> property in CSS controls the amount of vertical space between lines of
+            text. It helps
             make text easier to read by increasing or decreasing the spacing between lines. A larger `line-height`
             creates more space between lines, while a smaller value makes the lines closer together. It can be used with
             units such as `px`, `em`, or `rem`, or with a unitless number.
 
+        </p>
+    </div>
+
+    <!-- 09 - word-spacing -->
+    <div class="box word-spacing">
+        <h2>09 - Word Spacing</h2>
+        <p>
+            The word-spacing property controls the amount of
+            space between words in a text.
+        </p>
+    </div>
+
+    <!-- 10 - text-shadow -->
+    <div class="box text-shadow">
+        <h2>10 - text-shadow</h2>
+        <p>
+            The text-shadow property adds a shadow effect behind
+            text. You can control its horizontal position,
+            vertical position, blur, and color.
+        </p>
+    </div>
+
+    <!-- 11 - Text Overflow -->
+    <div class="box text-overflow">
+        <h2>11 - Text Overflow</h2>
+        <p>
+            This is a very long text that will not fit inside
+            the available width of the container, so the extra
+            text will be hidden and displayed with an ellipsis.
         </p>
     </div>
 </body>
