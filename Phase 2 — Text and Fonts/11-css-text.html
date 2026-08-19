@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Text</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .box {
+            width: 80%;
+            margin: 30px auto;
+            padding: 20px;
+
+            border: 2px solid #333;
+            box-sizing: border-box;
+        }
+
+        /* 01 - Color  */
+        .color {
+            color: blue;
+        }
+
+        /* 02 - text-align */
+        .text-align {
+            text-align: center;
+        }
+
+        /* 03 - text-align-last */
+        .text-align-last {
+            text-align: justify;
+            text-align-last: center;
+        }
+
+        /* 04 - text-decoration */
+        .text-decoration {
+            text-decoration: underline;
+        }
+
+        /* 05 - text-transform */
+        .text-transform {
+            text-transform: uppercase;
+        }
+
+        /* 06 - text-indent */
+        .text-indent>p {
+            text-indent: 50px;
+        }
+
+        /* 07 - letter-spacing */
+        .letter-spacing>p {
+            letter-spacing: 3px;
+        }
+
+        /* 08 - line-height */
+        .line-height p {
+            text-indent: 50px;
+            line-height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">CSS Text</h1>
+
+    <hr style="border-top: 2px solid aqua; width: 90%;">
+
+    <!-- 01 - color -->
+    <div class="box color">
+        <h2>01 - color</h2>
+        <p>
+            The color property is used to set the color of text.
+        </p>
+    </div>
+
+    <!-- 02 - text-align -->
+    <div class="box text-align">
+        <h2>02 - text-align</h2>
+        <p>
+            The text-align property is used to align text
+            horizontally inside an element.
+        </p>
+    </div>
+
+    <!-- 03 - text-align-last -->
+    <div class="box text-align-last">
+        <h2>03 - text-align-last</h2>
+        <p>
+            The text-align-last property controls the alignment
+            of the last line of a text block. This example uses
+            justified text with the last line centered.
+        </p>
+    </div>
+
+    <!-- 04 - text-decoration -->
+    <div class="box text-decoration">
+        <h2>04 - text-decoration</h2>
+        <p>
+            The text-decoration property is used to add lines
+            to text such as underline, overline, or line-through.
+        </p>
+    </div>
+
+    <!-- 05 - text-transform -->
+    <div class="box text-transform">
+        <h2>05 - text-transform</h2>
+        <p>
+            The text-transform property controls the capitalization
+            of text.
+        </p>
+    </div>
+
+    <!-- 06 - text-indent -->
+    <div class="box text-indent">
+        <h2>06 - text-indent</h2>
+        <p>
+            The text-indent property moves the first line of a
+            paragraph inward from the left side. This is useful
+            for creating a traditional paragraph indentation.
+        </p>
+    </div>
+
+    <!-- 07 - letter-spacing -->
+    <div class="box letter-spacing">
+        <h2>07 - letter-spacing</h2>
+        <p>
+            The letter-spacing property controls the amount of
+            space between individual characters.
+        </p>
+    </div>
+
+    <!-- 08 - line-height -->
+    <div class="box line-height">
+        <h2>08 - line-height</h2>
+        <p>
+            The <strong>`line-height`</strong> property in CSS controls the amount of vertical space between lines of text. It helps
+            make text easier to read by increasing or decreasing the spacing between lines. A larger `line-height`
+            creates more space between lines, while a smaller value makes the lines closer together. It can be used with
+            units such as `px`, `em`, or `rem`, or with a unitless number.
+
+        </p>
+    </div>
+</body>
+
+</html>
