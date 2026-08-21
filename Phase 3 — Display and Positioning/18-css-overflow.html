@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Overflow</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            width: 250px;
+            height: 250px;
+            border: 2px solid black;
+            margin: 45px auto;
+            padding: 5px;
+            background-color: azure;
+        }
+
+        .overflow {
+            overflow: visible;
+        }
+
+        .hidden {
+            overflow: hidden;
+        }
+
+        .scroll {
+            overflow: scroll;
+        }
+
+
+        .auto {
+            overflow: auto;
+        }
+
+        .overflow-x {
+            width: 300px;
+            height: 150px;
+
+            overflow-x: auto;
+        }
+
+        .overflow-y {
+            width: 300px;
+            height: 150px;
+
+            overflow-y: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">CSS Overflow</h1>
+
+    <hr style="border-top: 2px solid red; width: 90%;">
+
+    <div class="container">
+        <!-- 1 - overflow -->
+        <div class="box">
+            <h2>1 - overflow</h2>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea accusantium quibusdam laudantium veniam eum
+            fugiat
+            molestias asperiores, odio totam a? Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            dolor
+            pariatur consequatur labore incidunt debitis est enim doloribus inventore numquam molestiae eius, ex
+            voluptates
+            aliquid dolore officia voluptate voluptatum. Assumenda?
+        </div>
+
+        <div class="box visible">
+            <h2>2 - overflow: visible</h2>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, minus laboriosam. Voluptatum, obcaecati
+            iure
+            atque adipisci repudiandae nam. Porro quae aut ipsam voluptate qui tempora incidunt maxime voluptates illo
+            et
+            eaque doloribus ex minima harum, numquam animi quos recusandae eum, dolore distinctio sapiente ducimus!
+            Mollitia
+            quidem commodi quos deleniti dolore accusamus veniam numquam cumque distinctio quisquam, vitae molestiae
+            accusantium error.
+        </div>
+
+        <div class="box hidden">
+            <h2>3 - overflow: hidden</h2>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt, ad cumque voluptas nisi non dolores
+            eligendi, nam laboriosam minus possimus voluptate ratione? Fuga quaerat ab qui dolorem modi cumque doloribus
+            iusto facere amet quis! Cupiditate, ab beatae. Possimus enim odio consectetur impedit sed inventore aliquam
+            recusandae, nisi maiores? Maxime natus in voluptate ratione porro impedit consequuntur, aperiam alias a ab?
+        </div>
+
+        <div class="box scroll">
+            <h2>4 - overflow: scroll</h2>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem alias animi, corrupti, laborum
+            tempore, distinctio sed ea accusantium dicta blanditiis pariatur quasi magni doloremque quos rem delectus
+            quod natus vitae reprehenderit sit? Atque totam temporibus nisi aliquam dignissimos veritatis omnis
+            voluptatibus mollitia debitis, neque voluptas incidunt quos ullam quis recusandae reiciendis sequi ad unde
+            nobis ipsam voluptatum. Magni, esse aliquid.
+        </div>
+
+        <div class="box auto">
+            <h2>5 - overflow: auto</h2>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae non inventore velit quam fugiat
+            suscipit nam excepturi porro autem nihil cum dignissimos, doloremque, ea dolorem rem placeat quasi laborum
+            expedita?
+        </div>
+
+        <div class="box overflow-x">
+            <h2>6 - overflow-x</h2>
+            <p style="white-space: nowrap;">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius, commodi dolorem quia minus quasi
+                quisquam
+                expedita. Nesciunt fuga quasi qui pariatur id, quae nemo architecto quos quia atque quod consequuntur?
+                Lorem
+                ipsum dolor sit, amet consectetur adipisicing elit. Eaque neque ex nam corrupti illum illo laborum quo,
+                nulla impedit velit aperiam assumenda quam cum mollitia quod, esse, voluptatibus temporibus cupiditate.
+            </p>
+        </div>
+
+        <div class="box overflow-y">
+            <h2>7 - overflow-y</h2>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius, commodi dolorem quia minus quasi quisquam
+            expedita. Nesciunt fuga quasi qui pariatur id, quae nemo architecto quos quia atque quod consequuntur? Lorem
+            ipsum dolor sit, amet consectetur adipisicing elit. Eaque neque ex nam corrupti illum illo laborum quo,
+            nulla impedit velit aperiam assumenda quam cum mollitia quod, esse, voluptatibus temporibus cupiditate.
+        </div>
+    </div>
+</body>
+
+</html>
