@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Position</title>
+    <style>
+        .position {
+            border: 2px solid black;
+            margin: 20px auto;
+            padding: 10px;
+            width: 80%;
+        }
+
+        .position .box {
+            border: 2px solid black;
+            height: auto;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        /* 1 - position: static */
+        .static .box {
+            border: 1px solid blue;
+            margin: 5px;
+
+            position: static;
+        }
+
+        .static .box1 {
+            background-color: antiquewhite;
+
+            /* top, right, bottom and left have no effect on statically positioned elements. */
+        }
+
+        .static .box2 {
+            background-color: beige;
+        }
+
+        .static .box3 {
+            background-color: blanchedalmond;
+        }
+
+        .static .box4 {
+            background-color: cadetblue;
+        }
+
+        /* 2 - position: relative */
+        .relative .box {
+            border: 1px solid blue;
+            margin: 5px;
+        }
+
+        .relative .box1 {
+            background-color: aqua;
+        }
+
+        .relative .box2 {
+            background-color: rgb(77, 217, 217);
+            position: relative;
+            bottom: 20px;
+            left: 10px;
+        }
+
+        .relative .box3 {
+            background-color: rgb(56, 133, 133);
+            position: relative;
+            top: 10px;
+        }
+
+        .relative .box4 {
+            background-color: rgb(137, 247, 247);
+        }
+
+        /* 3 - position: absolute */
+        .absolute {
+            position: relative;
+        }
+
+        .absolute .box {
+            border: 1px solid blue;
+            margin: 5px;
+        }
+
+        .absolute .box1 {
+            background-color: rgb(136, 90, 157);
+
+            /* It is positioned relative to its nearest positioned ancestor. */
+            position: absolute;
+            top: 0px;
+            right: 0;
+            width: 50%;
+        }
+
+        .absolute .box2 {
+            background-color: rgb(153, 110, 193);
+        }
+
+        .absolute .box3 {
+            background-color: rgb(155, 121, 188);
+        }
+
+        .absolute .box4 {
+            background-color: rgba(142, 45, 232, 0.452);
+        }
+
+        /* 4 - position: fixed */
+        .fixed .box1 {
+            background-color: rgb(125, 65, 65);
+        }
+
+        .fixed .box2 {
+            background-color: rgb(186, 120, 120);
+        }
+
+        .fixed .box3 {
+            background-color: rgb(128, 91, 91);
+            position: fixed;
+            bottom: 10px;
+            right: 30px;
+            width: 10%;
+            height: 10vh;
+        }
+
+        .fixed .box4 {
+            background-color: rgba(245, 133, 133, 0.603);
+        }
+
+        /* 5 - position: sticky */
+        .sticky .box {
+            height: 50vh;
+        }
+
+        .sticky .box1 {
+            background-color: rgba(122, 180, 63, 0.653);
+            position: sticky;
+            top: 0px;
+        }
+
+        .sticky .box2 {
+            background-color: rgb(113, 166, 61);
+        }
+
+        .sticky .box3 {
+            background-color: rgb(174, 246, 103);
+        }
+
+        .sticky .box4 {
+            background-color: rgba(34, 209, 34, 0.482);
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">CSS Position</h1>
+
+    <hr style="border-top: 2px solid aqua; width: 90%;">
+
+    <div class="position static">
+        <h2>1 - position: static</h2>
+
+        <div class="box box1">Box 1</div>
+        <div class="box box2">Box 2</div>
+        <div class="box box3">Box 3</div>
+        <div class="box box4">Box 4</div>
+    </div>
+
+    <div class="position relative">
+        <h2>2 - position: relative</h2>
+
+        <div class="box box1">Box 1</div>
+        <div class="box box2">Box 2</div>
+        <div class="box box3">Box 3</div>
+        <div class="box box4">Box 4</div>
+    </div>
+
+    <div class="position absolute">
+        <h2>3 - position: absolute</h2>
+
+        <div class="box box1">Box 1</div>
+        <div class="box box2">Box 2</div>
+        <div class="box box3">Box 3</div>
+        <div class="box box4">Box 4</div>
+    </div>
+
+    <div class="position fixed">
+        <h2>4 - position: fixed</h2>
+
+        <div class="box box1">Box 1</div>
+        <div class="box box2">Box 2</div>
+        <div class="box box3">Box 3 <br> using <br> position: fixed</div>
+        <div class="box box4">Box 4</div>
+    </div>
+
+    <div class="position sticky">
+        <h2>5 - position: sticky</h2>
+
+        <div class="box box1">Box 1 <br> using <br> position: sticky</div>
+        <div class="box box2">Box 2</div>
+        <div class="box box3">Box 3</div>
+        <div class="box box4">Box 4</div>
+    </div>
+</body>
+
+</html>
