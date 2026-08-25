@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Links</title>
+    <style>
+        .box {
+            width: 80%;
+            margin: 30px auto;
+            border: 1px solid red;
+            padding: 15px;
+        }
+
+        .link a:link {
+            color: blue;
+        }
+
+        .visited a:visited {
+            color: cadetblue;
+
+        }
+
+        .hover a:hover {
+            color: red;
+        }
+
+        .active a:active {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">CSS Link</h1>
+
+    <hr style="border-top: 2px solid aqua; width: 90%;">
+
+    <div class="box link">
+        <h2>1 - :link</h2>
+        <p>
+            If you have never visited the link, it will appear blue. Only applies to unvisited links.
+        </p>
+        <a href="#" target="_blank">Not visited link</a>
+    </div>
+
+    <div class="box visited">
+        <h1>2 - :visited</h1>
+        <p>
+            Used to style a link that the user has already visited.
+        </p>
+        <a href="#" target="_blank">Already visited link</a>
+    </div>
+
+    <div class="box hover">
+        <h1>3 - :hover</h1>
+        <p>
+            Used when you move your mouse over the link.
+        </p>
+        <a href="#" target="_blank">Mouse over link</a>
+    </div>
+
+    <div class="box active">
+        <h1>4 - :active</h1>
+        <p>
+            Applies while you are clicking/pressing the link.
+        </p>
+        <a href="#" target="_blank">Currently clicking link</a>
+    </div>
+</body>
+
+</html>
