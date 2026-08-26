@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Pseudo-Classes</title>
+    <style>
+        .box {
+            width: 70%;
+            margin: 15px auto;
+            padding: 10px;
+            border: 2px solid rebeccapurple;
+        }
+
+        /* 1 - :hover */
+        .hover button {
+            background-color: blue;
+            color: white;
+            padding: 10px;
+            border: none;
+        }
+
+        .hover button:hover {
+            background-color: green;
+            cursor: pointer;
+        }
+
+        /* 2 - :focus */
+        .focus input {
+            padding: 10px;
+            border: 2px solid gray;
+        }
+
+        .focus input:focus {
+            border-color: burlywood;
+            outline: none;
+        }
+
+        /* 3 - :active */
+        .active button {
+            background-color: blue;
+            color: white;
+            padding: 12px 15px;
+        }
+
+        .active button:active {
+            background-color: red;
+        }
+
+        /* 4 - :first-child */
+        .first-child p:first-child {
+            color: blueviolet;
+        }
+
+        /* 5 - :last-child */
+        .last-child p:last-child {
+            color: brown;
+        }
+
+        /* 6 - :nth-child() */
+        .nth-child p:nth-child(2) {
+            color: blue;
+        }
+
+        /* 7 - :not() */
+        .not p:not(.special) {
+            color: red;
+        }
+
+        /* 8 - :checked */
+        .checked input:checked {
+            accent-color: green;
+        }
+
+        /* 9 - :disabled */
+        input {
+            margin: 3px;
+        }
+
+        .disabled input:disabled {
+            background-color: lightgray;
+            cursor: not-allowed;
+        }
+
+        /* 10 - :required */
+        .required input:required {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">CSS Pseudo-Classes</h1>
+
+    <hr style="border-top: 2px solid aqua; width: 90%;">
+
+    <div class="box hover">
+        <h2>1 - :hover</h2>
+        <button type="submit">Submit</button>
+    </div>
+
+    <div class="box focus">
+        <h2>2 - :focus</h2>
+        <input type="text" placeholder="Enter your name...">
+    </div>
+
+    <div class="box active">
+        <h2>3 - :active</h2>
+        <button type="reset">Reset</button>
+    </div>
+
+    <div class="box">
+        <h2>4 - :first-child</h2>
+        <div class="first-child">
+            <p>First Paragraph</p>
+            <p>Second Paragraph</p>
+            <p>Third Paragraph</p>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2>5 - :last-child</h2>
+        <div class="last-child">
+            <p>First Paragraph</p>
+            <p>Second Paragraph</p>
+            <p>Third Paragraph</p>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2>6 - :nth-child()</h2>
+        <div class="nth-child">
+            <p>First Paragraph</p>
+            <p>Second Paragraph</p>
+            <p>Third Paragraph</p>
+            <p>Fourth Paragraph</p>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2>7 - :not()</h2>
+        <div class="not">
+            <p class="special">Special</p>
+            <p>Normal</p>
+            <p>Normal</p>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2>8 - :checked</h2>
+        <div class="checked">
+            <label>
+                <input type="checkbox">
+                I agree to the terms
+            </label>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2>9 - :disabled</h2>
+        <div class="disabled">
+            <input type="text" placeholder="You can type..."><br>
+            <input type="text" placeholder="You cannot type..." disabled>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2>10 - :required</h2>
+        <div class="required">
+            <input type="text" placeholder="Enter your name..." required><br>
+            <input type="email" name="email" id="email" placeholder="Enter your email...">
+        </div>
+    </div>
+</body>
+
+</html>
