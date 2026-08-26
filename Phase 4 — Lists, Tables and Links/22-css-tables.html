@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Tables</title>
+    <style>
+        /* 2. border-collapse */
+        table {
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid violet;
+        }
+
+        /* 3. border-spacing */
+        table {
+            border-collapse: separate;
+            border-spacing: 20px 10px;
+        }
+
+        /* 4. caption-side */
+        caption {
+            caption-side: bottom;
+        }
+
+        /* 5. Table Alignment */
+        table {
+            width: 70%;
+            margin: auto;
+        }
+
+        /* 6. Zebra Tables */
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(odd) {
+            background-color: lightcyan;
+        }
+
+        /* 7. Responsive Tables */
+        .table-container {
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">CSS Tables</h1>
+
+    <hr style="border-top: 2px solid aqua; width: 90%;">
+
+    <!-- 1. Basic Table -->
+    <div class="table-container">
+        <table>
+            <caption>Student Information</caption>
+
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+            </tr>
+
+            <tr>
+                <td>Ali</td>
+                <td>20</td>
+                <td>Lahore</td>
+            </tr>
+
+            <tr>
+                <td>Ahmed</td>
+                <td>22</td>
+                <td>Islamabad</td>
+            </tr>
+
+            <tr>
+                <td>Usman</td>
+                <td>21</td>
+                <td>Karachi</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
