@@ -1,0 +1,118 @@
+<!-- CSS Flexbox is a one-dimensional layout system used to arrange elements in a row or column. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Flexbox Introduction</title>
+    <style>
+        .box {
+            width: 70%;
+            margin: 20px auto;
+            padding: 10px;
+            border: 2px solid black;
+        }
+
+        /* 1. Flex Container */
+        .flex-container {
+            background-color: aliceblue;
+        }
+
+        .flex-container .container {
+            display: flex;
+            /* flex-direction: column; */
+            background-color: azure;
+            width: 50%;
+            border: 2px solid black;
+        }
+
+        .flex-container .container .item {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid aqua;
+            margin: 3px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">CSS Flexbox Introduction</h1>
+
+    <hr style="border-top: 2px solid aqua; width: 80%;">
+
+    <!-- 1. Flex Container -->
+
+    <div class="box flex-container">
+        <h2>1. Flex Container</h2>
+        <p>
+            A Flex Container is an element that has <strong>display: flex;</strong>.
+        </p>
+
+        <p>
+            Its direct children become <strong>Flex Items</strong>.
+        </p>
+
+        <div class="container">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+        </div>
+    </div>
+
+    <!-- 2. Flex Items -->
+    <div style='background-color: aliceblue;' class="box">
+        <h2>2. Flex Items</h2>
+        <p>
+            Flex Items are the direct children of a Flex Container.
+        </p>
+
+        <p>
+            In this example, the three <strong>.item</strong> elements
+            are Flex Items.
+        </p>
+    </div>
+
+    <!-- 3. Main Axis -->
+
+    <div style='background-color: aliceblue;' class="box">
+        <h2>3. Main Axis</h2>
+
+        <p>
+            The Main Axis is the primary direction in which Flexbox places the flex items.
+        </p>
+        <p>
+            By default, <strong>flex-direction</strong> is <strong>row</strong>,
+            so the Main Axis goes from left to right.
+        </p>
+        <p>
+            If you change the direction to a column: flex-direction: column;
+        </p>
+        <p style="text-indent: 30px;">
+            Now the Main Axis becomes top to bottom
+        </p>
+    </div>
+
+    <!-- 4. Cross Axis -->
+    <div style='background-color: aliceblue;' class="box">
+        <h2>4. Cross Axis</h2>
+        <p>
+            The Cross Axis is the axis that is perpendicular to the Main Axis.
+        </p>
+
+        <h3>Easy Rule</h3>
+        <p style="text-indent: 30px;">
+            <strong>Main Axis</strong> = direction of your flex items
+        </p>
+        <p style="text-indent: 30px;">
+            <strong>Cross Axis</strong> = axis perpendicular to the Main Axis
+        </p>
+    </div>
+</body>
+
+</html>
