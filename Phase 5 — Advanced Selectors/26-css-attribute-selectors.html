@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Attribute Selector</title>
+    <style>
+        .box {
+            width: 70%;
+            margin: 20px auto;
+            padding: 10px;
+            border: 2px solid black;
+        }
+
+        /* 1. [attribute] — Attribute Exists */
+        .attribute-exists input[name] {
+            border: 2px solid palegreen;
+        }
+
+        /* 2. [attribute=value] — Exact Value */
+        .exact-value input[type="email"] {
+            border: 2px solid seagreen;
+        }
+
+        /* 3. [attribute^=value] — Starts With */
+        .start-with a[href^="https"] {
+            color: green;
+        }
+
+        /* 4. [attribute$=value] — Ends With */
+        .ends-with a[href$=".pdf"] {
+            color: red;
+        }
+
+        /* 5. [attribute*=value] — Contains */
+        .contains a[href*="google"] {
+            color: purple;
+        }
+
+        /* 6. [attribute~=value] — Contains a Whole Word */
+        .whole-word div[class~="active"] {
+            background-color: yellow;
+        }
+
+        /* 7. [attribute|=value] — Exact Value or Starts With value- */
+        .exact-value-start-with p[lang|="en"] {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">CSS Attribute Selector</h1>
+
+    <hr style="border-top: 2px solid aqua; width: 80%;">
+
+    <!-- 1. [attribute] — Attribute Exists -->
+
+    <div class="box attribute-exists">
+        <h2>1. [attribute] — Attribute Exists</h2>
+        <p>Selects every element that has the specified attribute, regardless of its value.</p>
+        <p>The first two inputs are selected because they have the name attribute.</p>
+
+        <input type="text" name="username" placeholder="Enter your Username...">
+        <input type="email" name="email" placeholder="Enter your email...">
+        <input type="text">
+    </div>
+
+    <!-- 2. [attribute=value] — Exact Value -->
+    <div class="box exact-value">
+        <h2>2. [attribute=value] — Exact Value</h2>
+        <p>Selects elements whose attribute has an exactly matching value.</p>
+
+        <input type="text" placeholder="Enter your text...">
+        <input type="email" placeholder="Enter your email">
+        <input type="password" placeholder="Enter your password...">
+    </div>
+
+    <!-- 3. [attribute^=value] — Starts With -->
+    <div class="box start-with">
+        <h2>3. [attribute^=value] — Starts With</h2>
+        <p>The ^= selector targets elements whose attribute value starts with the specified value.</p>
+
+        <a href="https://google.com">Google</a>
+        <a href="https://github.com">GitHub</a>
+        <a href="http://example.com">Example</a>
+    </div>
+
+    <!-- 4. [attribute$=value] — Ends With -->
+    <div class="box ends-with">
+        <h2>4. [attribute$=value] — Ends With</h2>
+        <p>The $= selector targets elements whose attribute value ends with the specified value.</p>
+
+        <a href="document.pdf">PDF File</a>
+        <a href="image.jpg">Image File</a>
+        <a href="report.pdf">Report</a>
+    </div>
+
+    <!-- 5. [attribute*=value] — Contains -->
+
+    <div class="box contains">
+        <h2>5. [attribute*=value] — Contains</h2>
+        <p>The *= selector targets elements whose attribute value contains the specified text</p>
+
+        <a href="https://google.com">Google</a>
+        <a href="https://github.com">GitHub</a>
+        <a href="https://facebook.com">Facebook</a>
+    </div>
+
+    <!-- 6. [attribute~=value] — Contains a Whole Word -->
+
+    <div class="box whole-word">
+        <h2>6. [attribute~=value] — Contains a Whole Word</h2>
+        <p>The ~= selector selects elements where the attribute value contains the specified whole word, separated by
+            spaces.</p>
+
+        <div class="box active">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box active-box">Box 3</div>
+    </div>
+
+    <!-- 7. [attribute|=value] — Exact Value or Starts With value- -->
+    <div class="box exact-value-start-with">
+        <h2>7. [attribute|=value] — Exact Value or Starts With value-</h2>
+        <p>The |= selector matches an attribute whose value is either:</p>
+
+        <ol>
+            <li>Exactly the specified value, or</li>
+            <li>Starts with the specified value followed by a hyphen -.</li>
+        </ol>
+
+        <p>It is commonly used with language attributes.</p>
+
+        <p lang="en">English</p>
+        <p lang="en-US">American English</p>
+        <p lang="en-GB">British English</p>
+        <p lang="fr">French</p>
+    </div>
+</body>
+
+</html>
