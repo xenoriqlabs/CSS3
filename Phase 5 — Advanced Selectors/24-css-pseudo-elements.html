@@ -1,0 +1,138 @@
+<!-- CSS pseudo-elements let you style or insert content into a specific part of 
+an HTML element without adding an extra HTML element. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo Elements</title>
+    <style>
+        .box {
+            width: 70%;
+            margin: 20px auto;
+            padding: 10px;
+            border: 2px solid black;
+        }
+
+        /* 1. ::before */
+        .before p:nth-of-type(2)::before {
+            content: "🥭 ";
+        }
+
+        .required::before {
+            content: "* ";
+            color: red;
+        }
+
+        /* 2. ::after */
+        .after p:nth-of-type(2)::after {
+            content: "🥭 ";
+        }
+
+        .external-link::after {
+            content: " ↗";
+        }
+
+        /* 3. ::first-letter */
+        .first-letter p:nth-of-type(2)::first-letter {
+            font-size: 40px;
+            font-weight: bold;
+            color: purple;
+        }
+
+        /* 4. ::first-line */
+        .first-line p:nth-of-type(2)::first-line {
+            font-weight: bold;
+            color: blue;
+        }
+
+        /* 5. ::selection */
+        .selection p:nth-of-type(2)::selection {
+            color: white;
+            background-color: black;
+        }
+
+        /* 6. ::placeholder */
+        input::placeholder {
+            color: cadetblue;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">CSS Pseudo Elements</h1>
+
+    <hr style="border-top: 2px solid aqua; width: 90%;">
+
+    <div class="box before">
+        <h2>1. ::before</h2>
+        <p>
+            ::before inserts generated content before the actual content of an element.
+        </p>
+        <p>
+            Mango
+        </p>
+
+        <label for="mango" class="required">Username</label>
+    </div>
+
+    <div class="box after">
+        <h2>2. ::after</h2>
+        <p>
+            ::after inserts generated content after the actual content of an element.
+        </p>
+        <p>
+            Mango
+        </p>
+        <a href="#" class="external-link">Visit Website</a>
+    </div>
+
+    <div class="box first-letter">
+        <h2>3. ::first-letter</h2>
+        <p>
+            ::first-letter styles the first letter of an element. <br>
+            This is commonly used for magazine/article-style text.
+        </p>
+        <p>
+            CSS is used to style and design web pages.
+        </p>
+    </div>
+
+    <div class="box first-line">
+        <h2>4. ::first-line</h2>
+        <p>
+            ::first-line styles the first line of text inside an element.
+        </p>
+        <p>
+            CSS allows you to create beautiful websites.
+            You can control colors, fonts, spacing, layouts,
+            animations, and much more.
+            The browser will not preserve the extra spaces and
+            line breaks exactly as you wrote them. HTML normally
+            collapses multiple spaces and line breaks into a single space.
+        </p>
+    </div>
+
+    <div class="box selection">
+        <h2>5. ::selection</h2>
+        <p>
+            ::selection styles text when the user selects/highlights it with the mouse.
+        </p>
+        <p>
+            Select this text with your mouse to see the effect.
+        </p>
+    </div>
+
+    <div class="box placeholder">
+        <h2>6. ::placeholder</h2>
+        <p>
+            ::placeholder styles the placeholder text inside an input or textarea.
+        </p>
+        <input type="text" placeholder="Enter your name...">
+    </div>
+</body>
+
+</html>
