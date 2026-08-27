@@ -1,0 +1,96 @@
+<!-- CSS combinators are used to define relationships between HTML elements. 
+They allow you to target elements based on their position or relationship to other elements. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Combinators</title>
+    <style>
+        .box {
+            width: 70%;
+            margin: 20px auto;
+            padding: 10px;
+            border: 2px solid black;
+        }
+
+        /* 1. Descendant Combinator */
+        .descendant-combinator p {
+            color: purple;
+        }
+
+        /* 2. Child Combinator > */
+        .child-combinator>p {
+            color: red;
+        }
+
+        /* 3. Adjacent Sibling Combinator + */
+        .adjacent-sibling h2+p {
+            color: palevioletred;
+        }
+
+        /* 4. General Sibling Combinator ~ */
+        .general-sibling h2~p {
+            color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">CSS Combinators</h1>
+
+    <hr style="border-top: 2px solid aqua; width: 90%;">
+
+    <!-- 1. Descendant Combinator -->
+
+    <div class="box descendant-combinator">
+        <h2>1. Descendant Combinator</h2>
+        <p>
+            A descendant selector targets an element that is anywhere inside another element.
+        </p>
+        <section>
+            <p>
+                Descendant means direct child OR deeply nested element.
+            </p>
+        </section>
+    </div>
+
+    <!-- 2. Child Combinator > -->
+
+    <div class="box child-combinator">
+        <h2>2. Child Combinator ></h2>
+        <p>
+            The child combinator targets only the elements that are direct children of another element.
+        </p>
+        <section>
+            <p>
+                Targets direct children only.
+            </p>
+        </section>
+    </div>
+
+    <!-- 3. Adjacent Sibling Combinator + -->
+
+    <div class="box adjacent-sibling">
+        <h2>3. Adjacent Sibling Combinator +</h2>
+
+        <p>The + combinator targets the element that comes immediately after another element.</p>
+        <p>Only the first paragraph is selected.</p>
+        <p>Because it is the immediately next sibling of the h2.</p>
+    </div>
+
+
+    <!-- 4. General Sibling Combinator ~ -->
+
+    <div class="box general-sibling">
+        <h2>4. General Sibling Combinator ~</h2>
+
+        <p>The ~ combinator targets all matching siblings that come after an element.</p>
+        <p>All three paragraphs are selected.</p>
+        <p>Because they are siblings of the h2 and come after it.</p>
+    </div>
+</body>
+
+</html>
