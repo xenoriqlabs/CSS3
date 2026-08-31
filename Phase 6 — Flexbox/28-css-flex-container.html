@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Flex Container</title>
+    <style>
+        .container {
+            width: 80%;
+            min-height: 400px;
+            margin: 50px auto;
+            padding: 20px;
+
+            border: 3px solid black;
+
+            /* Flex Container */
+            display: flex;
+
+            /* Direction */
+            flex-direction: row;
+
+            /* Allow items to move to the next line */
+            flex-wrap: wrap;
+
+            /* Direction + Wrap shorthand */
+            /* flex-flow: row wrap; */
+
+            /* Main-axis alignment */
+            justify-content: center;
+
+            /* Cross-axis alignment */
+            align-items: center;
+
+            /* Alignment of multiple flex lines */
+            align-content: center;
+
+            /* Space between items */
+            gap: 20px;
+        }
+
+        .box {
+            width: 150px;
+            height: 100px;
+
+            background-color: lightblue;
+            border: 2px solid blue;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">CSS Flex Container</h1>
+
+    <hr style="border-top: 2px solid aqua; width: 90%;">
+
+    <div class="container">
+
+        <div class="box">Box 1</div>
+        <div class="box">Box 2</div>
+        <div class="box">Box 3</div>
+        <div class="box">Box 4</div>
+        <div class="box">Box 5</div>
+        <div class="box">Box 6</div>
+        <div class="box">Box 7</div>
+        <div class="box">Box 8</div>
+        <div class="box">Box 9</div>
+        <div class="box">Box 10</div>
+        <div class="box">Box 11</div>
+        <div class="box">Box 12</div>
+
+    </div>
+</body>
+
+</html>
