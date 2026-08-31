@@ -1,0 +1,905 @@
+<!--
+    ============================================================
+    CSS FLEX ITEMS
+    ============================================================
+
+    Flex Item Properties:
+
+    1. order
+    2. flex-grow
+    3. flex-shrink
+    4. flex-basis
+    5. flex
+    6. align-self
+
+    NOTE:
+    Flex Item properties are applied to the CHILD elements
+    of a flex container.
+
+    ============================================================
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Flex Items</title>
+
+
+    <style>
+
+        /* =====================================================
+           GENERAL STYLING
+        ===================================================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px;
+
+            font-family: Arial, sans-serif;
+
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-top: 0;
+        }
+
+        .section {
+            width: 90%;
+            margin: 60px auto;
+        }
+
+
+        /* =====================================================
+           FLEX CONTAINER - COMMON
+        ===================================================== */
+
+        .container {
+            width: 100%;
+            min-height: 250px;
+
+            padding: 20px;
+
+            border: 3px solid black;
+
+            background-color: white;
+
+            display: flex;
+
+            flex-direction: row;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 20px;
+        }
+
+
+        /* =====================================================
+           FLEX ITEMS - COMMON
+        ===================================================== */
+
+        .box {
+            width: 120px;
+            height: 100px;
+
+            padding: 10px;
+
+            border: 3px solid blue;
+
+            background-color: lightblue;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+
+        /* =====================================================
+           1. ORDER
+        =====================================================
+
+           order controls the visual order of flex items.
+
+           Default:
+           order: 0;
+
+           Smaller order value appears first.
+
+           Example:
+
+           -1 → 0 → 1 → 2 → 3
+
+        ===================================================== */
+
+        .order .box1 {
+            order: 2;
+        }
+
+        .order .box2 {
+            order: 4;
+        }
+
+        .order .box3 {
+            order: 0;
+        }
+
+        .order .box4 {
+            order: -1;
+        }
+
+        .order .box5 {
+            order: 6;
+        }
+
+        .order .box6 {
+            order: 0;
+        }
+
+        .order .box7 {
+            order: 3;
+        }
+
+        .order .box8 {
+            order: 1;
+        }
+
+
+        /* =====================================================
+           2. FLEX-GROW
+        =====================================================
+
+           flex-grow controls how much an item grows
+           when there is extra space.
+
+           Default:
+           flex-grow: 0;
+
+           Example:
+
+           Box 1 = 1
+           Box 2 = 2
+           Box 3 = 3
+
+           Extra space ratio:
+
+           1 : 2 : 3
+
+        ===================================================== */
+
+        .flex-grow .box1 {
+            flex-grow: 1;
+        }
+
+        .flex-grow .box2 {
+            flex-grow: 2;
+        }
+
+        .flex-grow .box3 {
+            flex-grow: 3;
+        }
+
+        .flex-grow .box4 {
+            flex-grow: 0;
+        }
+
+
+        /* =====================================================
+           3. FLEX-SHRINK
+        =====================================================
+
+           flex-shrink controls how much an item can shrink
+           when there is not enough space.
+
+           Default:
+           flex-shrink: 1;
+
+           0 = Do not shrink
+           1 = Can shrink
+
+        ===================================================== */
+
+        .flex-shrink {
+            width: 600px;
+
+            justify-content: flex-start;
+
+            flex-wrap: nowrap;
+        }
+
+        .flex-shrink .box {
+            width: 300px;
+
+            flex-shrink: 1;
+        }
+
+        .flex-shrink .box1 {
+            flex-shrink: 0;
+        }
+
+        .flex-shrink .box2 {
+            flex-shrink: 1;
+        }
+
+
+        /* =====================================================
+           4. FLEX-BASIS
+        =====================================================
+
+           flex-basis defines the initial size of a flex item
+           along the main axis.
+
+           If direction is row:
+           flex-basis controls initial width.
+
+           If direction is column:
+           flex-basis controls initial height.
+
+        ===================================================== */
+
+        .flex-basis .box1 {
+            flex-basis: 150px;
+        }
+
+        .flex-basis .box2 {
+            flex-basis: 250px;
+        }
+
+        .flex-basis .box3 {
+            flex-basis: 350px;
+        }
+
+
+        /* =====================================================
+           5. FLEX
+        =====================================================
+
+           flex is shorthand for:
+
+           flex-grow
+           flex-shrink
+           flex-basis
+
+           Syntax:
+
+           flex: grow shrink basis;
+
+           Example:
+
+           flex: 1 1 200px;
+
+        ===================================================== */
+
+        .flex .box1 {
+            flex: 1;
+        }
+
+        .flex .box2 {
+            flex: 2;
+        }
+
+        .flex .box3 {
+            flex: 1;
+        }
+
+
+        /* =====================================================
+           FLEX WITH COMPLETE VALUES
+        ===================================================== */
+
+        .flex-complete .box1 {
+            flex: 1 1 150px;
+        }
+
+        .flex-complete .box2 {
+            flex: 2 1 200px;
+        }
+
+        .flex-complete .box3 {
+            flex: 1 1 150px;
+        }
+
+
+        /* =====================================================
+           6. ALIGN-SELF
+        =====================================================
+
+           align-self allows an individual flex item
+           to override the container's align-items value.
+
+           Common values:
+
+           auto
+           flex-start
+           flex-end
+           center
+           baseline
+           stretch
+
+        ===================================================== */
+
+        .align-self {
+            height: 400px;
+
+            align-items: center;
+        }
+
+        .align-self .box1 {
+            align-self: flex-start;
+        }
+
+        .align-self .box2 {
+            align-self: center;
+        }
+
+        .align-self .box3 {
+            align-self: flex-end;
+        }
+
+
+        /* =====================================================
+           ALIGN-SELF - STRETCH
+        ===================================================== */
+
+        .align-self-stretch {
+            height: 300px;
+
+            align-items: flex-start;
+        }
+
+        .align-self-stretch .box1 {
+            align-self: stretch;
+
+            height: auto;
+        }
+
+
+        /* =====================================================
+           ALIGN-SELF - BASELINE
+        ===================================================== */
+
+        .align-self-baseline {
+            align-items: baseline;
+        }
+
+        .align-self-baseline .box1 {
+            height: 80px;
+
+            align-self: baseline;
+
+            font-size: 16px;
+        }
+
+        .align-self-baseline .box2 {
+            height: 120px;
+
+            align-self: baseline;
+
+            font-size: 30px;
+        }
+
+        .align-self-baseline .box3 {
+            height: 100px;
+
+            align-self: baseline;
+
+            font-size: 20px;
+        }
+
+
+        /* =====================================================
+           PRACTICE SECTION
+        ===================================================== */
+
+        .practice {
+            min-height: 300px;
+
+            flex-wrap: wrap;
+        }
+
+
+        /* =====================================================
+           PRACTICE ITEM 1
+        ===================================================== */
+
+        .practice .box1 {
+            order: 5;
+
+            flex-grow: 1;
+
+            flex-shrink: 1;
+
+            flex-basis: 120px;
+
+            align-self: center;
+        }
+
+
+        /* =====================================================
+           PRACTICE ITEM 2
+        ===================================================== */
+
+        .practice .box2 {
+            order: 2;
+
+            flex-grow: 2;
+
+            flex-shrink: 1;
+
+            flex-basis: 120px;
+
+            align-self: flex-start;
+        }
+
+
+        /* =====================================================
+           PRACTICE ITEM 3
+        ===================================================== */
+
+        .practice .box3 {
+            order: 1;
+
+            flex-grow: 1;
+
+            flex-shrink: 0;
+
+            flex-basis: 120px;
+
+            align-self: flex-end;
+        }
+
+
+        /* =====================================================
+           PRACTICE ITEM 4
+        ===================================================== */
+
+        .practice .box4 {
+            order: 4;
+
+            flex: 1 1 120px;
+
+            align-self: center;
+        }
+
+
+        /* =====================================================
+           PRACTICE ITEM 5
+        ===================================================== */
+
+        .practice .box5 {
+            order: 3;
+
+            flex: 2 1 120px;
+
+            align-self: flex-start;
+        }
+
+
+        /* =====================================================
+           PRACTICE ITEM 6
+        ===================================================== */
+
+        .practice .box6 {
+            order: 0;
+
+            flex: 1 0 120px;
+
+            align-self: flex-end;
+        }
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         PAGE TITLE
+    ===================================================== -->
+
+    <h1>CSS Flex Items</h1>
+
+    <hr>
+
+
+    <!-- =====================================================
+         1. ORDER
+    ===================================================== -->
+
+    <section class="section">
+
+        <h2>1. order</h2>
+
+        <p>
+            The <strong>order</strong> property controls the
+            visual order of flex items.
+        </p>
+
+        <div class="container order">
+
+            <div class="box box1">
+                Box 1<br>
+                order: 2
+            </div>
+
+            <div class="box box2">
+                Box 2<br>
+                order: 4
+            </div>
+
+            <div class="box box3">
+                Box 3<br>
+                order: 0
+            </div>
+
+            <div class="box box4">
+                Box 4<br>
+                order: -1
+            </div>
+
+            <div class="box box5">
+                Box 5<br>
+                order: 6
+            </div>
+
+            <div class="box box6">
+                Box 6<br>
+                order: 0
+            </div>
+
+            <div class="box box7">
+                Box 7<br>
+                order: 3
+            </div>
+
+            <div class="box box8">
+                Box 8<br>
+                order: 1
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         2. FLEX-GROW
+    ===================================================== -->
+
+    <section class="section">
+
+        <h2>2. flex-grow</h2>
+
+        <p>
+            The <strong>flex-grow</strong> property controls
+            how much a flex item grows when extra space is available.
+        </p>
+
+        <div class="container flex-grow">
+
+            <div class="box box1">
+                Box 1<br>
+                grow: 1
+            </div>
+
+            <div class="box box2">
+                Box 2<br>
+                grow: 2
+            </div>
+
+            <div class="box box3">
+                Box 3<br>
+                grow: 3
+            </div>
+
+            <div class="box box4">
+                Box 4<br>
+                grow: 0
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         3. FLEX-SHRINK
+    ===================================================== -->
+
+    <section class="section">
+
+        <h2>3. flex-shrink</h2>
+
+        <p>
+            The <strong>flex-shrink</strong> property controls
+            how much a flex item can shrink when there is not
+            enough space.
+        </p>
+
+        <div class="container flex-shrink">
+
+            <div class="box box1">
+                Box 1<br>
+                shrink: 0
+            </div>
+
+            <div class="box box2">
+                Box 2<br>
+                shrink: 1
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         4. FLEX-BASIS
+    ===================================================== -->
+
+    <section class="section">
+
+        <h2>4. flex-basis</h2>
+
+        <p>
+            The <strong>flex-basis</strong> property defines
+            the initial size of a flex item along the main axis.
+        </p>
+
+        <div class="container flex-basis">
+
+            <div class="box box1">
+                Box 1<br>
+                basis: 150px
+            </div>
+
+            <div class="box box2">
+                Box 2<br>
+                basis: 250px
+            </div>
+
+            <div class="box box3">
+                Box 3<br>
+                basis: 350px
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         5. FLEX
+    ===================================================== -->
+
+    <section class="section">
+
+        <h2>5. flex</h2>
+
+        <p>
+            The <strong>flex</strong> property is shorthand
+            for flex-grow, flex-shrink and flex-basis.
+        </p>
+
+        <div class="container flex">
+
+            <div class="box box1">
+                Box 1<br>
+                flex: 1
+            </div>
+
+            <div class="box box2">
+                Box 2<br>
+                flex: 2
+            </div>
+
+            <div class="box box3">
+                Box 3<br>
+                flex: 1
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FLEX - COMPLETE SHORTHAND
+    ===================================================== -->
+
+    <section class="section">
+
+        <h2>5.1 flex - Complete Shorthand</h2>
+
+        <p>
+            Syntax:
+            <strong>flex: grow shrink basis;</strong>
+        </p>
+
+        <div class="container flex-complete">
+
+            <div class="box box1">
+                Box 1<br>
+                1 1 150px
+            </div>
+
+            <div class="box box2">
+                Box 2<br>
+                2 1 200px
+            </div>
+
+            <div class="box box3">
+                Box 3<br>
+                1 1 150px
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         6. ALIGN-SELF
+    ===================================================== -->
+
+    <section class="section">
+
+        <h2>6. align-self</h2>
+
+        <p>
+            The <strong>align-self</strong> property allows
+            an individual flex item to override the container's
+            align-items property.
+        </p>
+
+        <div class="container align-self">
+
+            <div class="box box1">
+                Box 1<br>
+                flex-start
+            </div>
+
+            <div class="box box2">
+                Box 2<br>
+                center
+            </div>
+
+            <div class="box box3">
+                Box 3<br>
+                flex-end
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ALIGN-SELF: STRETCH
+    ===================================================== -->
+
+    <section class="section">
+
+        <h2>6.1 align-self: stretch</h2>
+
+        <div class="container align-self-stretch">
+
+            <div class="box box1">
+                Box 1<br>
+                stretch
+            </div>
+
+            <div class="box box2">
+                Box 2
+            </div>
+
+            <div class="box box3">
+                Box 3
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ALIGN-SELF: BASELINE
+    ===================================================== -->
+
+    <section class="section">
+
+        <h2>6.2 align-self: baseline</h2>
+
+        <div class="container align-self-baseline">
+
+            <div class="box box1">
+                Small Text
+            </div>
+
+            <div class="box box2">
+                Large Text
+            </div>
+
+            <div class="box box3">
+                Normal Text
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         7. COMPLETE PRACTICE
+    ===================================================== -->
+
+    <section class="section">
+
+        <h2>7. Complete Flex Item Practice</h2>
+
+        <p>
+            This section combines all Flex Item properties.
+        </p>
+
+        <div class="container practice">
+
+            <div class="box box1">
+                Box 1
+            </div>
+
+            <div class="box box2">
+                Box 2
+            </div>
+
+            <div class="box box3">
+                Box 3
+            </div>
+
+            <div class="box box4">
+                Box 4
+            </div>
+
+            <div class="box box5">
+                Box 5
+            </div>
+
+            <div class="box box6">
+                Box 6
+            </div>
+
+        </div>
+
+    </section>
+
+
+</body>
+
+</html>
+```
