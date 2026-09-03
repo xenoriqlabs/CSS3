@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>CSS Grid Areas</title>
+    <title>CSS Grid Responsive</title>
 
     <style>
+
         /* ========================================
            GENERAL STYLES
            ======================================== */
@@ -21,7 +22,7 @@
 
         h1 {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         h2 {
@@ -32,72 +33,21 @@
             margin-bottom: 60px;
         }
 
-
-        /* ========================================
-           1. GRID TEMPLATE AREAS
-           ======================================== */
-
-        .layout {
-            max-width: 1000px;
-            margin: auto;
-
+        .grid {
             display: grid;
-
-            grid-template-columns: 200px 1fr;
-
-            grid-template-rows: 80px 300px 70px;
-
-            grid-template-areas:
-                "header header"
-                "sidebar main"
-                "footer footer";
-
-            gap: 10px;
+            gap: 15px;
         }
 
-
-        /* ========================================
-           GRID ITEMS
-           ======================================== */
-
-        .header {
-            grid-area: header;
-
-            background-color: #2563eb;
+        .box {
+            background-color: steelblue;
             color: white;
-        }
 
-        .sidebar {
-            grid-area: sidebar;
+            min-height: 100px;
 
-            background-color: #7c3aed;
-            color: white;
-        }
-
-        .main {
-            grid-area: main;
-
-            background-color: #059669;
-            color: white;
-        }
-
-        .footer {
-            grid-area: footer;
-
-            background-color: #ea580c;
-            color: white;
-        }
-
-
-        /* ========================================
-           COMMON ITEM STYLING
-           ======================================== */
-
-        .area {
             display: grid;
             place-items: center;
 
-            font-size: 22px;
+            font-size: 20px;
             font-weight: bold;
 
             border-radius: 8px;
@@ -105,63 +55,77 @@
 
 
         /* ========================================
-           2. HEADER
+           1. minmax()
            ======================================== */
 
-        .header-content {
-            text-align: center;
+        .minmax-example {
+            grid-template-columns:
+                minmax(150px, 1fr)
+                minmax(150px, 1fr)
+                minmax(150px, 1fr);
         }
 
 
         /* ========================================
-           3. SIDEBAR
+           2. auto-fit
            ======================================== */
 
-        .sidebar-content {
-            text-align: center;
+        .auto-fit-example {
+            grid-template-columns:
+                repeat(auto-fit, minmax(180px, 1fr));
         }
 
 
         /* ========================================
-           4. MAIN
+           3. auto-fill
            ======================================== */
 
-        .main-content {
-            text-align: center;
+        .auto-fill-example {
+            grid-template-columns:
+                repeat(auto-fill, minmax(180px, 1fr));
         }
 
 
         /* ========================================
-           5. FOOTER
+           4. RESPONSIVE CARDS
            ======================================== */
 
-        .footer-content {
+        .cards {
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+        }
+
+        .card {
+            background-color: white;
+
+            padding: 25px;
+
+            border-radius: 10px;
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
             text-align: center;
         }
 
+        .card h3 {
+            margin-top: 0;
+        }
 
-        /* ========================================
-           RESPONSIVE
-           ======================================== */
+        .card p {
+            line-height: 1.6;
+            color: #555;
+        }
 
-        @media (max-width: 600px) {
+        .card button {
+            padding: 10px 20px;
 
-            .layout {
-                grid-template-columns: 1fr;
+            border: none;
+            border-radius: 5px;
 
-                grid-template-rows:
-                    80px
-                    150px
-                    300px
-                    70px;
+            background-color: #2563eb;
+            color: white;
 
-                grid-template-areas:
-                    "header"
-                    "sidebar"
-                    "main"
-                    "footer";
-            }
-
+            cursor: pointer;
         }
 
     </style>
@@ -170,39 +134,28 @@
 
 <body>
 
-    <h1>CSS Grid Areas</h1>
+
+    <h1>CSS Grid Responsive</h1>
 
 
     <!-- ========================================
-         1. GRID TEMPLATE AREAS
+         1. minmax()
          ======================================== -->
 
     <div class="section">
 
-        <h2>1. grid-template-areas</h2>
+        <h2>1. minmax()</h2>
 
         <p>
-            grid-template-areas allows us to give names to
-            different parts of a grid layout.
+            minmax() defines a minimum and maximum size
+            for a grid column or row.
         </p>
 
-        <div class="layout">
+        <div class="grid minmax-example">
 
-            <header class="area header">
-                Header
-            </header>
-
-            <aside class="area sidebar">
-                Sidebar
-            </aside>
-
-            <main class="area main">
-                Main
-            </main>
-
-            <footer class="area footer">
-                Footer
-            </footer>
+            <div class="box">Box 1</div>
+            <div class="box">Box 2</div>
+            <div class="box">Box 3</div>
 
         </div>
 
@@ -210,64 +163,126 @@
 
 
     <!-- ========================================
-         2. HEADER
+         2. auto-fit
          ======================================== -->
 
     <div class="section">
 
-        <h2>2. Header</h2>
+        <h2>2. auto-fit</h2>
 
         <p>
-            Header usually contains the logo, website name,
-            and navigation.
+            auto-fit automatically fits as many columns
+            as possible and expands the items to fill
+            available space.
         </p>
+
+        <div class="grid auto-fit-example">
+
+            <div class="box">Box 1</div>
+            <div class="box">Box 2</div>
+            <div class="box">Box 3</div>
+            <div class="box">Box 4</div>
+
+        </div>
 
     </div>
 
 
     <!-- ========================================
-         3. SIDEBAR
+         3. auto-fill
          ======================================== -->
 
     <div class="section">
 
-        <h2>3. Sidebar</h2>
+        <h2>3. auto-fill</h2>
 
         <p>
-            Sidebar usually contains menus, links,
-            categories, or additional information.
+            auto-fill creates as many columns as can fit
+            based on the minimum size.
         </p>
+
+        <div class="grid auto-fill-example">
+
+            <div class="box">Box 1</div>
+            <div class="box">Box 2</div>
+            <div class="box">Box 3</div>
+
+        </div>
 
     </div>
 
 
     <!-- ========================================
-         4. MAIN
+         4. RESPONSIVE CARDS
          ======================================== -->
 
     <div class="section">
 
-        <h2>4. Main</h2>
+        <h2>4. Responsive Cards</h2>
 
         <p>
-            Main contains the primary content of the webpage.
+            Cards automatically change the number of columns
+            according to the available screen width.
         </p>
 
-    </div>
+        <div class="grid cards">
+
+            <div class="card">
+
+                <h3>HTML</h3>
+
+                <p>
+                    HTML is used to create the structure
+                    of a webpage.
+                </p>
+
+                <button>Learn More</button>
+
+            </div>
 
 
-    <!-- ========================================
-         5. FOOTER
-         ======================================== -->
+            <div class="card">
 
-    <div class="section">
+                <h3>CSS</h3>
 
-        <h2>5. Footer</h2>
+                <p>
+                    CSS is used to style and design
+                    webpages.
+                </p>
 
-        <p>
-            Footer usually contains copyright,
-            contact information, and useful links.
-        </p>
+                <button>Learn More</button>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>JavaScript</h3>
+
+                <p>
+                    JavaScript adds functionality and
+                    interactivity to webpages.
+                </p>
+
+                <button>Learn More</button>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>React</h3>
+
+                <p>
+                    React is a JavaScript library used
+                    to build user interfaces.
+                </p>
+
+                <button>Learn More</button>
+
+            </div>
+
+        </div>
 
     </div>
 
