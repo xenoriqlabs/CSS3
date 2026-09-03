@@ -8,7 +8,10 @@
     <title>CSS Grid Areas</title>
 
     <style>
-        /* GENERAL STYLES */
+        /* ========================================
+           GENERAL STYLES
+           ======================================== */
+
         body {
             font-family: Arial, Helvetica, sans-serif;
             margin: 0;
@@ -18,30 +21,32 @@
 
         h1 {
             text-align: center;
-            margin-bottom: 20px;
-        }
-
-        hr {
-            border-top: 3px solid aquamarine;
-            width: 80%;
+            margin-bottom: 40px;
         }
 
         h2 {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         .section {
             margin-bottom: 60px;
         }
 
-        /* 1. GRID TEMPLATE AREAS */
+
+        /* ========================================
+           1. GRID TEMPLATE AREAS
+           ======================================== */
+
         .layout {
             max-width: 1000px;
             margin: auto;
 
             display: grid;
+
             grid-template-columns: 200px 1fr;
+
             grid-template-rows: 80px 300px 70px;
+
             grid-template-areas:
                 "header header"
                 "sidebar main"
@@ -50,7 +55,11 @@
             gap: 10px;
         }
 
-        /* GRID ITEMS */
+
+        /* ========================================
+           GRID ITEMS
+           ======================================== */
+
         .header {
             grid-area: header;
 
@@ -79,7 +88,11 @@
             color: white;
         }
 
-        /* COMMON ITEM STYLING */
+
+        /* ========================================
+           COMMON ITEM STYLING
+           ======================================== */
+
         .area {
             display: grid;
             place-items: center;
@@ -90,13 +103,57 @@
             border-radius: 8px;
         }
 
-        /* RESPONSIVE */
+
+        /* ========================================
+           2. HEADER
+           ======================================== */
+
+        .header-content {
+            text-align: center;
+        }
+
+
+        /* ========================================
+           3. SIDEBAR
+           ======================================== */
+
+        .sidebar-content {
+            text-align: center;
+        }
+
+
+        /* ========================================
+           4. MAIN
+           ======================================== */
+
+        .main-content {
+            text-align: center;
+        }
+
+
+        /* ========================================
+           5. FOOTER
+           ======================================== */
+
+        .footer-content {
+            text-align: center;
+        }
+
+
+        /* ========================================
+           RESPONSIVE
+           ======================================== */
+
         @media (max-width: 600px) {
+
             .layout {
                 grid-template-columns: 1fr;
 
                 grid-template-rows:
-                    80px 150px 300px 70px;
+                    80px
+                    150px
+                    300px
+                    70px;
 
                 grid-template-areas:
                     "header"
@@ -104,7 +161,9 @@
                     "main"
                     "footer";
             }
+
         }
+
     </style>
 
 </head>
@@ -113,7 +172,10 @@
 
     <h1>CSS Grid Areas</h1>
 
-    <hr>
+
+    <!-- ========================================
+         1. GRID TEMPLATE AREAS
+         ======================================== -->
 
     <div class="section">
 
@@ -146,6 +208,11 @@
 
     </div>
 
+
+    <!-- ========================================
+         2. HEADER
+         ======================================== -->
+
     <div class="section">
 
         <h2>2. Header</h2>
@@ -157,7 +224,11 @@
 
     </div>
 
-    <!-- 3. SIDEBAR -->
+
+    <!-- ========================================
+         3. SIDEBAR
+         ======================================== -->
+
     <div class="section">
 
         <h2>3. Sidebar</h2>
@@ -169,7 +240,11 @@
 
     </div>
 
-    <!-- 4. MAIN -->
+
+    <!-- ========================================
+         4. MAIN
+         ======================================== -->
+
     <div class="section">
 
         <h2>4. Main</h2>
@@ -180,7 +255,11 @@
 
     </div>
 
-    <!-- 5. FOOTER -->
+
+    <!-- ========================================
+         5. FOOTER
+         ======================================== -->
+
     <div class="section">
 
         <h2>5. Footer</h2>
@@ -191,6 +270,7 @@
         </p>
 
     </div>
+
 
 </body>
 
