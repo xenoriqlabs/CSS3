@@ -52,6 +52,59 @@
 
             border-radius: 8px;
         }
+
+        /* 1. minmax() */
+        .minmax-example {
+            grid-template-columns:
+                minmax(150px, 1fr) minmax(150px, 1fr) minmax(150px, 1fr);
+        }
+
+        /* 2. auto-fit */
+        .auto-fit-example {
+            grid-template-columns:
+                repeat(auto-fit, minmax(180px, 1fr));
+        }
+
+        /* 3. auto-fill */
+        .auto-fill-example {
+            grid-template-columns:
+                repeat(auto-fill, minmax(180px, 1fr));
+        }
+
+        /* 4. RESPONSIVE CARDS */
+        .cards {
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+        }
+
+        .card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        .card p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .card button {
+            padding: 10px 20px;
+
+            border: none;
+            border-radius: 5px;
+
+            background-color: #2563ed;
+            color: white;
+
+            cursor: pointer;
+        }
     </style>
 
 </head>
