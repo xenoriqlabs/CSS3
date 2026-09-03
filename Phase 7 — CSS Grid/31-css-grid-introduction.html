@@ -8,16 +8,132 @@
     <title>CSS Grid Introduction</title>
 
     <style>
+        /* 1. GRID CONTAINER */
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 50px auto;
 
+            /* Makes this element a Grid Container */
+            display: grid;
+
+            /* 3 equal columns */
+            grid-template-columns: repeat(3, 1fr);
+
+            /* Rows */
+            grid-template-rows: 120px 120px 120px;
+
+            /* Space between grid items */
+            gap: 15px;
+        }
+
+
+        /* 2. GRID ITEMS */
+        .box {
+            background-color: #2563eb;
+            color: white;
+
+            font-size: 22px;
+            font-weight: bold;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 10px;
+        }
+
+
+        /* ========================================
+           3. GRID LINES
+           
+           3 columns = 4 column lines
+
+           Line 1 | Line 2 | Line 3 | Line 4
+           
+           Box 1 | Box 2 | Box 3
+           
+           ======================================== */
+
+        /* Box 1 starts at column line 1
+           and ends at column line 4.
+
+           So it takes all 3 columns.
+        */
+
+        .box1 {
+            grid-column: 1 / 4;
+            background-color: #7c3aed;
+        }
+
+
+        /* Box 2 starts at column line 1
+           and ends at column line 2.
+        */
+        .box2 {
+            grid-column: 1 / 2;
+        }
+
+
+        /* Box 3 */
+        .box3 {
+            grid-column: 2 / 3;
+        }
+
+
+        /* Box 4 */
+        .box4 {
+            grid-column: 3 / 4;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+
+            .container {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+
+            .box1,
+            .box2,
+            .box3,
+            .box4 {
+                grid-column: auto;
+            }
+
+            .box {
+                min-height: 100px;
+            }
+        }
     </style>
 
 </head>
 
-<body>
- 
-    <h1 style="text-align: center;">CSS Grid Introduction</h1>
 
-    <hr style="border-top: 2px solid aqua; width: 90%;">
+<body>
+
+    <div class="container">
+
+        <!-- Grid Item -->
+        <div class="box box1">
+            Box 1 - Full Width
+        </div>
+
+        <!-- Grid Item -->
+        <div class="box box2">
+            Box 2
+        </div>
+
+        <!-- Grid Item -->
+        <div class="box box3">
+            Box 3
+        </div>
+
+        <!-- Grid Item -->
+        <div class="box box4">
+            Box 4
+        </div>
+
+    </div>
 
 </body>
 
