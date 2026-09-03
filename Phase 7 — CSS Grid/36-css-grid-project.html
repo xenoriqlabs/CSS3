@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Grid Project</title>
+
+    <style>
+        /* 1. GENERAL STYLES */
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f1f5f9;
+            color: #1e293b;
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* 2. MAIN WEBSITE GRID */
+        .website{
+            min-height: 100vh;
+
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            grid-template-rows: 70px 1fr 60px;
+
+            grid-template-areas: 
+                "header header"
+                "sidebar main"
+                "footer footer";
+        }
+
+        /* 3. HEADER */
+        header{
+            grid-area: header;
+
+            background-color: #0f172a;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+            padding: 0 30px;
+        }
+
+        .logo{
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav{
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a{
+            color: #cbd5e1;
+        }
+
+        nav a:hover{
+            color: white;
+            border-bottom: 2px solid aqua;
+            border-radius: 3px;
+        }
+
+        header button{
+            width: 55px;
+            height: 33px;
+            background-color: #cbd5e1;
+
+            border: none;
+            border-radius: 3px;
+
+            cursor: pointer;
+        }
+
+        header button:hover{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="website">
+
+        
+        <!-- ====================================
+             HEADER
+             ==================================== -->
+
+        <header>
+            <div class="logo">
+                Xenoriq Labs
+            </div>
+
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+            </nav>
+
+            <button type="button">Login</button>
+
+        </header>
+
+    </div>
+</body>
+</html>
