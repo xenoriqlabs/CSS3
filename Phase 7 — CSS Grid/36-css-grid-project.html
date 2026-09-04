@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,37 +9,39 @@
 
     <style>
         /* 1. GENERAL STYLES */
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        body{
+
+        body {
             font-family: Arial, Helvetica, sans-serif;
             background-color: #f1f5f9;
             color: #1e293b;
         }
-        a{
+
+        a {
             text-decoration: none;
             color: inherit;
         }
 
         /* 2. MAIN WEBSITE GRID */
-        .website{
+        .website {
             min-height: 100vh;
 
             display: grid;
             grid-template-columns: 220px 1fr;
             grid-template-rows: 70px 1fr 60px;
 
-            grid-template-areas: 
+            grid-template-areas:
                 "header header"
                 "sidebar main"
                 "footer footer";
         }
 
         /* 3. HEADER */
-        header{
+        header {
             grid-area: header;
 
             background-color: #0f172a;
@@ -47,31 +50,31 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            
+
             padding: 0 30px;
         }
 
-        .logo{
+        .logo {
             font-size: 24px;
             font-weight: bold;
         }
 
-        nav{
+        nav {
             display: flex;
             gap: 25px;
         }
 
-        nav a{
+        nav a {
             color: #cbd5e1;
         }
 
-        nav a:hover{
+        nav a:hover {
             color: white;
             border-bottom: 2px solid aqua;
             border-radius: 3px;
         }
 
-        header button{
+        header button {
             width: 55px;
             height: 33px;
             background-color: #cbd5e1;
@@ -82,15 +85,55 @@
             cursor: pointer;
         }
 
-        header button:hover{
+        header button:hover {
             background-color: white;
+        }
+
+        /* 4. SIDEBAR */
+        aside {
+            grid-area: sidebar;
+
+            background-color: #1e293b;
+            color: white;
+
+            padding: 30px 20px;
+        }
+
+        aside h2 {
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .sidebar-links {
+            display: grid;
+            gap: 12px;
+        }
+
+        .sidebar-links a {
+            padding: 2px;
+            border-radius: 6px;
+            color: #cbd5e1;
+        }
+
+        .sidebar-links a:hover {
+            background-color: #334155;
+            color: white;
+        }
+
+        /* 5. MAIN */
+        main {
+            grid-area: main;
+            padding: 20px;
+            display: grid;
+            gap: 30px;
         }
     </style>
 </head>
+
 <body>
     <div class="website">
 
-        
+
         <!-- ====================================
              HEADER
              ==================================== -->
@@ -111,6 +154,144 @@
 
         </header>
 
+        <!-- SIDEBAR -->
+
+        <aside>
+
+            <h2>Dashboard</h2>
+
+            <div class="sidebar-links">
+
+                <a href="#">Overview</a>
+                <a href="#">Projects</a>
+                <a href="#">Courses</a>
+                <a href="#">Students</a>
+                <a href="#">Settings</a>
+
+            </div>
+
+        </aside>
+
+        <!-- MAIN CONTENT -->
+
+        <main>
+
+            <!-- HERO -->
+
+            <section class="hero">
+
+                <h1>
+                    Learn Modern Web Development
+                </h1>
+
+                <p>
+                    Learn HTML, CSS, JavaScript and modern
+                    web development technologies with
+                    practical projects.
+                </p>
+
+                <button>
+                    Get Started
+                </button>
+
+
+                <div class="cards-section">
+
+                    <h2>
+                        Our Courses
+                    </h2>
+
+                    <div class="cards">
+
+                        <!-- Card 1 -->
+
+                        <div class="card">
+
+                            <h3>HTML</h3>
+
+                            <p>
+                                Learn how to create the structure
+                                of modern websites using HTML5.
+                            </p>
+
+                            <a href="#">
+                                Learn More →
+                            </a>
+
+                        </div>
+
+                        <!-- Card 2 -->
+
+                        <div class="card">
+
+                            <h3>CSS</h3>
+
+                            <p>
+                                Learn layouts, Flexbox, Grid,
+                                animations and responsive design.
+                            </p>
+
+                            <a href="#">
+                                Learn More →
+                            </a>
+
+                        </div>
+
+                        <!-- Card 3 -->
+
+                        <div class="card">
+
+                            <h3>JavaScript</h3>
+
+                            <p>
+                                Learn programming, DOM manipulation,
+                                events and modern JavaScript.
+                            </p>
+
+                            <a href="#">
+                                Learn More →
+                            </a>
+
+                        </div>
+
+
+                        <!-- Card 4 -->
+
+                        <div class="card">
+
+                            <h3>React</h3>
+
+                            <p>
+                                Build modern interactive user
+                                interfaces using React.
+                            </p>
+
+                            <a href="#">
+                                Learn More →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <p>
+                © 2026 Xenoriq Labs. All Rights Reserved.
+            </p>
+
+        </footer>
+
     </div>
+
 </body>
+
 </html>
