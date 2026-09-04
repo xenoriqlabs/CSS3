@@ -8,6 +8,7 @@
     <title>Xenoriq Labs</title>
 
     <style>
+        /* GENERAL STYLES */
         * {
             margin: 0;
             padding: 0;
@@ -16,12 +17,206 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background-color: #f5f5f5;
+            background-color: #f1f5f9;
+            color: #1e293b;
         }
+
+        /*  2. MAIN WEBSITE GRID */
+        .website {
+            min-height: 100vh;
+
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            grid-template-rows: 70px 1fr 60px;
+            grid-template-areas:
+                "header header"
+                "sidebar main"
+                "footer footer";
+        }
+
+        /* 3. HEADER */
+        header {
+            grid-area: header;
+
+            background-color: #0f172a;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 30px;
+        }
+
+        
     </style>
 </head>
 
 <body>
+
+    <!-- ===================================
+                WEBSITE CONTAINER
+    ======================================== -->
+    <div class="website">
+
+        <!-- ===============================
+                    HEADER
+        ==================================== -->
+        <header>
+
+            <div class="logo">
+                <strong>Xenoriq Labs</strong>
+                <span>Software Company & AI Solutions</span>
+            </div>
+
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">About Us</a>
+                <a href="#">Services</a>
+                <a href="#">Projects</a>
+                <a href="#">Contact</a>
+            </nav>
+
+            <div class="auth-buttons">
+                <button type="button">Login</button>
+                <button type="button">Sign Up</button>
+            </div>
+
+        </header>
+
+        <!-- =================================
+                        SIDEBAR 
+         ===================================== -->
+
+        <aside>
+
+            <h2>Dashboard</h2>
+
+            <div class="sidebar-links">
+                <a href="#">CEO Profile</a>
+                <a href="#">Company Overview</a>
+                <a href="#">Learning Programs</a>
+                <a href="#">Student Community</a>
+                <a href="#">Resources</a>
+            </div>
+
+        </aside>
+
+        <!-- ===================================
+                    MAIN CONTENT
+        ======================================== -->
+
+        <main>
+
+            <!-- HERO -->
+
+            <section class="hero">
+
+                <h1>
+                    Build Modern Software & AI Solutions
+                </h1>
+
+                <p>
+                    Explore modern web development, AI technologies,
+                    and practical software projects designed to build
+                    real-world skills.
+                </p>
+
+                <button type="button">Get Started</button>
+
+            </section>
+
+            <!-- SERVICES -->
+
+            <section class="cards-section">
+
+                <h2>
+                    Our Services
+                </h2>
+
+                <div class="cards">
+
+                    <!-- Card 1 -->
+                    <div class="card">
+
+                        <h3>Web Development</h3>
+
+                        <p>
+                            Build modern, responsive and high-performance
+                            websites and web applications.
+                        </p>
+
+                        <a href="#">
+                            Explore Service →
+                        </a>
+
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="card">
+
+                        <h3>Full-Stack Solutions</h3>
+
+                        <p>
+                            Develop complete web applications with scalable
+                            frontend, backend and database solutions.
+                        </p>
+
+                        <a href="#">
+                            Explore Service →
+                        </a>
+
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="card">
+
+                        <h3>AI & Machine Learning</h3>
+
+                        <p>
+                            Integrate intelligent AI and machine learning
+                            solutions into modern software applications.
+                        </p>
+
+                        <a href="#">
+                            Explore Service →
+                        </a>
+
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="card">
+
+                        <h3>Mobile App Development</h3>
+
+                        <p>
+                            Create modern and scalable mobile applications
+                            designed for seamless user experiences.
+                        </p>
+
+                        <a href="#">
+                            Explore Service →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- ============================
+                    FOOTER
+         ================================ -->
+
+        <footer>
+            <p>
+                © 2026 Xenoriq Labs. All Rights Reserved.
+            </p>
+        </footer>
+
+    </div>
 
 </body>
 
