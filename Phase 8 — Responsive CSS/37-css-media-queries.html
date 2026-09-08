@@ -87,6 +87,51 @@
             text-align: center;
             border-radius: 10px;
         }
+
+        /* =====================
+           TABLET
+        ====================== */
+
+        @media (max-width:900px) {
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+        }
+
+        /* =====================
+           MOBILE
+        ====================== */
+
+        @media (max-width: 600px) {
+            .navbar {
+                padding: 20px;
+            }
+
+            .links {
+                display: none;
+            }
+
+            .menu {
+                display: block;
+            }
+
+            .hero {
+                padding: 30px 20px;
+            }
+
+            .hero h1 {
+                font-size: 35px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 
