@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Responsive Layout</title>
+
+    <style>
+        /* =========================
+           GLOBAL
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 20px 50px;
+
+            background-color: #111;
+            color: white;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .menu-btn {
+            display: none;
+            color: white;
+            font-size: 25px;
+            cursor: pointer;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 500px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 60px 30px;
+
+            background-color: #f2f2f2;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 20px;
+        }
+
+        /* ABOUT SECTION */
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            Xenoriq Labs
+        </div>
+
+        <div class="nav-links">
+
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+
+        </div>
+
+        <button class="menu-btn">
+            ☰
+        </button>
+
+    </nav>
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+
+        <div>
+
+            <h1>Build Something Amazing</h1>
+
+            <p>
+                Modern and responsive web development.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    /* =========================
+    ABOUT SECTION
+    ========================== */
+
+    <section class="about">
+
+        <div class="about-image">
+
+            <img src="../media/xenoriq-labs-logo.jpeg" alt="xenoriq-labs-logo">
+
+        </div>
+
+        <div class="about-content">
+
+            <h2>About Us</h2>
+
+            <p>
+                We create modern, responsive and
+                user-friendly digital experiences.
+            </p>
+
+            <button>
+                Learn More
+            </button>
+            
+        </div>
+
+    </section>
+
+</body>
+
+</html>
