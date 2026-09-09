@@ -23,6 +23,12 @@
             line-height: 1.6;
         }
 
+        img{
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
         /* NAVBAR */
 
         .navbar {
@@ -89,13 +95,43 @@
         }
 
         /* ABOUT SECTION */
+
+        .about{
+            display: flex;
+            align-items: center;
+
+            gap: 50px;
+
+            padding: 80px 50px;
+        }
+
+        .about-image,
+        .about-content{
+            flex: 1;
+        }
+
+        .about-content h2{
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .about-content p{
+            margin-bottom: 20px;
+        }
+
+        .about-content button{
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 
 <body>
 
     <!-- =========================
-         NAVBAR
+                NAVBAR
     ========================== -->
 
     <nav class="navbar">
@@ -120,7 +156,7 @@
     </nav>
 
     <!-- =========================
-         HERO
+                HERO
     ========================== -->
 
     <section class="hero">
@@ -138,15 +174,15 @@
     </section>
 
 
-    /* =========================
-    ABOUT SECTION
-    ========================== */
+    <!-- =========================
+            ABOUT SECTION
+    ==========================  -->
 
     <section class="about">
 
         <div class="about-image">
 
-            <img src="../media/xenoriq-labs-logo.jpeg" alt="xenoriq-labs-logo">
+            <img src="../media/xenoriq-labs-banner.jpg" alt="xenoriq-labs-logo">
 
         </div>
 
@@ -162,7 +198,7 @@
             <button>
                 Learn More
             </button>
-            
+
         </div>
 
     </section>
