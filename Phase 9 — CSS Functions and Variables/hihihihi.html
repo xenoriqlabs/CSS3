@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Variables - Xenoriq Labs</title>
+
+    <style>
+
+        /* =========================
+           GLOBAL VARIABLES
+        ========================== */
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #111827;
+            --text-color: #ffffff;
+
+            --card-bg: #f3f4f6;
+
+            --spacing: 20px;
+            --border-radius: 10px;
+
+            --font-size: 18px;
+        }
+
+
+        /* =========================
+           GLOBAL STYLES
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--card-bg);
+            font-size: var(--font-size);
+        }
+
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        header {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+
+            padding: var(--spacing);
+
+            text-align: center;
+        }
+
+
+        /* =========================
+           CARD
+        ========================== */
+
+        .card {
+            /* LOCAL VARIABLE */
+
+            --card-color: #7c3aed;
+
+            background-color: white;
+
+            width: 300px;
+
+            margin: 50px auto;
+
+            padding: var(--spacing);
+
+            border-radius: var(--border-radius);
+
+            border: 3px solid var(--card-color);
+
+            text-align: center;
+        }
+
+        .card h2 {
+            color: var(--card-color);
+
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: var(--secondary-color);
+
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================== */
+
+        button {
+            background-color: var(--primary-color);
+
+            color: var(--text-color);
+
+            border: none;
+
+            padding: 12px 20px;
+
+            border-radius: var(--border-radius);
+
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: var(--secondary-color);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background-color: var(--secondary-color);
+
+            color: var(--text-color);
+
+            text-align: center;
+
+            padding: var(--spacing);
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <h1>Welcome to Xenoriq Labs 🚀</h1>
+    </header>
+
+
+    <div class="card">
+
+        <h2>Xenoriq Labs</h2>
+
+        <p>
+            Building Smart Digital Solutions.
+        </p>
+
+        <button>
+            Learn More
+        </button>
+
+    </div>
+
+
+    <footer>
+
+        <p>
+            © 2026 Xenoriq Labs
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
