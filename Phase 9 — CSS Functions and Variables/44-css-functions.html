@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Functions</title>
+
+
+    <style>
+        /* =========================
+           GLOBAL VARIABLES
+        ========================== */
+
+        :root {
+
+            --primary-color: rgb(37, 99, 235);
+
+            --secondary-color: rgb(17, 24, 39);
+
+            --text-color: rgb(255, 255, 255);
+
+            --container-width: 1200px;
+
+            --header-height: 80px;
+
+        }
+
+
+        /* =========================
+           GLOBAL
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            background-color: hsl(220, 20%, 96%);
+
+        }
+
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        header {
+
+            height: var(--header-height);
+
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            /*
+                clamp(
+                    minimum,
+                    preferred,
+                    maximum
+                )
+            */
+
+            padding: clamp(15px, 3vw, 40px);
+        }
+
+
+        header h1 {
+            font-size: clamp(28px, 5vw, 64px);
+        }
+
+
+        /* =========================
+           MAIN
+        ========================== */
+
+        main {
+
+            /*
+                calc()
+                Dynamic height
+            */
+
+            min-height: calc(100vh - var(--header-height));
+
+            /*
+                min()
+                Maximum container width
+            */
+
+            width: min(90%,
+                    var(--container-width));
+
+            margin: 0 auto;
+
+            /*
+                max()
+                Minimum padding
+            */
+
+            padding-top: max(30px, 5vw);
+            padding-bottom: max(30px, 5vw);
+        }
+
+
+        /* =========================
+           CARD
+        ========================== */
+
+        .card {
+
+            width: min(100%, 700px);
+
+            margin: 0 auto;
+            background-color: white;
+
+            /*
+                rgba()
+                Transparent border
+            */
+
+            border: 3px solid rgba(37, 99, 235, 0.5);
+            border-radius: 12px;
+
+            /*
+                clamp()
+                Responsive padding
+            */
+
+            padding: clamp(20px, 5vw, 60px);
+            text-align: center;
+        }
+
+
+        /* =========================
+           CARD HEADING
+        ========================== */
+
+        .card h2 {
+
+            /*
+                hsl()
+            */
+
+            color: hsl(220, 80%, 45%);
+
+            /*
+                clamp()
+            */
+
+            font-size: clamp(24px, 4vw, 42px);
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+           CARD TEXT
+        ========================== */
+
+        .card p {
+            color: rgb(55, 65, 81);
+            font-size: clamp(14px, 2vw, 20px);
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================== */
+
+        button {
+            /*
+                rgb()
+            */
+            background-color: rgb(37, 99, 235);
+
+            color: rgb(255, 255, 255);
+            border: none;
+
+            /*
+                calc()
+            */
+
+            padding: calc(8px + 0.5vw) calc(16px + 1vw);
+
+            /*
+                max()
+            */
+
+            min-width: max(140px, 12vw);
+
+            border-radius: 8px;
+            margin-top: 25px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           BUTTON HOVER
+        ========================== */
+
+        button:hover {
+
+            /*
+                rgba()
+            */
+
+            background-color: rgba(37, 99, 235, 0.8);
+        }
+
+
+        /* =========================
+           SPECIAL BOX
+        ========================== */
+
+        .color-box {
+
+            /*
+                hsla()
+            */
+
+            background-color: hsla(220, 80%, 50%, 0.15);
+            margin-top: 30px;
+
+            /*
+                clamp()
+            */
+
+            padding: clamp(15px, 3vw, 30px);
+            border-radius: 10px;
+
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            text-align: center;
+
+            padding: max(20px, 3vw);
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <h1>
+            Welcome to Xenoriq Labs 🚀
+        </h1>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main>
+
+        <div class="card">
+
+            <h2>
+                CSS Functions
+            </h2>
+
+
+            <p>
+                CSS functions help us create colors,
+                calculations, responsive sizes,
+                and dynamic layouts.
+            </p>
+
+
+            <button>
+                Learn More
+            </button>
+
+
+            <div class="color-box">
+
+                <p>
+                    Using rgb(), rgba(), hsl(),
+                    hsla(), calc(), min(), max(),
+                    and clamp().
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Xenoriq Labs
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
