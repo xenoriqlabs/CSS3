@@ -2,32 +2,23 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>CSS min max clamp - Xenoriq Labs</title>
 
     <style>
-
-        /* =========================
-           GLOBAL VARIABLES
-        ========================== */
+        /* GLOBAL VARIABLES */
 
         :root {
-            --primary-color: #2563eb;
+            --primary-color: #3563eb;
             --secondary-color: #111827;
             --text-color: #ffffff;
 
             --container-width: 1200px;
         }
 
-
-        /* =========================
-           GLOBAL
-        ========================== */
+        /* GLOBAL */
 
         * {
             margin: 0;
@@ -36,14 +27,11 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             background-color: #f3f4f6;
         }
 
-
-        /* =========================
-           HEADER
-        ========================== */
+        /* HEADER */
 
         header {
             background-color: var(--secondary-color);
@@ -55,7 +43,7 @@
         }
 
         header h1 {
-            /*
+            /* 
                 Minimum: 28px
                 Preferred: 5vw
                 Maximum: 64px
@@ -64,40 +52,29 @@
             font-size: clamp(28px, 5vw, 64px);
         }
 
+        /* CONTAINER */
 
-        /* =========================
-           CONTAINER
-        ========================== */
+        .conatiner {
 
-        .container {
-
-            /*
+            /* 
                 Chooses the smaller value
                 between 90% and 1200px.
             */
 
             width: min(90%, var(--container-width));
-
             margin: 0 auto;
         }
 
-
-        /* =========================
-           MAIN
-        ========================== */
+        /* MAIN */
 
         main {
             padding: clamp(30px, 6vw, 80px) 0;
         }
 
-
-        /* =========================
-           CARD
-        ========================== */
+        /* CARD */
 
         .card {
-
-            /*
+            /* 
                 Width will never be smaller
                 than 280px and never larger
                 than 600px.
@@ -106,30 +83,21 @@
             width: clamp(280px, 60vw, 600px);
 
             margin: 0 auto;
-
             background-color: white;
-
             padding: clamp(20px, 4vw, 50px);
-
             border-radius: 12px;
-
             text-align: center;
         }
 
-
         .card h2 {
-
             /*
                 Responsive heading
             */
 
             font-size: clamp(22px, 4vw, 40px);
-
             color: var(--primary-color);
-
             margin-bottom: 20px;
         }
-
 
         .card p {
 
@@ -138,14 +106,10 @@
             */
 
             font-size: clamp(14px, 2vw, 20px);
-
             line-height: 1.6;
         }
 
-
-        /* =========================
-           BUTTON
-        ========================== */
+        /* BUTTON */
 
         button {
 
@@ -154,63 +118,39 @@
                 than 10px and will grow up to 20px.
             */
 
-            padding: max(10px, 1.5vw)
-                     max(20px, 3vw);
-
+            padding: max(10px, 1.5vw) max(20px, 3vw);
             margin-top: 25px;
-
             background-color: var(--primary-color);
-
             color: var(--text-color);
-
             border: none;
-
             border-radius: 8px;
-
             cursor: pointer;
-
             font-size: 16px;
         }
 
+           /* FOOTER */
 
-        /* =========================
-           FOOTER
-        ========================== */
-
-        footer {
-
+           footer{
             background-color: var(--secondary-color);
-
             color: var(--text-color);
-
             text-align: center;
-
             padding: max(20px, 3vw);
-        }
-
+           }
     </style>
-
 </head>
-
 
 <body>
 
-
     <header>
-
         <h1>
             Welcome to Xenoriq Labs 🚀
         </h1>
-
     </header>
 
-
     <main>
-
-        <div class="container">
+        <div class="contanier">
 
             <div class="card">
-
                 <h2>
                     Responsive CSS
                 </h2>
@@ -231,15 +171,11 @@
 
     </main>
 
-
     <footer>
-
         <p>
             © 2026 Xenoriq Labs
         </p>
-
     </footer>
-
 
 </body>
 
