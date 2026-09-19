@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Transitions</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        .button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+
+            background-color: black;
+            color: white;
+
+            cursor: pointer;
+
+            /* Transition properties */
+            /* transition-property: background-color, color, transform;
+            transition-duration: 0.5s;
+            transition-timing-function: ease;
+            transition-delay: 0s; */
+
+            /* Shorthand (property → duration → timing-function → delay) */
+            transition: all 0.5s ease 2ms;
+
+        }
+
+        .button:hover {
+            background-color: orange;
+            color: black;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>CSS Transitions</h1>
+
+        <button class="button">
+            Hover Me
+        </button>
+
+    </div>
+
+</body>
+
+</html>
