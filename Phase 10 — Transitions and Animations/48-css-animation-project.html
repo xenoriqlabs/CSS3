@@ -105,7 +105,7 @@
         }
 
         /* HERO SECTION */
-        .hero{
+        .hero {
             min-height: 100vh;
             padding: 80px 8%;
 
@@ -118,25 +118,93 @@
             overflow: hidden;
         }
 
-        .hero-content{
+        .hero-content {
             max-width: 600px;
             animation: heroText 1s ease-out;
         }
 
-        .hero-content h1{
+        .hero-content h1 {
             font-size: 55px;
             margin-bottom: 20px;
         }
 
-        .hero-content h1 span{
+        .hero-content h1 span {
             color: orange;
         }
 
-        .hero-content p{
+        .hero-content p {
             font-size: 18px;
             line-height: 1.7;
             margin-bottom: 30px;
             color: #555;
+        }
+
+        /* BUTTON ANIMATION */
+        .hero-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #111;
+            color: white;
+            text-decoration: none;
+
+            border-radius: 8px;
+
+            transition:
+                transform 0.3s ease,
+                backgound-color 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .hero-button:hover{
+            background-color: orange;
+
+            transform: translateY(-5px);
+
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-image{
+            width: 350px;
+            height: 350px;
+
+            background-color: orange;
+            border-radius: 50%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 35px;
+            font-weight: bold;
+
+            animation: heroImage 1.2s ease-out;
+        }
+
+        @keyframes heroText {
+
+            from{
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+
+            to{
+                opacity: 1;
+                transform: translateX(0);
+            }
+            
+        }
+
+        @keyframes heroImage {
+            
+            from{
+                opacity: 0;
+                transform: translateX(100px) scale(0.7);
+            }
+
+            to{
+                opacity: 1;
+                transform: translate(0) scale(1);
+            }
         }
     </style>
 </head>
