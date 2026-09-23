@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,23 +8,169 @@
     <title>CSS Gradients</title>
 
     <style>
-
-        /* GLOBAL */
-        *{
+        /* =========================
+           GLOBAL
+        ========================== */
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body{
+        body {
             font-family: Arial, Helvetica, sans-serif;
             background-color: #f4f4f4;
             color: #222;
             padding: 40px;
         }
+
+        /* =========================
+           CONTAINER
+        ========================== */
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        h1 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #555;
+        }
+
+        /* =========================
+           SECTION
+        ========================== */
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        /* =========================
+           GRID
+        ========================== */
+
+        .gradient-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+
+        /* =========================
+           COMMON BOX
+        ========================== */
+
+        .gradient-box {
+            min-height: 220px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 15px;
+
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+
+            text-align: center;
+            padding: 20px;
+
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* =================================================
+           LINEAR GRADIENTS
+        ================================================== */
+
+        .linear-1 {
+            background: linear-gradient(red, blue);
+        }
+
+        .linear-2{
+            background: linear-gradient(to right, red, blue);
+        }
+
+        .linear-3{
+            background: linear-gradient(to bottom right, red, yellow);
+        }
+
+        .linear-4{
+            background: linear-gradient(45deg, #ff0000, #0000ff);
+        }
+
+        .linear-5{
+            background: linear-gradient(to right, red, yellow, green, blue);
+        }
+
+        .linear-6{
+            background: linear-gradient(to right, red 0%, yellow 50%, blue 100%);
+        }
     </style>
 </head>
+
 <body>
-    
+
+    <div class="container">
+
+        <h1>CSS Gradients</h1>
+
+        <p class="intro">
+            Linear, Radial and Conic Gradients
+        </p>
+
+        <!-- =========================================
+             LINEAR GRADIENTS
+        ========================================== -->
+
+        <section>
+
+            <h2>1. Linear Gradients</h2>
+
+            <div class="gradient-grid">
+
+                <div class="gradient-box linear-1">
+                    Linear Gradient
+                </div>
+
+                <div class="gradient-box linear-2">
+                    To Right
+                </div>
+
+                <div class="gradient-box linear-3">
+                    Bottom Right
+                </div>
+
+                <div class="gradient-box linear-4">
+                    45 Degree
+                </div>
+
+                <div class="gradient-box linear-5">
+                    Multiple Colors
+                </div>
+
+                <div class="gradient-box linear-6">
+                    Color Stops
+                </div>
+
+            </div>
+        </section>
+    </div>
 </body>
+
 </html>
