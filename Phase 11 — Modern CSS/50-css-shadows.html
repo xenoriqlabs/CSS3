@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Shadows</title>
+
+    <style>
+        /* =========================
+           GLOBAL
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #222;
+            padding: 40px;
+        }
+
+
+        /* =========================
+           CONTAINER
+        ========================== */
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        h1 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .intro {
+            text-align: center;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+
+        /* =========================
+           SECTION
+        ========================== */
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================
+           GRID
+        ========================== */
+
+        .shadow-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+
+        /* =========================
+           COMMON CARD
+        ========================== */
+
+        .card {
+            min-height: 180px;
+
+            background-color: white;
+
+            border-radius: 15px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 30px;
+
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+
+        /* =================================================
+           BOX-SHADOW
+        ================================================== */
+
+        .box-shadow-1 {
+            box-shadow: 10px 10px 20px gray;
+        }
+
+
+        .box-shadow-2 {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+        }
+
+
+        .box-shadow-3 {
+            box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+
+        .box-shadow-4 {
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+        }
+
+
+        .box-shadow-5 {
+            box-shadow:
+                0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .box-shadow-6 {
+            box-shadow:
+                0 10px 20px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* =================================================
+           MULTIPLE BOX SHADOWS
+        ================================================== */
+
+        .box-shadow-multiple {
+            box-shadow:
+                10px 10px 20px rgba(255, 0, 0, 0.4),
+                -10px -10px 20px rgba(0, 0, 255, 0.4);
+        }
+
+        .box-shadow-three {
+            box-shadow:
+                5px 5px 10px red,
+                -5px -5px 10px blue,
+                0 0 20px green;
+        }
+
+        /* =================================================
+           TEXT SHADOW
+        ================================================== */
+
+        .text-shadow {
+            font-size: 40px;
+            color: #222;
+            text-shadow: 3px 3px 5px gray;
+        }
+
+        .text-shadow-soft {
+            font-size: 40px;
+            color: #333;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .text-shadow-negative {
+            font-size: 40px;
+            color: #333;
+            text-shadow: -3px -3px 5px gray;
+        }
+
+        /* =================================================
+           MULTIPLE TEXT SHADOWS
+        ================================================== */
+
+        .text-shadow-multiple {
+            font-size: 45px;
+
+            color: white;
+
+            text-shadow:
+                3px 3px 5px red,
+                -3px -3px 5px blue;
+        }
+
+        .text-shadow-three {
+            font-size: 45px;
+
+            color: white;
+
+            text-shadow:
+                2px 2px 5px red,
+                -2px -2px 5px blue,
+                0 0 15px green;
+        }
+
+        /* =================================================
+           GLOW EFFECT
+        ================================================== */
+
+        .text-glow {
+            font-size: 45px;
+
+            color: white;
+
+            background-color: #222;
+
+            padding: 30px;
+
+            text-shadow:
+                0 0 5px white,
+                0 0 10px white,
+                0 0 20px white,
+                0 0 30px white;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 700px) {
+
+            body {
+                padding: 20px;
+            }
+
+            .shadow-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .text-shadow,
+            .text-shadow-soft,
+            .text-shadow-negative,
+            .text-shadow-multiple,
+            .text-shadow-three,
+            .text-glow {
+                font-size: 30px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>CSS Shadows</h1>
+
+        <p class="intro">
+            box-shadow, text-shadow and Multiple Shadows
+        </p>
+
+        <!-- =========================================
+             BOX SHADOW
+        ========================================== -->
+
+        <section>
+
+            <h2>1. Box Shadow</h2>
+
+            <div class="shadow-grid">
+
+                <div class="card box-shadow-1">
+                    Basic Box Shadow
+                </div>
+
+                <div class="card box-shadow-2">
+                    Soft Shadow
+                </div>
+
+                <div class="card box-shadow-3">
+                    Left Shadow
+                </div>
+
+                <div class="card box-shadow-4">
+                    All Around Shadow
+                </div>
+
+                <div class="card box-shadow-5">
+                    Shadow with Spread
+                </div>
+
+                <div class="card box-shadow-6">
+                    Inset Shadow
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================================
+             MULTIPLE BOX SHADOWS
+        ========================================== -->
+
+        <section>
+
+            <h2>2. Multiple Box Shadows</h2>
+
+            <div class="shadow-grid">
+
+                <div class="card box-shadow-multiple">
+                    Two Shadows
+                </div>
+
+                <div class="card box-shadow-three">
+                    Three Shadows
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================================
+             TEXT SHADOW
+        ========================================== -->
+
+        <section>
+
+            <h2>3. Text Shadow</h2>
+
+            <div class="shadow-grid">
+
+                <div class="card">
+                    <p class="text-shadow">
+                        Xenoriq Labs
+                    </p>
+                </div>
+
+                <div class="card">
+                    <p class="text-shadow-soft">
+                        Soft Text Shadow
+                    </p>
+                </div>
+
+                <div class="card">
+                    <p class="text-shadow-negative">
+                        Negative Shadow
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================================
+             MULTIPLE TEXT SHADOWS
+        ========================================== -->
+
+        <section>
+
+            <h2>4. Multiple Text Shadows</h2>
+
+            <div class="shadow-grid">
+
+                <div class="card">
+
+                    <p class="text-shadow-multiple">
+                        Xenoriq
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <p class="text-shadow-three">
+                        Labs
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             TEXT GLOW
+        ========================================== -->
+
+        <section>
+
+            <h2>5. Text Glow Effect</h2>
+
+            <div class="card text-glow">
+                Xenoriq Labs
+            </div>
+
+        </section>
+
+    </div>
+
+</body>
+
+</html>
