@@ -125,6 +125,77 @@
         /* =================================================
            RADIAL GRADIENTS
         ================================================== */
+
+        .radial-1 {
+            background: radial-gradient(red, blue);
+        }
+
+        .radial-2 {
+            background: radial-gradient(circle, red, blue);
+        }
+
+        .radial-3 {
+            background: radial-gradient(circle, red, yellow, blue);
+        }
+
+        .radial-4 {
+            background: radial-gradient(circle at top left, red, blue);
+        }
+
+        .radial-5 {
+            background: radial-gradient(circle at bottom right, red, yellow, blue);
+        }
+
+        .radial-6 {
+            background: radial-gradient(circle, red 10%, yellow 40%, blue 100%);
+        }
+
+        /* =================================================
+           CONIC GRADIENTS
+        ================================================== */
+
+        .conic-1 {
+            background: conic-gradient(red, yellow, green, blue, red);
+        }
+
+        .conic-2 {
+            background: conic-gradient(from 90deg, red, yellow, blue, red);
+        }
+
+        .conic-3 {
+            background: conic-gradient(red, yellow, green, blue, purple, red);
+        }
+
+        .conic-4 {
+            background: conic-gradient(at center, red, yellow, blue, red);
+        }
+
+        .conic-5 {
+            background: conic-gradient(red 0deg 90deg, blue 90deg 180deg, green 180deg 270deg, yellow 270deg 360deg);
+        }
+
+        .conic-6 {
+            background: conic-gradient(from 45deg, #ff0000, #ffff00, #00ff00, #0000ff, #ff00ff, #ff0000);
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 700px) {
+            
+            bordy{
+                padding: 20px;
+            }
+
+            .gradient-grid{
+                grid-template-columns: 1fr;
+            }
+
+            .gradient-box{
+                min-height: 180px;
+            }
+        }
     </style>
 </head>
 
@@ -214,8 +285,46 @@
 
         </section>
 
+        <!-- =========================================
+             CONIC GRADIENTS
+        ========================================== -->
+
+        <section>
+
+            <h2>3. Conic Gradients</h2>
+
+            <div class="gradient-grid">
+
+                <div class="gradient-box conic-1">
+                    Conic Gradient
+                </div>
+
+                <div class="gradient-box conic-2">
+                    From 90deg
+                </div>
+
+                <div class="gradient-box conic-3">
+                    Multiple Colors
+                </div>
+
+                <div class="gradient-box conic-4">
+                    Center
+                </div>
+
+                <div class="gradient-box conic-5">
+                    Pie Chart Style
+                </div>
+
+                <div class="gradient-box conic-6">
+                    Color Wheel
+                </div>
+
+            </div>
+
+        </section>
+
     </div>
-    
+
 </body>
 
 </html>
