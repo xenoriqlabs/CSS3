@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Blend Modes - Xenoriq Labs</title>
+
+    <style>
+
+        /* =========================
+           GLOBAL
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #222;
+            padding: 40px;
+        }
+
+        /* =========================
+           CONTAINER
+        ========================== */
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        h1 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .intro {
+            text-align: center;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        /* =========================
+           SECTION
+        ========================== */
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            margin-bottom: 25px;
+        }
+
+        /* =========================
+           GRID
+        ========================== */
+
+        .blend-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        /* =========================
+           CARD
+        ========================== */
+
+        .card {
+            min-height: 220px;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            box-shadow:
+                0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* =================================================
+           MIX-BLEND-MODE
+        ================================================== */
+
+        .mix-background {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff0000,
+                    #0000ff
+                );
+        }
+
+        .mix-text {
+            position: relative;
+            z-index: 1;
+            font-size: 30px;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* =========================
+           MULTIPLY
+        ========================== */
+
+        .mix-multiply .mix-text {
+            mix-blend-mode: multiply;
+        }
+
+        /* =========================
+           SCREEN
+        ========================== */
+
+        .mix-screen .mix-text {
+            mix-blend-mode: screen;
+        }
+
+        /* =========================
+           OVERLAY
+        ========================== */
+
+        .mix-overlay .mix-text {
+            mix-blend-mode: overlay;
+        }
+
+        /* =========================
+           DARKEN
+        ========================== */
+
+        .mix-darken .mix-text {
+            mix-blend-mode: darken;
+        }
+
+        /* =========================
+           LIGHTEN
+        ========================== */
+
+        .mix-lighten .mix-text {
+            mix-blend-mode: lighten;
+        }
+
+        /* =========================
+           DIFFERENCE
+        ========================== */
+
+        .mix-difference .mix-text {
+            mix-blend-mode: difference;
+        }
+
+        /* =========================
+           EXCLUSION
+        ========================== */
+
+        .mix-exclusion .mix-text {
+            mix-blend-mode: exclusion;
+        }
+
+        /* =================================================
+           BACKGROUND BLEND MODE
+        ================================================== */
+
+        .background-blend {
+            min-height: 250px;
+
+            background-image:
+                linear-gradient(
+                    rgba(255, 0, 0, 0.6),
+                    rgba(0, 0, 255, 0.6)
+                ),
+                radial-gradient(
+                    circle at center,
+                    yellow,
+                    green,
+                    blue
+                );
+
+            background-size: cover;
+            background-position: center;
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+            padding: 30px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 15px;
+        }
+
+        /* =========================
+           MULTIPLY
+        ========================== */
+
+        .background-multiply {
+            background-blend-mode: multiply;
+        }
+
+        /* =========================
+           SCREEN
+        ========================== */
+
+        .background-screen {
+            background-blend-mode: screen;
+        }
+
+        /* =========================
+           OVERLAY
+        ========================== */
+
+        .background-overlay {
+            background-blend-mode: overlay;
+        }
+
+        /* =========================
+           DARKEN
+        ========================== */
+
+        .background-darken {
+            background-blend-mode: darken;
+        }
+
+        /* =========================
+           LIGHTEN
+        ========================== */
+
+        .background-lighten {
+            background-blend-mode: lighten;
+        }
+
+        /* =========================
+           DIFFERENCE
+        ========================== */
+
+        .background-difference {
+            background-blend-mode: difference;
+        }
+
+        /* =================================================
+           HERO EXAMPLE
+        ================================================== */
+
+        .hero {
+            min-height: 350px;
+            border-radius: 20px;
+            padding: 40px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            color: white;
+
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.35),
+                    rgba(0, 0, 0, 0.35)
+                ),
+                radial-gradient(
+                    circle at top left,
+                    #00c6ff,
+                    #0072ff,
+                    #6a11cb
+                );
+
+            background-blend-mode: multiply;
+        }
+
+        .hero h3 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            line-height: 1.6;
+            font-size: 18px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 900px) {
+
+            .blend-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 20px;
+            }
+
+            .blend-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h3 {
+                font-size: 32px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>CSS Blend Modes</h1>
+
+        <p class="intro">
+            mix-blend-mode and background-blend-mode
+        </p>
+
+
+        <!-- =========================================
+             MIX-BLEND-MODE
+        ========================================== -->
+
+        <section>
+
+            <h2>1. mix-blend-mode</h2>
+
+            <div class="blend-grid">
+
+
+                <div class="card mix-multiply">
+
+                    <div class="mix-background"></div>
+
+                    <div class="mix-text">
+                        Multiply
+                    </div>
+
+                </div>
+
+
+                <div class="card mix-screen">
+
+                    <div class="mix-background"></div>
+
+                    <div class="mix-text">
+                        Screen
+                    </div>
+
+                </div>
+
+
+                <div class="card mix-overlay">
+
+                    <div class="mix-background"></div>
+
+                    <div class="mix-text">
+                        Overlay
+                    </div>
+
+                </div>
+
+
+                <div class="card mix-darken">
+
+                    <div class="mix-background"></div>
+
+                    <div class="mix-text">
+                        Darken
+                    </div>
+
+                </div>
+
+
+                <div class="card mix-lighten">
+
+                    <div class="mix-background"></div>
+
+                    <div class="mix-text">
+                        Lighten
+                    </div>
+
+                </div>
+
+
+                <div class="card mix-difference">
+
+                    <div class="mix-background"></div>
+
+                    <div class="mix-text">
+                        Difference
+                    </div>
+
+                </div>
+
+
+                <div class="card mix-exclusion">
+
+                    <div class="mix-background"></div>
+
+                    <div class="mix-text">
+                        Exclusion
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             BACKGROUND-BLEND-MODE
+        ========================================== -->
+
+        <section>
+
+            <h2>2. background-blend-mode</h2>
+
+            <div class="blend-grid">
+
+
+                <div class="background-blend background-multiply">
+
+                    Multiply
+
+                </div>
+
+
+                <div class="background-blend background-screen">
+
+                    Screen
+
+                </div>
+
+
+                <div class="background-blend background-overlay">
+
+                    Overlay
+
+                </div>
+
+
+                <div class="background-blend background-darken">
+
+                    Darken
+
+                </div>
+
+
+                <div class="background-blend background-lighten">
+
+                    Lighten
+
+                </div>
+
+
+                <div class="background-blend background-difference">
+
+                    Difference
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             REAL-WORLD EXAMPLE
+        ========================================== -->
+
+        <section>
+
+            <h2>3. Real-World Example</h2>
+
+            <div class="hero">
+
+                <h3>
+                    Xenoriq Labs
+                </h3>
+
+                <p>
+                    Build Smart. Automate More.
+                    Innovate Faster.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+</body>
+
+</html>
