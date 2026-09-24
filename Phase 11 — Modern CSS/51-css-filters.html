@@ -192,6 +192,80 @@
         .sepia-3 {
             filter: sepia(100%);
         }
+
+        /* =================================================
+           DROP SHADOW
+        ================================================== */
+
+        .drop-shadow-1 {
+            filter: drop-shadow(5px 5px 5px gray);
+        }
+
+        .drop-shadow-2 {
+            filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.4));
+        }
+
+        .drop-shadow-3 {
+            filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.6));
+        }
+
+        /* =================================================
+           MULTIPLE FILTERS
+        ================================================== */
+
+        .multiple-filter-1 {
+            filter: brightness(120%) contrast(120%) grayscale(30%);
+        }
+
+
+        .multiple-filter-2 {
+            filter:
+                grayscale(100%) brightness(120%);
+        }
+
+        .multiple-filter-3 {
+            filter:
+                sepia(70%) contrast(120%) brightness(90%);
+        }
+
+        /* =================================================
+           HOVER EFFECT
+        ================================================== */
+
+        .hover-image {
+            filter: grayscale(100%);
+
+            transition: filter 0.4s ease;
+        }
+
+        .hover-image:hover {
+            filter: grayscale(0%);
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 900px) {
+
+            .filter-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 20px;
+            }
+
+            .filter-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
     </style>
 </head>
 
@@ -523,7 +597,7 @@
 
         </section>
 
-         <!-- =========================================
+        <!-- =========================================
              DROP SHADOW
         ========================================== -->
 
@@ -535,11 +609,7 @@
 
                 <div class="card">
 
-                    <img
-                        class="drop-shadow-1"
-                        src="https://picsum.photos/500/300?random=16"
-                        alt="Drop shadow example"
-                    >
+                    <img class="drop-shadow-1" src="https://picsum.photos/500/300?random=16" alt="Drop shadow example">
 
                     <div class="card-content">
 
@@ -556,11 +626,7 @@
 
                 <div class="card">
 
-                    <img
-                        class="drop-shadow-2"
-                        src="https://picsum.photos/500/300?random=17"
-                        alt="Drop shadow example"
-                    >
+                    <img class="drop-shadow-2" src="https://picsum.photos/500/300?random=17" alt="Drop shadow example">
 
                     <div class="card-content">
 
@@ -577,11 +643,7 @@
 
                 <div class="card">
 
-                    <img
-                        class="drop-shadow-3"
-                        src="https://picsum.photos/500/300?random=18"
-                        alt="Drop shadow example"
-                    >
+                    <img class="drop-shadow-3" src="https://picsum.photos/500/300?random=18" alt="Drop shadow example">
 
                     <div class="card-content">
 
@@ -598,6 +660,101 @@
             </div>
 
         </section>
+
+        <!-- =========================================
+             MULTIPLE FILTERS
+        ========================================== -->
+
+        <section>
+
+            <h2>7. Multiple Filters</h2>
+
+            <div class="filter-grid">
+
+                <div class="card">
+
+                    <img class="multiple-filter-1" src="https://picsum.photos/500/300?random=19" alt="Multiple filters">
+
+                    <div class="card-content">
+
+                        <h3>Multiple Filters</h3>
+
+                        <p>
+                            Brightness + Contrast + Grayscale
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <img class="multiple-filter-2" src="https://picsum.photos/500/300?random=20" alt="Multiple filters">
+
+                    <div class="card-content">
+
+                        <h3>Grayscale + Brightness</h3>
+
+                        <p>
+                            Multiple filter functions
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <img class="multiple-filter-3" src="https://picsum.photos/500/300?random=21" alt="Multiple filters">
+
+                    <div class="card-content">
+
+                        <h3>Sepia + Contrast</h3>
+
+                        <p>
+                            Combined filter effect
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             HOVER FILTER
+        ========================================== -->
+
+        <section>
+
+            <h2>8. Hover Filter Effect</h2>
+
+            <div class="card">
+
+                <img class="hover-image" src="https://picsum.photos/1000/500?random=22" alt="Hover filter example">
+
+                <div class="card-content">
+
+                    <h3>
+                        Hover Over Image
+                    </h3>
+
+                    <p>
+                        Grayscale changes to normal colors
+                        when you hover over the image.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
 
     </div>
 
