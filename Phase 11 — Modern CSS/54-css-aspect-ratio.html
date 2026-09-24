@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Aspect Ratio</title>
+
+    <style>
+        /* =========================
+           GLOBAL
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #222;
+            padding: 30px;
+        }
+
+
+        /* =========================
+           CONTAINER
+        ========================== */
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #666;
+        }
+
+
+        /* =========================
+           SECTION
+        ========================== */
+
+        .section {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+        }
+
+        .section h2 {
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+           1:1 ASPECT RATIO
+        ========================== */
+
+        .square-box {
+            width: 300px;
+            max-width: 100%;
+            aspect-ratio: 1 / 1;
+
+            background-color: #3498db;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+
+            margin: auto;
+            border-radius: 12px;
+        }
+
+
+        /* =========================
+           4:3 ASPECT RATIO
+        ========================== */
+
+        .four-three-box {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+
+            background-color: #2ecc71;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+
+            border-radius: 12px;
+        }
+
+
+        /* =========================
+           16:9 ASPECT RATIO
+        ========================== */
+
+        .sixteen-nine-box {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+
+            background-color: #9b59b6;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+
+            border-radius: 12px;
+        }
+
+
+        /* =========================
+           21:9 ASPECT RATIO
+        ========================== */
+
+        .twenty-one-nine-box {
+            width: 100%;
+            aspect-ratio: 21 / 9;
+
+            background-color: #e67e22;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+
+            border-radius: 12px;
+        }
+
+
+        /* =========================
+           CARD GRID
+        ========================== */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+
+        /* =========================
+           CARD IMAGE
+        ========================== */
+
+        .card-image {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card-content h3 {
+            margin-bottom: 8px;
+        }
+
+        .card-content p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+
+        /* =========================
+           PROFILE IMAGE
+        ========================== */
+
+        .profile-image {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+
+            object-fit: cover;
+            object-position: center;
+
+            display: block;
+
+            border-radius: 50%;
+        }
+
+
+        /* =========================
+           VIDEO CONTAINER
+        ========================== */
+
+        .video-container {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+
+            background-color: #111;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+            font-size: 24px;
+
+            border-radius: 12px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 768px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .square-box {
+                width: 220px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- =========================
+             HEADER
+        ========================== -->
+
+        <header>
+
+            <h1>CSS Aspect Ratio - Xenoriq Labs</h1>
+
+            <p>
+                Maintaining consistent width-to-height proportions
+                using the aspect-ratio property.
+            </p>
+
+        </header>
+
+
+        <!-- =========================
+             1:1
+        ========================== -->
+
+        <section class="section">
+
+            <h2>1. Aspect Ratio: 1 / 1</h2>
+
+            <div class="square-box">
+                1 : 1
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             4:3
+        ========================== -->
+
+        <section class="section">
+
+            <h2>2. Aspect Ratio: 4 / 3</h2>
+
+            <div class="four-three-box">
+                4 : 3
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             16:9
+        ========================== -->
+
+        <section class="section">
+
+            <h2>3. Aspect Ratio: 16 / 9</h2>
+
+            <div class="sixteen-nine-box">
+                16 : 9
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             21:9
+        ========================== -->
+
+        <section class="section">
+
+            <h2>4. Aspect Ratio: 21 / 9</h2>
+
+            <div class="twenty-one-nine-box">
+                21 : 9
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CARDS
+        ========================== -->
+
+        <section class="section">
+
+            <h2>5. Aspect Ratio with Cards</h2>
+
+            <div class="cards">
+
+                <article class="card">
+
+                    <div class="card-image" style="
+                         background: linear-gradient(
+                             135deg,
+                             #3498db,
+                             #2ecc71
+                         );
+                         ">
+                    </div>
+
+                    <div class="card-content">
+
+                        <h3>Xenoriq Labs</h3>
+
+                        <p>
+                            This card uses a 16:9 aspect ratio
+                            for its image area.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="card-image" style="
+                         background: linear-gradient(
+                             135deg,
+                             #9b59b6,
+                             #e74c3c
+                         );
+                         ">
+                    </div>
+
+                    <div class="card-content">
+
+                        <h3>Web Development</h3>
+
+                        <p>
+                            The image area maintains the same
+                            proportion on different screen sizes.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="card-image" style="
+                         background: linear-gradient(
+                             135deg,
+                             #f39c12,
+                             #e67e22
+                         );
+                         ">
+                    </div>
+
+                    <div class="card-content">
+
+                        <h3>AI & ML</h3>
+
+                        <p>
+                            Aspect ratio is useful for creating
+                            consistent card layouts.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PROFILE
+        ========================== -->
+
+        <section class="section">
+
+            <h2>6. Square Profile Image</h2>
+
+            <img src="../media/xenoriq-labs-banner.jpg" alt="Xenoriq Labs" class="profile-image">
+
+        </section>
+
+
+        <!-- =========================
+             VIDEO
+        ========================== -->
+
+        <section class="section">
+
+            <h2>7. Video Container</h2>
+
+            <div class="video-container">
+
+                16 : 9 Video Area
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PRACTICAL EXAMPLE
+        ========================== -->
+
+        <section class="section">
+
+            <h2>8. Practical Example</h2>
+
+            <div style="
+                    width: 100%;
+                    aspect-ratio: 16 / 9;
+                    background: linear-gradient(
+                        135deg,
+                        #111,
+                        #444
+                    );
+                    border-radius: 12px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    text-align: center;
+                    padding: 20px;
+                ">
+
+                <div>
+
+                    <h2>Xenoriq Labs</h2>
+
+                    <p>
+                        Build Smart. Automate More. Innovate Faster.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</body>
+
+</html>
