@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Filters</title>
+
+    <style>
+        /* =========================
+           GLOBAL
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4;
+            color: #222;
+            padding: 40px;
+        }
+
+        /* =========================
+           CONTAINER
+        ========================== */
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        h1 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .intro {
+            text-align: center;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+
+        /* =========================
+           SECTION
+        ========================== */
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            margin-bottom: 25px;
+        }
+
+        /* =========================
+           GRID
+        ========================== */
+
+        .filter-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        /* =========================
+           CARD
+        ========================== */
+
+        .card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            text-align: center;
+
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+
+            display: block;
+            object-fit: cover;
+        }
+
+        /* =========================
+           CARD CONTENT
+        ========================== */
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            margin-bottom: 10px;
+        }
+
+        .card-content p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* =================================================
+           BLUR
+        ================================================== */
+
+        .blur-1 {
+            filter: blur(2px);
+        }
+
+        .blur-2 {
+            filter: blur(5px);
+        }
+
+        .blur-3 {
+            filter: blur(10px);
+        }
+
+        /* =================================================
+           BRIGHTNESS
+        ================================================== */
+
+        .brightness-1 {
+            filter: brightness(50%);
+        }
+
+        .brightness-2 {
+            filter: brightness(100%);
+        }
+
+        .brightness-3 {
+            filter: brightness(150%);
+        }
+
+
+        /* =================================================
+           CONTRAST
+        ================================================== */
+
+        .contrast-1 {
+            filter: contrast(50%);
+        }
+
+        .contrast-2 {
+            filter: contrast(100%);
+        }
+
+        .contrast-3 {
+            filter: contrast(150%);
+        }
+
+
+        /* =================================================
+           GRAYSCALE
+        ================================================== */
+
+        .grayscale-1 {
+            filter: grayscale(25%);
+        }
+
+        .grayscale-2 {
+            filter: grayscale(50%);
+        }
+
+        .grayscale-3 {
+            filter: grayscale(100%);
+        }
+
+        /* =================================================
+           SEPIA
+        ================================================== */
+
+        .sepia-1 {
+            filter: sepia(25%);
+        }
+
+        .sepia-2 {
+            filter: sepia(50%);
+        }
+
+        .sepia-3 {
+            filter: sepia(100%);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>CSS Filters - Xenoriq Labs</h1>
+
+        <p class="intro">
+            Blur, Brightness, Contrast, Grayscale, Sepia and Drop Shadow
+        </p>
+
+        <!-- =========================================
+             BLUR
+        ========================================== -->
+
+        <section>
+
+            <h2>1. blur()</h2>
+
+            <div class="filter-grid">
+
+                <div class="card">
+
+                    <img class="blur-1" src="https://picsum.photos/500/300?random=1" alt="Blur Example">
+
+                    <div class="card-content">
+
+                        <h3>Blur 2px</h3>
+
+                        <p>
+                            filter: blur(2px);
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <img class="blur-2" src="https://picsum.photos/500/300?random=2" alt="Blur example">
+
+                    <div class="card-content">
+
+                        <h3>Blur 5px</h3>
+
+                        <p>
+                            filter: blur(5px);
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <img class="blur-3" src="https://picsum.photos/500/300?random=3" alt="Blur example">
+
+                    <div class="card-content">
+
+                        <h3>Blur 10px</h3>
+
+                        <p>
+                            filter: blur(10px);
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================================
+             BRIGHTNESS
+        ========================================== -->
+
+        <section>
+
+            <h2>2. brightness()</h2>
+
+            <div class="filter-grid">
+
+                <div class="card">
+
+                    <img class="brightness-1" src="https://picsum.photos/500/300?random=4" alt="Brightness example">
+
+                    <div class="card-content">
+
+                        <h3>Brightness 50%</h3>
+
+                        <p>
+                            filter: brightness(50%);
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="card">
+
+                    <img class="brightness-2" src="https://picsum.photos/500/300?random=5" alt="Brightness example">
+
+                    <div class="card-content">
+
+                        <h3>Brightness 100%</h3>
+
+                        <p>
+                            filter: brightness(100%);
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <img class="brightness-3" src="https://picsum.photos/500/300?random=6" alt="Brightness example">
+
+                    <div class="card-content">
+
+                        <h3>Brightness 150%</h3>
+
+                        <p>
+                            filter: brightness(150%);
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================================
+             CONTRAST
+        ========================================== -->
+
+        <section>
+
+            <h2>3. contrast()</h2>
+
+            <div class="filter-grid">
+
+                <div class="card">
+
+                    <img class="contrast-1" src="https://picsum.photos/500/300?random=7" alt="Contrast example">
+
+                    <div class="card-content">
+
+                        <h3>Contrast 50%</h3>
+
+                        <p>
+                            filter: contrast(50%);
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <img class="contrast-2" src="https://picsum.photos/500/300?random=8" alt="Contrast example">
+
+                    <div class="card-content">
+
+                        <h3>Contrast 100%</h3>
+
+                        <p>
+                            filter: contrast(100%);
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <img class="contrast-3" src="https://picsum.photos/500/300?random=9" alt="Contrast example">
+
+                    <div class="card-content">
+
+                        <h3>Contrast 150%</h3>
+
+                        <p>
+                            filter: contrast(150%);
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================================
+             GRAYSCALE
+        ========================================== -->
+
+        <section>
+
+            <h2>4. grayscale()</h2>
+
+            <div class="filter-grid">
+
+                <div class="card">
+
+                    <img class="grayscale-1" src="https://picsum.photos/500/300?random=10" alt="Grayscale example">
+
+                    <div class="card-content">
+
+                        <h3>Grayscale 25%</h3>
+
+                        <p>
+                            filter: grayscale(25%);
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <img class="grayscale-2" src="https://picsum.photos/500/300?random=11" alt="Grayscale example">
+
+                    <div class="card-content">
+
+                        <h3>Grayscale 50%</h3>
+
+                        <p>
+                            filter: grayscale(50%);
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <img class="grayscale-3" src="https://picsum.photos/500/300?random=12" alt="Grayscale example">
+
+                    <div class="card-content">
+
+                        <h3>Grayscale 100%</h3>
+
+                        <p>
+                            filter: grayscale(100%);
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================================
+             SEPIA
+        ========================================== -->
+
+        <section>
+
+            <h2>5. sepia()</h2>
+
+            <div class="filter-grid">
+
+                <div class="card">
+
+                    <img class="sepia-1" src="https://picsum.photos/500/300?random=13" alt="Sepia example">
+
+                    <div class="card-content">
+
+                        <h3>Sepia 25%</h3>
+
+                        <p>
+                            filter: sepia(25%);
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <img class="sepia-2" src="https://picsum.photos/500/300?random=14" alt="Sepia example">
+
+                    <div class="card-content">
+
+                        <h3>Sepia 50%</h3>
+
+                        <p>
+                            filter: sepia(50%);
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <img class="sepia-3" src="https://picsum.photos/500/300?random=15" alt="Sepia example">
+
+                    <div class="card-content">
+
+                        <h3>Sepia 100%</h3>
+
+                        <p>
+                            filter: sepia(100%);
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+         <!-- =========================================
+             DROP SHADOW
+        ========================================== -->
+
+        <section>
+
+            <h2>6. drop-shadow()</h2>
+
+            <div class="filter-grid">
+
+                <div class="card">
+
+                    <img
+                        class="drop-shadow-1"
+                        src="https://picsum.photos/500/300?random=16"
+                        alt="Drop shadow example"
+                    >
+
+                    <div class="card-content">
+
+                        <h3>Basic Drop Shadow</h3>
+
+                        <p>
+                            filter: drop-shadow(5px 5px 5px gray);
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <img
+                        class="drop-shadow-2"
+                        src="https://picsum.photos/500/300?random=17"
+                        alt="Drop shadow example"
+                    >
+
+                    <div class="card-content">
+
+                        <h3>Soft Drop Shadow</h3>
+
+                        <p>
+                            filter: drop-shadow(10px 10px 15px);
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <img
+                        class="drop-shadow-3"
+                        src="https://picsum.photos/500/300?random=18"
+                        alt="Drop shadow example"
+                    >
+
+                    <div class="card-content">
+
+                        <h3>Glow Shadow</h3>
+
+                        <p>
+                            filter: drop-shadow(0 0 15px);
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</body>
+
+</html>
