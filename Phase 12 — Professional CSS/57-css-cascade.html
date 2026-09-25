@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Cascade - Xenoriq Labs</title>
+
+
+    <!-- =====================================================
+         CASCADE LAYERS
+    ====================================================== -->
+
+    <style>
+        /*
+            Declare the layer order.
+
+            For normal declarations:
+            later layers have higher priority.
+        */
+
+        @layer reset, base, components, utilities;
+
+
+        /* =================================================
+           LAYER 1: RESET
+        ================================================== */
+
+        @layer reset {
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+        }
+
+
+        /* =================================================
+           LAYER 2: BASE
+        ================================================== */
+
+        @layer base {
+
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                background-color: #f4f4f4;
+                padding: 40px;
+            }
+
+            h1 {
+                margin-bottom: 30px;
+            }
+
+            h2 {
+                margin-bottom: 15px;
+            }
+
+            p {
+                margin-bottom: 10px;
+            }
+
+        }
+
+
+        /* =================================================
+           LAYER 3: COMPONENTS
+        ================================================== */
+
+        @layer components {
+
+            .container {
+                max-width: 1000px;
+                margin: auto;
+            }
+
+            section {
+                background-color: white;
+                padding: 25px;
+                margin-bottom: 25px;
+                border-radius: 10px;
+            }
+
+            .example {
+                padding: 20px;
+                margin-top: 15px;
+                background-color: #eeeeee;
+                border-radius: 8px;
+            }
+
+        }
+
+
+        /* =================================================
+           LAYER 4: UTILITIES
+        ================================================== */
+
+        @layer utilities {
+
+            .text-center {
+                text-align: center;
+            }
+
+            .bold {
+                font-weight: bold;
+            }
+
+        }
+    </style>
+
+
+    <!-- =====================================================
+         MAIN CASCADE EXAMPLES
+    ====================================================== -->
+
+    <style>
+        /* =================================================
+           1. SOURCE ORDER
+        ================================================== */
+
+        .source-order-example {
+            color: blue;
+        }
+
+        .source-order-example {
+            color: red;
+        }
+
+
+        /* =================================================
+           2. SPECIFICITY
+        ================================================== */
+
+        .specificity-example {
+            color: green;
+        }
+
+        #specificity-example {
+            color: purple;
+        }
+
+
+        /* =================================================
+           3. IMPORTANCE
+        ================================================== */
+
+        .importance-example {
+            color: orange !important;
+        }
+
+        #importance-example {
+            color: blue;
+        }
+
+
+        /* =================================================
+           4. COMBINED SPECIFICITY
+        ================================================== */
+
+        p {
+            color: blue;
+        }
+
+        .cascade-text {
+            color: green;
+        }
+
+        #cascade-text {
+            color: red;
+        }
+
+
+        /* =================================================
+           5. LAYER EXAMPLE
+        ================================================== */
+
+        @layer demo-base {
+
+            .layer-example {
+                color: blue;
+            }
+
+        }
+
+        @layer demo-components {
+
+            .layer-example {
+                color: red;
+            }
+
+        }
+
+
+        /* =================================================
+           6. INLINE STYLE
+        ================================================== */
+
+        .inline-example {
+            color: blue;
+        }
+
+
+        /* =================================================
+           7. SOURCE ORDER WITH SAME SPECIFICITY
+        ================================================== */
+
+        .order-test {
+            background-color: lightblue;
+        }
+
+        .order-test {
+            background-color: lightgreen;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="container">
+
+
+        <h1 class="text-center">
+            CSS Cascade
+        </h1>
+
+
+        <!-- =================================================
+             1. CASCADE
+        ================================================== -->
+
+        <section>
+
+            <h2>1. Cascade</h2>
+
+            <p>
+                The CSS cascade determines which declaration
+                should be applied when multiple CSS rules
+                target the same element.
+            </p>
+
+            <div class="example">
+
+                <p>
+                    The cascade considers factors such as
+                    importance, layers, specificity, and
+                    source order.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             2. SOURCE ORDER
+        ================================================== -->
+
+        <section>
+
+            <h2>2. Source Order</h2>
+
+            <p class="source-order-example">
+
+                Two selectors have the same specificity.
+
+            </p>
+
+            <div class="example">
+
+                <p>
+                    First rule:
+                </p>
+
+                <code>
+                    color: blue;
+                </code>
+
+                <br><br>
+
+                <p>
+                    Later rule:
+                </p>
+
+                <code>
+                    color: red;
+                </code>
+
+                <br><br>
+
+                <p>
+                    Result:
+                    <strong>Red</strong>
+                </p>
+
+                <p>
+                    The later declaration wins because
+                    specificity is equal.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             3. SPECIFICITY
+        ================================================== -->
+
+        <section>
+
+            <h2>3. Specificity</h2>
+
+            <p id="specificity-example" class="specificity-example">
+
+                This paragraph is targeted by both a class
+                and an ID.
+
+            </p>
+
+            <div class="example">
+
+                <p>
+                    Class specificity:
+                    <strong>0-0-1-0</strong>
+                </p>
+
+                <p>
+                    ID specificity:
+                    <strong>0-1-0-0</strong>
+                </p>
+
+                <p>
+                    The ID selector wins.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             4. IMPORTANCE
+        ================================================== -->
+
+        <section>
+
+            <h2>4. Importance</h2>
+
+            <p id="importance-example" class="importance-example">
+
+                This text uses !important.
+
+            </p>
+
+            <div class="example">
+
+                <code>
+                    color: orange !important;
+                </code>
+
+                <p>
+                    The !important declaration can override
+                    normal declarations even when the normal
+                    selector has higher specificity.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             5. COMBINED CASCADE
+        ================================================== -->
+
+        <section>
+
+            <h2>5. Specificity + Source Order</h2>
+
+            <p id="cascade-text" class="cascade-text">
+
+                ID wins over class and element selectors.
+
+            </p>
+
+            <div class="example">
+
+                <p>
+                    Element:
+                    <strong>0-0-0-1</strong>
+                </p>
+
+                <p>
+                    Class:
+                    <strong>0-0-1-0</strong>
+                </p>
+
+                <p>
+                    ID:
+                    <strong>0-1-0-0</strong>
+                </p>
+
+                <p>
+                    Result:
+                    <strong>Red</strong>
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             6. CASCADE LAYERS
+        ================================================== -->
+
+        <section>
+
+            <h2>6. Cascade Layers</h2>
+
+            <p class="layer-example">
+
+                This paragraph demonstrates cascade layers.
+
+            </p>
+
+            <div class="example">
+
+                <p>
+                    Base layer:
+                    <strong>Blue</strong>
+                </p>
+
+                <p>
+                    Components layer:
+                    <strong>Red</strong>
+                </p>
+
+                <p>
+                    The later normal layer has higher
+                    priority than the earlier normal layer.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             7. INLINE STYLE
+        ================================================== -->
+
+        <section>
+
+            <h2>7. Inline Style</h2>
+
+            <p class="inline-example" style="color: purple;">
+
+                Inline styles have high cascade priority
+                among normal author declarations.
+
+            </p>
+
+            <div class="example">
+
+                <code>
+                    style="color: purple;"
+                </code>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             8. SOURCE ORDER PRACTICAL TEST
+        ================================================== -->
+
+        <section>
+
+            <h2>8. Source Order Practical Test</h2>
+
+            <div class="order-test" style="padding: 20px;">
+
+                The later rule wins when competing rules
+                have equal specificity.
+
+            </div>
+
+            <div class="example">
+
+                <p>
+                    First:
+                </p>
+
+                <code>
+                    background-color: lightblue;
+                </code>
+
+                <br><br>
+
+                <p>
+                    Later:
+                </p>
+
+                <code>
+                    background-color: lightgreen;
+                </code>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             9. SUMMARY
+        ================================================== -->
+
+        <section>
+
+            <h2>9. Quick Summary</h2>
+
+            <div class="example">
+
+                <p>
+                    <strong>Cascade:</strong>
+                    Decides which CSS declaration applies.
+                </p>
+
+                <br>
+
+                <p>
+                    <strong>Importance:</strong>
+                    !important changes the priority level.
+                </p>
+
+                <br>
+
+                <p>
+                    <strong>Layers:</strong>
+                    Organize CSS and control priority between
+                    groups of rules.
+                </p>
+
+                <br>
+
+                <p>
+                    <strong>Specificity:</strong>
+                    Determines which selector is stronger.
+                </p>
+
+                <br>
+
+                <p>
+                    <strong>Source Order:</strong>
+                    If competing declarations remain tied,
+                    the later declaration wins.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+
+</body>
+
+</html>
