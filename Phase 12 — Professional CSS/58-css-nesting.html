@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Nesting</title>
+
+
+    <style>
+        /* =====================================================
+           GLOBAL
+        ====================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+        }
+
+        section {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+        }
+
+        .example {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #eeeeee;
+            border-radius: 8px;
+        }
+
+
+        /* =====================================================
+           1. BASIC NESTING
+        ====================================================== */
+
+        .basic-card {
+
+            padding: 20px;
+            background-color: white;
+            border: 2px solid #ddd;
+
+            h2 {
+                color: blue;
+            }
+
+            p {
+                color: #555;
+            }
+
+        }
+
+
+        /* =====================================================
+           2. MULTIPLE NESTED SELECTORS
+        ====================================================== */
+
+        .multi-card {
+
+            padding: 20px;
+            border: 2px solid #ccc;
+
+            h2 {
+                color: purple;
+            }
+
+            p {
+                color: #555;
+            }
+
+            a {
+                color: green;
+            }
+
+        }
+
+
+        /* =====================================================
+           3. & PARENT SELECTOR
+        ====================================================== */
+
+        .hover-card {
+
+            padding: 25px;
+            background-color: white;
+            border: 2px solid #ddd;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: translateY(-5px);
+            }
+
+        }
+
+
+        /* =====================================================
+           4. NESTED BUTTON
+        ====================================================== */
+
+        .button-card {
+
+            padding: 25px;
+            background-color: white;
+
+            .button {
+
+                display: inline-block;
+                padding: 12px 20px;
+                background-color: black;
+                color: white;
+                text-decoration: none;
+                border-radius: 6px;
+
+                &:hover {
+                    background-color: #444;
+                }
+
+                &:focus {
+                    outline: 3px solid #999;
+                }
+
+            }
+
+        }
+
+
+        /* =====================================================
+           5. NESTED NAVBAR
+        ====================================================== */
+
+        .navbar {
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 20px;
+            background-color: #111;
+
+            .logo {
+                color: white;
+                font-size: 22px;
+                font-weight: bold;
+                text-decoration: none;
+            }
+
+            .nav-links {
+
+                display: flex;
+                gap: 20px;
+
+                a {
+                    color: white;
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+
+            }
+
+        }
+
+
+        /* =====================================================
+           6. NESTED CARD PROJECT
+        ====================================================== */
+
+        .project-card {
+
+            padding: 25px;
+            border: 1px solid #ddd;
+            background-color: white;
+
+            .project-title {
+                font-size: 24px;
+                margin-bottom: 10px;
+                color: #222;
+            }
+
+            .project-description {
+                color: #666;
+                margin-bottom: 15px;
+            }
+
+            .project-button {
+
+                display: inline-block;
+                padding: 10px 18px;
+                background-color: black;
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+
+                &:hover {
+                    background-color: #555;
+                }
+
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="container">
+
+
+        <h1>
+            Native CSS Nesting - Xenoriq Labs
+        </h1>
+
+
+        <!-- =================================================
+             1. BASIC NESTING
+        ================================================== -->
+
+        <section>
+
+            <h2>
+                1. Basic CSS Nesting
+            </h2>
+
+            <div class="basic-card">
+
+                <h2>
+                    Xenoriq Labs
+                </h2>
+
+                <p>
+                    Building modern software and AI solutions.
+                </p>
+
+            </div>
+
+            <div class="example">
+
+                <p>
+                    The nested CSS:
+                </p>
+
+                <br>
+
+                <code>
+                    .basic-card {
+                </code>
+
+                <br>
+
+                <code>
+                    &nbsp;&nbsp;&nbsp;&nbsp;h2 {
+                </code>
+
+                <br>
+
+                <code>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: blue;
+                </code>
+
+                <br>
+
+                <code>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                </code>
+
+                <br>
+
+                <code>
+                    }
+                </code>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             2. MULTIPLE SELECTORS
+        ================================================== -->
+
+        <section>
+
+            <h2>
+                2. Multiple Nested Selectors
+            </h2>
+
+            <div class="multi-card">
+
+                <h2>
+                    Xenoriq Labs
+                </h2>
+
+                <p>
+                    Software Company
+                </p>
+
+                <a href="#">
+                    Visit Website
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             3. & SELECTOR
+        ================================================== -->
+
+        <section>
+
+            <h2>
+                3. Parent Selector &
+            </h2>
+
+            <div class="hover-card">
+
+                <h3>
+                    Hover Over This Card
+                </h3>
+
+                <p>
+                    The & represents the parent selector.
+                </p>
+
+            </div>
+
+            <div class="example">
+
+                <code>
+                    .hover-card {
+                </code>
+
+                <br>
+
+                <code>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&:hover {
+                </code>
+
+                <br>
+
+                <code>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transform: translateY(-5px);
+                </code>
+
+                <br>
+
+                <code>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                </code>
+
+                <br>
+
+                <code>
+                    }
+                </code>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             4. NESTED BUTTON
+        ================================================== -->
+
+        <section>
+
+            <h2>
+                4. Nested Button
+            </h2>
+
+            <div class="button-card">
+
+                <p>
+                    Move your mouse over the button.
+                </p>
+
+                <br>
+
+                <a href="#" class="button">
+                    Learn More
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             5. NESTED NAVBAR
+        ================================================== -->
+
+        <section>
+
+            <h2>
+                5. Nested Navbar
+            </h2>
+
+            <nav class="navbar">
+
+                <a href="#" class="logo">
+                    Xenoriq Labs
+                </a>
+
+                <div class="nav-links">
+
+                    <a href="#">
+                        Home
+                    </a>
+
+                    <a href="#">
+                        About
+                    </a>
+
+                    <a href="#">
+                        Services
+                    </a>
+
+                    <a href="#">
+                        Contact
+                    </a>
+
+                </div>
+
+            </nav>
+
+        </section>
+
+
+        <!-- =================================================
+             6. PROJECT EXAMPLE
+        ================================================== -->
+
+        <section>
+
+            <h2>
+                6. Practical Project Example
+            </h2>
+
+            <div class="project-card">
+
+                <h3 class="project-title">
+                    AI Automation System
+                </h3>
+
+                <p class="project-description">
+                    A modern AI-powered automation project
+                    developed by Xenoriq Labs.
+                </p>
+
+                <a href="#" class="project-button">
+                    View Project
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             7. SUMMARY
+        ================================================== -->
+
+        <section>
+
+            <h2>
+                7. Quick Summary
+            </h2>
+
+            <div class="example">
+
+                <p>
+                    <strong>Native CSS Nesting:</strong>
+                    Allows CSS rules to be nested inside
+                    other CSS rules.
+                </p>
+
+                <br>
+
+                <p>
+                    <strong>Nested selector:</strong>
+                    Targets elements inside the parent selector.
+                </p>
+
+                <br>
+
+                <p>
+                    <strong>&:</strong>
+                    Represents the parent selector.
+                </p>
+
+                <br>
+
+                <p>
+                    <strong>Example:</strong>
+                </p>
+
+                <br>
+
+                <code>
+                    .card {
+                </code>
+
+                <br>
+
+                <code>
+                    &nbsp;&nbsp;&nbsp;&nbsp;p {
+                </code>
+
+                <br>
+
+                <code>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: gray;
+                </code>
+
+                <br>
+
+                <code>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                </code>
+
+                <br>
+
+                <code>
+                    }
+                </code>
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+
+</body>
+
+</html>
