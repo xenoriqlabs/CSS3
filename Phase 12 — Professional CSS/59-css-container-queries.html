@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Container Queries</title>
+
+    <style>
+        /* =====================================================
+           GLOBAL
+        ====================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+        }
+
+        section {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+        }
+
+        .example {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #eeeeee;
+            border-radius: 8px;
+        }
+
+
+        /* =====================================================
+           1. BASIC CONTAINER
+        ====================================================== */
+
+        .basic-container {
+            container-type: inline-size;
+
+            border: 3px solid #333;
+            padding: 20px;
+        }
+
+        .basic-card {
+            padding: 20px;
+            background-color: #ddd;
+        }
+
+        @container (min-width: 500px) {
+
+            .basic-card {
+
+                background-color: #cfcfcf;
+            }
+        }
+
+        /* =====================================================
+           2. RESPONSIVE CARD
+        ====================================================== */
+
+        .card-container {
+            container-type: inline-size;
+
+            padding: 20px;
+            border: 3px solid #333;
+        }
+
+        .responsive-card {
+            display: block;
+
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .responsive-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            margin-bottom: 10px;
+        }
+
+        .card-content p {
+            color: #666;
+        }
+
+        @container (min-width: 600px) {
+            .responsive-card {
+
+                display: grid;
+                grid-template-columns: 220px 1fr;
+            }
+
+            .responsive-card img {
+                width: 220px;
+                height: 100%;
+            }
+        }
+
+        /* =====================================================
+           3. NAMED CONTAINER
+        ====================================================== */
+
+        .named-container {
+            container: cards / inline-size;
+
+            padding: 20px;
+            border: 3px solid #333;
+        }
+
+        .named-card {
+            padding: 25px;
+            background-color: #ddd;
+        }
+
+        @container cards (min-width: 500px) {
+            .named-card {
+                background-color: #ccc;
+                padding: 40px;
+            }
+        }
+
+        /* =====================================================
+           4. CONTAINER RESPONSIVE BUTTON
+        ====================================================== */
+
+        .button-container {
+            container-type: inline-size;
+
+            padding: 20px;
+            border: 3px solid #333;
+        }
+
+        .button-card {
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+        }
+
+        .button {
+            display: inline-block;
+
+            padding: 10px 18px;
+            background-color: black;
+            color: white;
+
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        @container (min-width: 500px) {
+            .button-card {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        /* =====================================================
+           5. DASHBOARD EXAMPLE
+        ====================================================== */
+
+        .dashboard-container {
+            container-type: inline-size;
+
+            border: 3px solid #333;
+            padding: 20px;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .dashboard-card {
+            padding: 25px;
+            background-color: #eeeeee;
+            border-radius: 8px;
+        }
+
+        .dashboard-card h3 {
+            margin-bottom: 10px;
+        }
+
+        @container (min-width: 600px) {
+            .dashboard {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+        @container (min-width: 900px) {
+            .dashboard {
+                grid-template-columns:
+                    repeat(3, 1fr);
+            }
+        }
+
+        /* =====================================================
+           6. SIDEBAR + MAIN CONTENT
+        ====================================================== */
+
+        .layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .main-area,
+        .sidebar {
+            padding: 20px;
+            border: 2px solid #ccc;
+        }
+
+        .main-area {
+            container-type: inline-size;
+        }
+
+        .sidebar {
+            container-type: inline-size;
+        }
+
+        .layout-card {
+            padding: 20px;
+            background-color: #eeeeee;
+        }
+
+        @container (min-width: 500px) {
+            .layout-card {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+            }
+        }
+
+        @media (min-width: 800px) {
+            .layout {
+                grid-template-columns:
+                    2fr 1fr;
+            }
+        }
+
+        /* =====================================================
+           7. SUMMARY
+        ====================================================== */
+
+        .summary {
+            padding: 20px;
+            background-color: #eeeeee;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="container">
+
+
+        <h1>
+            CSS Container Queries
+        </h1>
+
+
+        <!-- =================================================
+             1. BASIC CONTAINER
+        ================================================== -->
+
+        <section>
+
+            <h2>
+                1. Basic @container
+            </h2>
+
+            <div class="basic-container">
+
+                <div class="basic-card">
+
+                    <h3>
+                        Container Query
+                    </h3>
+
+                    <p>
+                        This element responds to the width
+                        of its container.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="example">
+
+                <code>
+                    .basic-container {
+                </code>
+
+                <br>
+
+                <code>
+                    &nbsp;&nbsp;&nbsp;&nbsp;container-type: inline-size;
+                </code>
+
+                <br>
+
+                <code>
+                    }
+                </code>
+
+                <br><br>
+
+                <code>
+                    @container (min-width: 500px) {
+                </code>
+
+                <br>
+
+                <code>
+                    &nbsp;&nbsp;&nbsp;&nbsp;.basic-card {
+                </code>
+
+                <br>
+
+                <code>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...
+                </code>
+
+                <br>
+
+                <code>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}
+                </code>
+
+                <br>
+
+                <code>
+                    }
+                </code>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             2. RESPONSIVE CARD
+        ================================================== -->
+
+        <section>
+
+            <h2>
+                2. Container-Based Responsive Card
+            </h2>
+
+            <div class="card-container">
+
+                <article class="responsive-card">
+
+                    <img src="../media/xenoriq-labs.jpg" alt="Xenoriq Labs">
+
+                    <div class="card-content">
+
+                        <h3>
+                            Xenoriq Labs
+                        </h3>
+
+                        <p>
+                            Building modern software products,
+                            AI solutions, and scalable digital
+                            systems.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <div class="example">
+
+                <p>
+                    Resize the container or browser window
+                    and observe how the card changes its
+                    layout.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             3. NAMED CONTAINER
+        ================================================== -->
+
+        <section>
+
+            <h2>
+                3. Named Container
+            </h2>
+
+            <div class="named-container">
+
+                <div class="named-card">
+
+                    <h3>
+                        Named Container
+                    </h3>
+
+                    <p>
+                        This container is named
+                        <strong>cards</strong>.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="example">
+
+                <code>
+                    container: cards / inline-size;
+                </code>
+
+                <br><br>
+
+                <code>
+                    @container cards (min-width: 500px)
+                </code>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             4. RESPONSIVE BUTTON
+        ================================================== -->
+
+        <section>
+
+            <h2>
+                4. Container Responsive Button
+            </h2>
+
+            <div class="button-container">
+
+                <div class="button-card">
+
+                    <div>
+
+                        <h3>
+                            AI Development
+                        </h3>
+
+                        <p>
+                            Smart solutions for modern
+                            businesses.
+                        </p>
+
+                    </div>
+
+                    <a href="#" class="button">
+                        Learn More
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             5. DASHBOARD
+        ================================================== -->
+
+        <section>
+
+            <h2>
+                5. Dashboard Example
+            </h2>
+
+            <div class="dashboard-container">
+
+                <div class="dashboard">
+
+                    <div class="dashboard-card">
+
+                        <h3>
+                            Web Development
+                        </h3>
+
+                        <p>
+                            Full-stack web applications.
+                        </p>
+
+                    </div>
+
+
+                    <div class="dashboard-card">
+
+                        <h3>
+                            AI / ML
+                        </h3>
+
+                        <p>
+                            AI-powered solutions.
+                        </p>
+
+                    </div>
+
+
+                    <div class="dashboard-card">
+
+                        <h3>
+                            Automation
+                        </h3>
+
+                        <p>
+                            Smart business automation.
+                        </p>
+
+                    </div>
+
+
+                    <div class="dashboard-card">
+
+                        <h3>
+                            MERN Stack
+                        </h3>
+
+                        <p>
+                            Modern JavaScript applications.
+                        </p>
+
+                    </div>
+
+
+                    <div class="dashboard-card">
+
+                        <h3>
+                            Flutter
+                        </h3>
+
+                        <p>
+                            Cross-platform mobile apps.
+                        </p>
+
+                    </div>
+
+
+                    <div class="dashboard-card">
+
+                        <h3>
+                            Cloud
+                        </h3>
+
+                        <p>
+                            Scalable cloud systems.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             6. MAIN + SIDEBAR
+        ================================================== -->
+
+        <section>
+
+            <h2>
+                6. Main Content + Sidebar
+            </h2>
+
+            <div class="layout">
+
+
+                <main class="main-area">
+
+                    <h3>
+                        Main Content
+                    </h3>
+
+                    <br>
+
+                    <div class="layout-card">
+
+                        <div>
+
+                            <h3>
+                                Main Card
+                            </h3>
+
+                            <p>
+                                This card responds to the width
+                                of the main content container.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </main>
+
+
+                <aside class="sidebar">
+
+                    <h3>
+                        Sidebar
+                    </h3>
+
+                    <br>
+
+                    <div class="layout-card">
+
+                        <div>
+
+                            <h3>
+                                Sidebar Card
+                            </h3>
+
+                            <p>
+                                The same component can respond
+                                differently in a narrow sidebar.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </aside>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             7. SUMMARY
+        ================================================== -->
+
+        <section>
+
+            <h2>
+                7. Quick Summary
+            </h2>
+
+            <div class="summary">
+
+                <p>
+                    <strong>container-type:</strong>
+                    Defines an element as a query container.
+                </p>
+
+                <br>
+
+                <p>
+                    <strong>@container:</strong>
+                    Applies CSS based on the size of a
+                    query container.
+                </p>
+
+                <br>
+
+                <p>
+                    <strong>inline-size:</strong>
+                    Allows queries based on the container's
+                    inline dimension.
+                </p>
+
+                <br>
+
+                <p>
+                    <strong>container-name:</strong>
+                    Gives a query container a name.
+                </p>
+
+                <br>
+
+                <p>
+                    <strong>container:</strong>
+                    Shorthand for container name and type.
+                </p>
+
+                <br>
+
+                <p>
+                    <strong>Media Query:</strong>
+                    Responds mainly to the viewport.
+                </p>
+
+                <br>
+
+                <p>
+                    <strong>Container Query:</strong>
+                    Responds to the component's container.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+
+</body>
+
+</html>
