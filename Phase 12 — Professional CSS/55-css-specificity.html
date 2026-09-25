@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Specificity</title>
+
+    <style>
+        /* =====================================================
+           GLOBAL
+        ====================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 40px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        section {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+        }
+
+        .example {
+            padding: 20px;
+            margin-top: 15px;
+            background-color: #eee;
+        }
+
+
+        /* =====================================================
+           1. ELEMENT SELECTOR
+           Specificity: 0-0-0-1
+        ====================================================== */
+
+        .element-example {
+            color: blue;
+        }
+
+
+        /* =====================================================
+           2. CLASS SELECTOR
+           Specificity: 0-0-1-0
+        ====================================================== */
+
+        .class-example {
+            color: green;
+        }
+
+
+        /* =====================================================
+           3. ID SELECTOR
+           Specificity: 0-1-0-0
+        ====================================================== */
+
+        #id-example {
+            color: red;
+        }
+
+
+        /* =====================================================
+           4. MULTIPLE SELECTORS
+        ====================================================== */
+
+        p {
+            color: blue;
+        }
+
+        .specificity-text {
+            color: green;
+        }
+
+        #specificity-text {
+            color: orange;
+        }
+
+
+        /* =====================================================
+           5. COMBINED SPECIFICITY
+        ====================================================== */
+
+        .card p {
+            color: purple;
+        }
+
+        #special-card p {
+            color: brown;
+        }
+
+
+        /* =====================================================
+           6. !IMPORTANT
+        ====================================================== */
+
+        .important-example {
+            color: red !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>CSS Specificity - Xenoriq Labs</h1>
+
+
+        <!-- =================================================
+             1. ELEMENT SELECTOR
+        ================================================== -->
+
+        <section>
+
+            <h2>1. Element Selector</h2>
+
+            <p class="element-example">
+                Element selector specificity example.
+            </p>
+
+            <div class="example">
+
+                <strong>Specificity:</strong>
+
+                <p>
+                    0-0-0-1
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             2. CLASS SELECTOR
+        ================================================== -->
+
+        <section>
+
+            <h2>2. Class Selector</h2>
+
+            <p class="class-example">
+                Class selector has higher specificity than an
+                element selector.
+            </p>
+
+            <div class="example">
+
+                <strong>Specificity:</strong>
+
+                <p>
+                    0-0-1-0
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             3. ID SELECTOR
+        ================================================== -->
+
+        <section>
+
+            <h2>3. ID Selector</h2>
+
+            <p id="id-example">
+                ID selector has higher specificity than a class
+                selector.
+            </p>
+
+            <div class="example">
+
+                <strong>Specificity:</strong>
+
+                <p>
+                    0-1-0-0
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             4. SPECIFICITY CALCULATION
+        ================================================== -->
+
+        <section>
+
+            <h2>4. Specificity Calculation</h2>
+
+            <p id="specificity-text" class="specificity-text">
+                Multiple CSS rules target this paragraph.
+            </p>
+
+            <div class="example">
+
+                <p>
+                    Element:
+                    <strong>0-0-0-1</strong>
+                </p>
+
+                <p>
+                    Class:
+                    <strong>0-0-1-0</strong>
+                </p>
+
+                <p>
+                    ID:
+                    <strong>0-1-0-0</strong>
+                </p>
+
+                <p>
+                    The ID selector wins.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             5. COMBINED SPECIFICITY
+        ================================================== -->
+
+        <section>
+
+            <h2>5. Combined Specificity</h2>
+
+            <div id="special-card" class="card">
+
+                <p>
+                    ID + element selector wins over class +
+                    element selector.
+                </p>
+
+            </div>
+
+            <div class="example">
+
+                <p>
+                    <strong>.card p</strong>
+                </p>
+
+                <p>
+                    Specificity:
+                    <strong>0-0-1-1</strong>
+                </p>
+
+                <br>
+
+                <p>
+                    <strong>#special-card p</strong>
+                </p>
+
+                <p>
+                    Specificity:
+                    <strong>0-1-0-1</strong>
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             6. INLINE STYLE
+        ================================================== -->
+
+        <section>
+
+            <h2>6. Inline Style</h2>
+
+            <p style="color: teal;">
+                This color comes from an inline style.
+            </p>
+
+            <div class="example">
+
+                <p>
+                    Inline styles have higher priority than
+                    normal ID, class, and element selectors.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             7. !IMPORTANT
+        ================================================== -->
+
+        <section>
+
+            <h2>7. !important</h2>
+
+            <p class="important-example">
+                This paragraph uses !important.
+            </p>
+
+            <div class="example">
+
+                <p>
+                    The CSS rule uses:
+                </p>
+
+                <br>
+
+                <code>
+                    color: red !important;
+                </code>
+
+                <p>
+                    This declaration can override normal
+                    specificity rules.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             8. SUMMARY
+        ================================================== -->
+
+        <section>
+
+            <h2>8. Specificity Priority</h2>
+
+            <div class="example">
+
+                <p>1. !important</p>
+
+                <p>2. Inline style</p>
+
+                <p>3. ID selector</p>
+
+                <p>4. Class / Attribute / Pseudo-class</p>
+
+                <p>5. Element / Pseudo-element</p>
+
+                <p>6. Universal selector</p>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</body>
+
+</html>
