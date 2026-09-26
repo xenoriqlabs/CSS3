@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS BEM</title>
+
+    <style>
+        /* =====================================================
+           GLOBAL
+        ====================================================== */
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #222;
+            line-height: 1.6;
+        }
+
+
+        .container {
+            max-width: 1100px;
+            margin-inline: auto;
+            padding: 40px 20px;
+        }
+
+
+        section {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+        }
+
+
+        section>h2 {
+            margin-bottom: 20px;
+        }
+
+
+        .example {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #eeeeee;
+            border-radius: 8px;
+        }
+
+
+        /* =====================================================
+           1. BLOCK
+        ====================================================== */
+
+        .card {
+            padding: 25px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+
+        /* =====================================================
+           2. CARD ELEMENTS
+        ====================================================== */
+
+        .card__image {
+            width: 100%;
+            height: 250px;
+
+            object-fit: cover;
+            display: block;
+
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+
+        .card__title {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+
+        .card__description {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+
+        .card__button {
+            padding: 10px 20px;
+            border: none;
+            background-color: black;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           3. BUTTON BLOCK
+        ====================================================== */
+
+        .button {
+            display: inline-block;
+            padding: 12px 22px;
+
+            border: none;
+            border-radius: 6px;
+            background-color: #222;
+
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+
+        /* =====================================================
+           4. BUTTON MODIFIERS
+        ====================================================== */
+
+        .button--primary {
+            background-color: #0066ff;
+        }
+
+        .button--secondary {
+            background-color: #666;
+        }
+
+        .button--large {
+            padding: 16px 30px;
+            font-size: 18px;
+        }
+
+        .button--small {
+            padding: 7px 14px;
+            font-size: 13px;
+        }
+
+        .button--disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+
+        /* =====================================================
+           5. CARD MODIFIER
+        ====================================================== */
+
+        .card--featured {
+            border: 3px solid #222;
+        }
+
+
+        /* =====================================================
+           6. NAVBAR BLOCK
+        ====================================================== */
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+
+            background-color: #111;
+            border-radius: 8px;
+        }
+
+
+        /* =====================================================
+           NAVBAR ELEMENTS
+        ====================================================== */
+
+        .navbar__logo {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .navbar__links {
+            display: flex;
+            gap: 20px;
+        }
+
+
+        .navbar__link {
+            color: white;
+            text-decoration: none;
+        }
+
+
+        /* =====================================================
+           NAVBAR ELEMENT MODIFIER
+        ====================================================== */
+
+        .navbar__link--active {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+
+        /* =====================================================
+           7. HERO BLOCK
+        ====================================================== */
+
+        .hero {
+            padding: 60px 30px;
+            text-align: center;
+            background-color: #eeeeee;
+            border-radius: 10px;
+        }
+
+        .hero__title {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero__description {
+            max-width: 700px;
+            margin-inline: auto;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .hero__button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: black;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        /* =====================================================
+           8. FORM BLOCK
+        ====================================================== */
+
+        .form {
+            max-width: 600px;
+        }
+
+        .form__group {
+            margin-bottom: 20px;
+        }
+
+        .form__label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        .form__input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form__input--error {
+            border: 2px solid #d00;
+        }
+
+
+        .form__message {
+            margin-top: 5px;
+            color: #d00;
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           9. PRODUCT BLOCK
+        ====================================================== */
+
+        .product {
+            padding: 25px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .product__title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .product__price {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .product__price--sale {
+            color: green;
+        }
+
+        .product__button {
+            padding: 10px 18px;
+            border: none;
+            background-color: black;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>
+            CSS BEM Methodology - Xenoriq Labs
+        </h1>
+
+        <!-- =================================================
+             1. BLOCK
+        ================================================== -->
+
+        <section>
+
+            <h2>
+                1. Block
+            </h2>
+
+            <div class="card">
+
+                <h3>
+                    Xenoriq Labs
+                </h3>
+
+                <p>
+                    The entire card is a BEM Block.
+                </p>
+
+            </div>
+
+            <div class="example">
+
+                <p>
+                    Block:
+                </p>
+
+                <br>
+
+                <code>
+                    .card
+                </code>
+
+                <br><br>
+
+                <p>
+                    A block is an independent component.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- =================================================
+             2. ELEMENT
+        ================================================== -->
+
+        <section>
+
+            <h2>
+                2. Element
+            </h2>
+
+            <article class="card">
+
+                <h3 class="card__title">
+                    Xenoriq Labs
+                </h3>
+
+                <p class="card__description">
+
+                    Building modern software products,
+                    AI solutions, and scalable systems.
+
+                </p>
+
+                <button class="card__button">
+                    Learn More
+                </button>
+
+            </article>
+
+            <div class="example">
+
+                <p>
+                    Elements:
+                </p>
+
+                <br>
+
+                <code>
+                    .card__title
+                </code>
+
+                <br>
+
+                <code>
+                    .card__description
+                </code>
+
+                <br>
+
+                <code>
+                    .card__button
+                </code>
+
+            </div>
+
+        </section>
+
+        <!-- =================================================
+             3. MODIFIER
+        ================================================== -->
+
+        <section>
+
+            <h2>
+                3. Modifier
+            </h2>
+
+            <a href="#" class="button button--primary">
+
+                Primary Button
+
+            </a>
+
+
+            <a href="#" class="button button--secondary">
+
+                Secondary Button
+
+            </a>
+
+
+            <a href="#" class="button button--large">
+
+                Large Button
+
+            </a>
+
+
+            <div class="example">
+
+                <p>
+                    Base block:
+                </p>
+
+                <code>
+                    .button
+                </code>
+
+                <br><br>
+
+                <p>
+                    Modifiers:
+                </p>
+
+                <code>
+                    .button--primary
+                </code>
+
+                <br>
+
+                <code>
+                    .button--secondary
+                </code>
+
+                <br>
+
+                <code>
+                    .button--large
+                </code>
+
+            </div>
+
+        </section>
+
+        <!-- =================================================
+             4. CARD MODIFIER
+        ================================================== -->
+
+        <section>
+
+            <h2>
+                4. Block Modifier
+            </h2>
+
+            <div class="card card--featured">
+
+                <h3 class="card__title">
+                    Featured Card
+                </h3>
+
+                <p class="card__description">
+                    This card uses a modifier.
+                </p>
+
+                <button class="card__button">
+                    View Project
+                </button>
+
+            </div>
+
+            <div class="example">
+
+                <code>
+                    .card
+                </code>
+
+                +
+
+                <code>
+                    .card--featured
+                </code>
+
+                <br><br>
+
+                <p>
+                    The base block provides the normal
+                    card styles, while the modifier changes
+                    the variation.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- =================================================
+             5. NAVBAR
+        ================================================== -->
+
+        <section>
+
+            <h2>
+                5. Navbar BEM Example
+            </h2>
+
+            <nav class="navbar">
+
+                <a href="#" class="navbar__logo">
+
+                    Xenoriq Labs
+
+                </a>
+
+
+                <div class="navbar__links">
+
+                    <a href="#" class="navbar__link navbar__link--active">
+
+                        Home
+
+                    </a>
+
+
+                    <a href="#" class="navbar__link">
+
+                        About
+
+                    </a>
+
+
+                    <a href="#" class="navbar__link">
+
+                        Services
+
+                    </a>
+
+
+                    <a href="#" class="navbar__link">
+
+                        Contact
+
+                    </a>
+
+                </div>
+
+            </nav>
+
+            <div class="example">
+
+                <code>
+                    navbar
+                </code>
+
+                <br>
+
+                <code>
+                    navbar__logo
+                </code>
+
+                <br>
+
+                <code>
+                    navbar__links
+                </code>
+
+                <br>
+
+                <code>
+                    navbar__link
+                </code>
+
+                <br>
+
+                <code>
+                    navbar__link--active
+                </code>
+
+            </div>
+
+        </section>
+
+        <!-- =================================================
+             6. HERO
+        ================================================== -->
+
+        <section>
+
+            <h2>
+                6. Hero BEM Example
+            </h2>
+
+            <div class="hero">
+
+                <h2 class="hero__title">
+                    Build Smart. Innovate Faster.
+                </h2>
+
+                <p class="hero__description">
+
+                    Xenoriq Labs builds modern software,
+                    AI solutions, and scalable digital products.
+
+                </p>
+
+                <a href="#" class="hero__button">
+
+                    Get Started
+
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- =================================================
+             7. FORM
+        ================================================== -->
+
+        <section>
+
+            <h2>
+                7. Form BEM Example
+            </h2>
+
+            <form class="form">
+
+
+                <div class="form__group">
+
+                    <label class="form__label">
+
+                        Name
+
+                    </label>
+
+                    <input type="text" class="form__input" placeholder="Enter your name">
+
+                </div>
+
+
+                <div class="form__group">
+
+                    <label class="form__label">
+
+                        Email
+
+                    </label>
+
+                    <input type="email" class="form__input form__input--error" placeholder="Enter your email">
+
+                    <p class="form__message">
+
+                        Please enter a valid email.
+
+                    </p>
+
+                </div>
+
+                <button type="submit" class="button button--primary">
+
+                    Submit
+
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- =================================================
+             8. PRODUCT
+        ================================================== -->
+
+        <section>
+
+            <h2>
+                8. Product BEM Example
+            </h2>
+
+            <div class="product">
+
+                <h3 class="product__title">
+                    AI Automation System
+                </h3>
+
+                <p class="product__price product__price--sale">
+                    $499
+                </p>
+
+                <button class="product__button">
+                    Buy Now
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- =================================================
+             9. NAMING CONVENTIONS
+        ================================================== -->
+
+        <section>
+
+            <h2>
+                9. BEM Naming Conventions
+            </h2>
+
+            <div class="example">
+
+                <h3>
+                    Block
+                </h3>
+
+                <code>
+                    .card
+                </code>
+
+                <br>
+
+                <code>
+                    .navbar
+                </code>
+
+                <br>
+
+                <code>
+                    .button
+                </code>
+
+                <br><br>
+
+
+                <h3>
+                    Element
+                </h3>
+
+                <code>
+                    .card__title
+                </code>
+
+                <br>
+
+                <code>
+                    .card__description
+                </code>
+
+                <br>
+
+                <code>
+                    .navbar__link
+                </code>
+
+                <br><br>
+
+
+                <h3>
+                    Modifier
+                </h3>
+
+                <code>
+                    .button--primary
+                </code>
+
+                <br>
+
+                <code>
+                    .button--large
+                </code>
+
+                <br>
+
+                <code>
+                    .card--featured
+                </code>
+
+                <br><br>
+
+
+                <h3>
+                    Element Modifier
+                </h3>
+
+                <code>
+                    .navbar__link--active
+                </code>
+
+                <br>
+
+                <code>
+                    .form__input--error
+                </code>
+
+                <br>
+
+                <code>
+                    .product__price--sale
+                </code>
+
+            </div>
+
+        </section>
+
+        <!-- =================================================
+             10. SUMMARY
+        ================================================== -->
+
+        <section>
+
+            <h2>
+                10. Quick Summary
+            </h2>
+
+            <div class="example">
+
+                <p>
+                    <strong>Block:</strong>
+                    Independent component.
+                </p>
+
+                <br>
+
+                <p>
+                    <strong>Element:</strong>
+                    A part of a block.
+                </p>
+
+                <br>
+
+                <p>
+                    <strong>Modifier:</strong>
+                    A variation or state.
+                </p>
+
+                <br>
+
+                <p>
+                    <strong>__</strong>
+                    Separates block and element.
+                </p>
+
+                <br>
+
+                <p>
+                    <strong>--</strong>
+                    Separates block/element and modifier.
+                </p>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</body>
+
+</html>
