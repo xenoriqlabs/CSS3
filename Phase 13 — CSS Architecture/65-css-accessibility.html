@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Accessibility - Xenoriq Labs</title>
+
+    <style>
+        /* =====================================================
+           GLOBAL RESET
+        ====================================================== */
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* =====================================================
+           BASE
+        ====================================================== */
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        a {
+            color: #005fcc;
+        }
+
+        .container {
+            width: min(1100px, 100% - 40px);
+            margin-inline: auto;
+            padding-block: 40px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section__title {
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+
+        .demo-box {
+            padding: 25px;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        /* =====================================================
+           1. FOCUS STATES
+        ====================================================== */
+
+        .button {
+            display: inline-block;
+            padding: 12px 22px;
+            border: 2px solid transparent;
+            border-radius: 6px;
+            background-color: #005fcc;
+            color: #ffffff;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        /*
+           IMPORTANT:
+           Keep a visible focus indicator.
+        */
+
+        .button:focus-visible {
+            outline: 3px solid #111;
+            outline-offset: 4px;
+        }
+
+        .input:focus-visible {
+            outline: 3px solid #005fcc;
+            outline-offset: 2px;
+        }
+
+        /* =====================================================
+           2. CONTRAST
+        ====================================================== */
+
+        .contrast-card {
+            padding: 25px;
+            background-color: #ffffff;
+            color: #222222;
+            border: 1px solid #999;
+            border-radius: 10px;
+        }
+
+        .contrast-card__title {
+            margin-bottom: 10px;
+        }
+
+        .contrast-card__text {
+            color: #555555;
+        }
+
+        .success-message {
+            margin-top: 15px;
+            padding: 12px;
+            background-color: #e8f7ee;
+            color: #14532d;
+            border: 1px solid #86efac;
+            border-radius: 6px;
+        }
+
+        .error-message {
+            margin-top: 15px;
+            padding: 12px;
+            background-color: #fef2f2;
+            color: #991b1b;
+            border: 1px solid #fca5a5;
+            border-radius: 6px;
+        }
+
+        /* =====================================================
+           3. ANIMATION
+        ====================================================== */
+
+        .animated-box {
+            width: 100px;
+            height: 100px;
+            margin: 20px 0;
+            border-radius: 10px;
+            background-color: #005fcc;
+            animation: moveBox 2s infinite alternate;
+        }
+
+        @keyframes moveBox {
+
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(250px);
+            }
+        }
+
+        /* =====================================================
+           REDUCED MOTION
+        ====================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* =====================================================
+           4. ACCESSIBLE FORM
+        ====================================================== */
+
+        .form {
+            max-width: 600px;
+        }
+
+        .form__group {
+            margin-bottom: 20px;
+        }
+
+        .form__label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        .required {
+            color: #b91c1c;
+        }
+
+        .form__input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 2px solid #777;
+            border-radius: 6px;
+            background-color: #ffffff;
+            color: #222;
+        }
+
+        .form__input:focus-visible {
+            outline: 3px solid #005fcc;
+            outline-offset: 2px;
+            border-color: #005fcc;
+        }
+
+        /* =====================================================
+           ERROR INPUT
+        ====================================================== */
+
+        .form__input--error {
+            border-color: #b91c1c;
+        }
+
+        .form__input--error:focus-visible {
+            outline-color: #b91c1c;
+        }
+
+        .form__error {
+            margin-top: 6px;
+            color: #991b1b;
+            font-weight: bold;
+        }
+
+        /* =====================================================
+           CHECKBOX
+        ====================================================== */
+
+        .checkbox {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .checkbox input {
+            width: 18px;
+            height: 18px;
+        }
+
+        .checkbox input:focus-visible {
+            outline: 3px solid #005fcc;
+            outline-offset: 3px;
+        }
+
+        /* =====================================================
+           SKIP LINK
+        ====================================================== */
+
+        .skip-link {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            padding: 10px 15px;
+            background-color: #111;
+            color: #fff;
+            border-radius: 5px;
+            transform: translateY(-150%);
+            z-index: 1000;
+        }
+
+        .skip-link:focus {
+            transform: translateY(0);
+        }
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        .footer {
+            margin-top: 30px;
+            padding: 25px;
+            text-align: center;
+            background-color: #111;
+            color: #fff;
+            border-radius: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- =====================================================
+         SKIP LINK
+    ====================================================== -->
+
+    <a href="#main-content" class="skip-link">
+        Skip to main content
+    </a>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="container">
+
+        <h1>
+            CSS Accessibility - Xenoriq Labs
+        </h1>
+
+        <p>
+            Accessible and user-friendly CSS techniques.
+        </p>
+
+    </header>
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main id="main-content" class="container">
+
+        <!-- =================================================
+             1. FOCUS STATES
+        ================================================== -->
+
+        <section class="section">
+
+            <h2 class="section__title">
+                1. Focus States
+            </h2>
+
+            <div class="demo-box">
+
+                <p>
+                    Press the Tab key to move between
+                    interactive elements.
+                </p>
+
+                <br>
+
+                <a href="#" class="button">
+                    First Link
+                </a>
+
+                <a href="#" class="button">
+                    Second Link
+                </a>
+
+                <button class="button">
+                    Button
+                </button>
+
+                <br><br>
+
+                <p>
+                    The visible outline shows which
+                    element currently has keyboard focus.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- =================================================
+             2. CONTRAST
+        ================================================== -->
+
+        <section class="section">
+
+            <h2 class="section__title">
+                2. Contrast
+            </h2>
+
+            <div class="contrast-card">
+
+                <h3 class="contrast-card__title">
+                    Good Text Contrast
+                </h3>
+
+                <p class="contrast-card__text">
+                    This text uses a dark foreground
+                    against a light background to make
+                    it easier to read.
+                </p>
+
+                <p class="success-message">
+                    ✓ Success: Your account was created.
+                </p>
+
+                <p class="error-message">
+                    ✕ Error: Please check your information.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- =================================================
+             3. REDUCED MOTION
+        ================================================== -->
+
+        <section class="section">
+
+            <h2 class="section__title">
+                3. Reduced Motion
+            </h2>
+
+            <div class="demo-box">
+
+                <p>
+                    This box has an animation.
+                    If your operating system has
+                    "Reduce motion" enabled, the CSS
+                    disables/minimizes the animation.
+                </p>
+
+                <div class="animated-box"></div>
+
+                <code>
+                    @media (prefers-reduced-motion: reduce)
+                </code>
+
+            </div>
+
+        </section>
+
+        <!-- =================================================
+             4. ACCESSIBLE FORM
+        ================================================== -->
+
+        <section class="section">
+
+            <h2 class="section__title">
+                4. Accessible Form
+            </h2>
+
+            <div class="demo-box">
+
+                <form class="form">
+
+                    <!-- NAME -->
+
+                    <div class="form__group">
+
+                        <label for="name" class="form__label">
+                            Name
+                            <span class="required" aria-hidden="true">
+                                *
+                            </span>
+                        </label>
+
+                        <input id="name" name="name" type="text" class="form__input" autocomplete="name" required>
+
+                    </div>
+
+                    <!-- EMAIL -->
+
+                    <div class="form__group">
+
+                        <label for="email" class="form__label">
+                            Email
+                            <span class="required" aria-hidden="true">
+                                *
+                            </span>
+
+                        </label>
+
+                        <input id="email" name="email" type="email" class="form__input" autocomplete="email"
+                            aria-describedby="email-help" required>
+
+                        <p id="email-help">
+                            We'll use your email to contact
+                            you about your request.
+                        </p>
+
+                    </div>
+
+                    <!-- PASSWORD -->
+
+                    <div class="form__group">
+
+                        <label for="password" class="form__label">
+                            Password
+                        </label>
+
+                        <input id="password" name="password" type="password" class="form__input"
+                            autocomplete="new-password">
+                    </div>
+
+                    <!-- ERROR EXAMPLE -->
+
+                    <div class="form__group">
+
+                        <label for="error-email" class="form__label">
+                            Email with Error
+                        </label>
+
+                        <input id="error-email" name="error-email" type="email" class="form__input form__input--error"
+                            aria-invalid="true" aria-describedby="email-error" value="wrong-email">
+
+                        <p id="email-error" class="form__error">
+                            Error: Please enter a valid
+                            email address.
+                        </p>
+
+                    </div>
+
+                    <!-- CHECKBOX -->
+
+                    <div class="checkbox">
+
+                        <input id="terms" name="terms" type="checkbox" required>
+
+                        <label for="terms">
+                            I agree to the terms and
+                            conditions.
+                        </label>
+
+                    </div>
+
+                    <!-- SUBMIT -->
+
+                    <button type="submit" class="button">
+                        Submit Form
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             5. ACCESSIBILITY SUMMARY
+        ================================================== -->
+
+        <section class="section">
+
+            <h2 class="section__title">
+                5. Accessibility Checklist
+            </h2>
+
+            <div class="demo-box">
+
+                <p>
+                    ✓ Keep visible focus states.
+                </p>
+
+                <p>
+                    ✓ Use sufficient color contrast.
+                </p>
+
+                <p>
+                    ✓ Respect prefers-reduced-motion.
+                </p>
+
+                <p>
+                    ✓ Use labels for form inputs.
+                </p>
+
+                <p>
+                    ✓ Connect labels with input IDs.
+                </p>
+
+                <p>
+                    ✓ Clearly show errors.
+                </p>
+
+                <p>
+                    ✓ Don't rely only on color.
+                </p>
+
+                <p>
+                    ✓ Make keyboard navigation possible.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <p>
+            Xenoriq Labs — Accessible Web Development
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
