@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Reset - Xenoriq Labs</title>
+
+    <style>
+        /* =====================================================
+           1. BASIC CSS RESET
+        ====================================================== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* =====================================================
+           2. BASE STYLES
+        ====================================================== */
+
+        html {
+            line-height: 1.5;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #222;
+        }
+
+        /* =====================================================
+           3. MEDIA RESET
+        ====================================================== */
+
+        img,
+        picture,
+        svg,
+        video,
+        canvas {
+            display: block;
+            max-width: 100%;
+        }
+
+        /* =====================================================
+           4. FORM ELEMENTS
+        ====================================================== */
+
+        button,
+        input,
+        textarea,
+        select {
+            font: inherit;
+        }
+
+        /* =====================================================
+           5. LINKS
+        ====================================================== */
+
+        a {
+            color: inherit;
+        }
+
+        /* =====================================================
+           6. HEADINGS
+        ====================================================== */
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font: inherit;
+        }
+
+        /* =====================================================
+           7. LISTS
+        ====================================================== */
+
+        ul,
+        ol {
+            list-style: none;
+        }
+
+        /* =====================================================
+           PAGE STYLES
+        ====================================================== */
+
+        .container {
+            max-width: 1000px;
+            margin-inline: auto;
+            padding-inline: 20px;
+            padding-block: 40px;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        section {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+        }
+
+        .example {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #eeeeee;
+            border-radius: 8px;
+        }
+
+        /* =====================================================
+           8. DEFAULTS DEMO
+        ====================================================== */
+
+        .default-demo {
+            border: 2px solid #333;
+            padding: 20px;
+        }
+
+        .default-demo p {
+            margin-top: 15px;
+        }
+
+        /* =====================================================
+           9. BOX-SIZING DEMO
+        ====================================================== */
+
+        .box-sizing-demo {
+            width: 100%;
+            padding: 20px;
+
+            border: 5px solid #333;
+            background-color: #ddd;
+        }
+
+        /* =====================================================
+           10. IMAGE DEMO
+        ====================================================== */
+
+        .demo-image {
+            width: 500px;
+            height: 300px;
+            object-fit: cover;
+            margin-top: 15px;
+        }
+
+        /* =====================================================
+           11. BUTTON DEMO
+        ====================================================== */
+        .demo-button {
+            padding: 10px 20px;
+
+            border: 2px solid #333;
+            background-color: white;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        /* =====================================================
+           12. LIST DEMO
+        ====================================================== */
+
+        .custom-list {
+            list-style: disc;
+            padding-inline-start: 25px;
+            margin-top: 15px;
+        }
+
+        /* =====================================================
+           13. SUMMARY
+        ====================================================== */
+        .summary {
+            background-color: #eeeeee;
+            padding: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>
+            CSS Reset & Normalize
+        </h1>
+
+        <!-- =================================================
+             1. BROWSER DEFAULTS
+        ================================================== -->
+
+        <section>
+
+            <h2>
+                1. Browser Defaults
+            </h2>
+
+            <div class="default-demo">
+
+                <h3>
+                    Xenoriq Labs
+                </h3>
+
+                <p>
+                    Browsers provide default styles for
+                    HTML elements.
+                </p>
+
+                <p>
+                    CSS resets help us create a predictable
+                    starting point.
+                </p>
+
+            </div>
+
+            <div class="example">
+
+                <p>
+                    Examples of browser defaults include:
+                </p>
+
+                <br>
+
+                <ul class="custom-list">
+
+                    <li>
+                        Heading sizes
+                    </li>
+
+                    <li>
+                        Paragraph margins
+                    </li>
+
+                    <li>
+                        List bullets
+                    </li>
+
+                    <li>
+                        Link colors
+                    </li>
+
+                    <li>
+                        Button appearance
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             2. CSS RESET
+        ================================================== -->
+
+        <section>
+
+            <h2>
+                2. CSS Reset
+            </h2>
+
+            <p>
+                This page uses a custom CSS reset at the
+                beginning of the stylesheet.
+            </p>
+
+            <div class="example">
+
+                <code>
+                    *,
+                    *::before,
+                    *::after {
+                </code>
+
+                <br>
+
+                <code>
+                    &nbsp;&nbsp;&nbsp;&nbsp;margin: 0;
+                </code>
+
+                <br>
+
+                <code>
+                    &nbsp;&nbsp;&nbsp;&nbsp;padding: 0;
+                </code>
+
+                <br>
+
+                <code>
+                    &nbsp;&nbsp;&nbsp;&nbsp;box-sizing: border-box;
+                </code>
+
+                <br>
+
+                <code>
+                    }
+                </code>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             3. BOX SIZING
+        ================================================== -->
+
+        <section>
+
+            <h2>
+                3. box-sizing
+            </h2>
+
+            <div class="box-sizing-demo">
+
+                <h3>
+                    Border Box
+                </h3>
+
+                <p>
+                    The declared width includes padding
+                    and border because the reset uses
+                    box-sizing: border-box.
+                </p>
+
+            </div>
+
+            <div class="example">
+
+                <code>
+                    box-sizing: border-box;
+                </code>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             4. MEDIA ELEMENTS
+        ================================================== -->
+
+        <section>
+
+            <h2>
+                4. Media Elements
+            </h2>
+
+            <p>
+                Images and other media can be made responsive
+                with a common reset rule.
+            </p>
+
+            <img class="demo-image" src="../media/xenoriq-labs-logo.jpeg" alt="Xenoriq Labs">
+
+            <div class="example">
+
+                <code>
+                    img,
+                    picture,
+                    svg,
+                    video,
+                    canvas {
+                </code>
+
+                <br>
+
+                <code>
+                    &nbsp;&nbsp;&nbsp;&nbsp;display: block;
+                </code>
+
+                <br>
+
+                <code>
+                    &nbsp;&nbsp;&nbsp;&nbsp;max-width: 100%;
+                </code>
+
+                <br>
+
+                <code>
+                    }
+                </code>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             5. FORM ELEMENTS
+        ================================================== -->
+
+        <section>
+
+            <h2>
+                5. Form Elements
+            </h2>
+
+            <p>
+                Form elements can inherit the page font
+                using font: inherit.
+            </p>
+
+            <button class="demo-button">
+                Xenoriq Labs
+            </button>
+
+            <div class="example">
+
+                <code>
+                    button,
+                    input,
+                    textarea,
+                    select {
+                </code>
+
+                <br>
+
+                <code>
+                    &nbsp;&nbsp;&nbsp;&nbsp;font: inherit;
+                </code>
+
+                <br>
+
+                <code>
+                    }
+                </code>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             6. RESET VS NORMALIZE
+        ================================================== -->
+
+        <section>
+
+            <h2>
+                6. Reset vs Normalize
+            </h2>
+
+            <div class="example">
+
+                <h3>
+                    CSS Reset
+                </h3>
+
+                <p>
+                    Removes or overrides many browser defaults
+                    to give you a clean starting point.
+                </p>
+
+                <br>
+
+                <h3>
+                    Normalize
+                </h3>
+
+                <p>
+                    Attempts to make useful browser defaults
+                    more consistent across browsers instead
+                    of removing everything.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             7. NORMALIZE CONCEPT
+        ================================================== -->
+
+        <section>
+
+            <h2>
+                7. Normalize Concept
+            </h2>
+
+            <div class="example">
+
+                <p>
+                    The Normalize approach can be thought of
+                    as:
+                </p>
+
+                <br>
+
+                <p>
+                    Browser A → Default styles
+                </p>
+
+                <p>
+                    Browser B → Different defaults
+                </p>
+
+                <p>
+                    Browser C → Different defaults
+                </p>
+
+                <br>
+
+                <p>
+                    ↓
+                </p>
+
+                <br>
+
+                <p>
+                    More consistent baseline
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             8. PRACTICAL RESET
+        ================================================== -->
+
+        <section>
+
+            <h2>
+                8. Practical Modern Reset
+            </h2>
+
+            <div class="example">
+
+                <pre>
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    line-height: 1.5;
+}
+
+body {
+    min-height: 100vh;
+}
+
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+</pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             9. SUMMARY
+        ================================================== -->
+
+        <section>
+
+            <h2>
+                9. Quick Summary
+            </h2>
+
+            <div class="summary">
+
+                <p>
+                    <strong>Browser defaults:</strong>
+                    Built-in styles provided by the browser.
+                </p>
+
+                <br>
+
+                <p>
+                    <strong>CSS reset:</strong>
+                    Removes or overrides many defaults.
+                </p>
+
+                <br>
+
+                <p>
+                    <strong>Normalize:</strong>
+                    Makes browser behavior more consistent
+                    while preserving useful defaults.
+                </p>
+
+                <br>
+
+                <p>
+                    <strong>box-sizing:</strong>
+                    Makes width and height calculations easier
+                    to control.
+                </p>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</body>
+
+</html>
