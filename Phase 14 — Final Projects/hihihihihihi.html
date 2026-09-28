@@ -1,0 +1,239 @@
+<style>
+/* ========================================
+   8. ABOUT SECTION
+======================================== */
+
+.about-section {
+
+    background-color:
+        var(--surface-color);
+
+}
+
+
+/* ========================================
+   SECTION HEADING
+======================================== */
+
+.section-heading {
+
+    max-width: 750px;
+
+    margin-inline: auto;
+
+    margin-bottom: var(--spacing-lg);
+
+    text-align: center;
+
+}
+
+
+.section-label {
+
+    margin-bottom: 0.75rem;
+
+    color: var(--primary-color);
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.1em;
+
+    font-size: 0.85rem;
+
+}
+
+
+.section-heading h2 {
+
+    margin-bottom: var(--spacing-sm);
+
+    font-size: clamp(
+        2rem,
+        5vw,
+        3.5rem
+    );
+
+    line-height: 1.1;
+
+}
+
+
+.section-heading > p:last-child {
+
+    color: var(--muted-color);
+
+}
+
+
+/* ========================================
+   ABOUT GRID
+======================================== */
+
+.about-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    gap: clamp(
+        2rem,
+        5vw,
+        5rem
+    );
+
+    align-items: center;
+
+}
+
+
+/* ========================================
+   ABOUT CONTENT
+======================================== */
+
+.about-content {
+
+    max-width: 600px;
+
+}
+
+
+.about-content h3 {
+
+    margin-bottom: var(--spacing-sm);
+
+    font-size: clamp(
+        1.7rem,
+        4vw,
+        2.5rem
+    );
+
+}
+
+
+.about-content p {
+
+    margin-bottom: var(--spacing-sm);
+
+    color: var(--muted-color);
+
+}
+
+
+.about-content .btn {
+
+    margin-top: 0.5rem;
+
+}
+
+
+/* ========================================
+   FEATURE GRID
+======================================== */
+
+.about-features {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 1rem;
+
+}
+
+
+/* ========================================
+   FEATURE CARD
+======================================== */
+
+.feature-card {
+
+    padding: 1.5rem;
+
+    border:
+        1px solid var(--border-color);
+
+    border-radius:
+        var(--border-radius-md);
+
+    background-color:
+        var(--background-color);
+
+    box-shadow:
+        0 10px 30px
+        rgba(15, 23, 42, 0.05);
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        border-color var(--transition);
+
+}
+
+
+.feature-card:hover {
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        var(--primary-color);
+
+    box-shadow:
+        0 15px 35px
+        rgba(15, 23, 42, 0.10);
+
+}
+
+
+/* ========================================
+   FEATURE ICON
+======================================== */
+
+.feature-icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 50px;
+
+    height: 50px;
+
+    margin-bottom: 1rem;
+
+    border-radius:
+        var(--border-radius-sm);
+
+    background:
+        rgba(37, 99, 235, 0.10);
+
+    font-size: 1.5rem;
+
+}
+
+
+.feature-card h3 {
+
+    margin-bottom: 0.5rem;
+
+    font-size: 1.15rem;
+
+}
+
+
+.feature-card p {
+
+    color: var(--muted-color);
+
+    font-size: 0.95rem;
+
+}
+
+</style>
