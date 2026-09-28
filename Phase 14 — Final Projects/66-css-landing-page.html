@@ -230,10 +230,8 @@
 
         .hero {
             position: relative;
-            min-height: calc(100vh - 70px);
-
-            display: flex;
-            align-items: center;
+            min-height: auto;
+            padding-block: 0;
             overflow: hidden;
 
             background:
@@ -256,7 +254,7 @@
             align-items: center;
             gap: clamp(2rem, 6vw, 5rem);
 
-            padding-block: var(--spacing-xl);
+            padding-block: 5rem;
         }
 
         /* ========================================
@@ -292,6 +290,7 @@
             font-size: clamp(2.8rem, 7vw, 5.5rem);
             line-height: 1.05;
             letter-spacing: -0.04em;
+            white-space: nowrap;
         }
 
         .hero-title span {
@@ -424,7 +423,7 @@
         ======================================== */
 
         .hero-card {
-            width: min(100%, 500px);
+            width: min(100%, 400px);
             overflow: hidden;
             border: 1px solid var(--border-color);
             border-radius: var(--border-radius-sm);
@@ -450,7 +449,7 @@
             CARD HEADER
         ======================================== */
 
-        .hero-card-header{
+        .hero-card-header {
             display: flex;
             align-items: center;
             gap: 0.6rem;
@@ -462,7 +461,59 @@
             font-weight: 600px;
         }
 
-        
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #22c55e;
+        }
+
+        /* ========================================
+            CODE AREA
+        ======================================== */
+
+        .hero-code {
+            padding: 2rem 1.5em;
+            overflow-x: auto;
+            font-family: "Courier New", monospace;
+            line-height: 2;
+        }
+
+        .hero-code p {
+            white-space: nowrap;
+        }
+
+        .code-blue {
+            color: #60a5fa;
+        }
+
+        .code-green {
+            color: #4ade80;
+        }
+
+        .code-comment {
+            color: #94a3b8;
+        }
+
+        /* ========================================
+             CARD FOOTER
+        ======================================== */
+
+        .hero-card-footer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            padding: 1rem 1.2rem;
+
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-card-footer span {
+            padding: 0.35rem 0.7rem;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.08);
+            font-size: 0.8rem;
+        }
     </style>
 </head>
 
@@ -597,7 +648,7 @@
 
                     </div>
 
-                    <div class="hero-card-code">
+                    <div class="hero-code">
 
                         <p>
                             <span class="code-blue">
@@ -658,6 +709,7 @@
         </div>
 
     </section>
+
 
 </body>
 
