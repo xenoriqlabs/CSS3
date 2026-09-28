@@ -647,6 +647,156 @@
             color: var(--muted-color);
             font-size: 0.95rem;
         }
+
+        /* ========================================
+                9. SERVICES SECTION
+            ======================================== */
+
+        .service-section {
+            background-color: var(--background-color);
+        }
+
+        /* ========================================
+                SERVICES GRID
+            ======================================== */
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 0.5rem;
+        }
+
+        /* ========================================
+            SERVICE CARD
+        ======================================== */
+
+        .service-card {
+            position: relative;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-md);
+            background-color: var(--background-color);
+
+            box-shadow:
+                0 10px 30px rgba(15, 23, 42, 0.05);
+
+            overflow: hidden;
+
+            transition:
+                transform 0.35s ease-in-out,
+                box-shadow 0.35s ease-in-out,
+                boder-color 0.35 ease-in-out;
+        }
+
+        /* ========================================
+            CARD TOP BORDER EFFECT
+        ======================================== */
+
+        .service-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+
+            background: linear-gradient(90deg,
+                    var(--primary-color),
+                    var(--secondary-color));
+
+            transform: scaleX(0);
+
+            transform-origin: left;
+
+            transition: transform 0.35s ease-in-out;
+        }
+
+        /* ========================================
+            CARD HOVER
+        ======================================== */
+
+        .service-card:hover {
+            transform: translateY(-8x);
+
+            border-color: rgba(37, 99, 235, 0.35);
+
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        /* ========================================
+            SERVICE ICON
+        ======================================== */
+
+        .service-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1.5rem;
+
+            border-radius: var(--border-radius-md);
+            background-color: rgba(37, 99, 235, 0.10);
+
+            font-size: 1.7rem;
+
+            transition:
+                transform 0.35s ease,
+                background-color 0.35s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(-5deg);
+
+            background-color: rgba(124, 58, 237, 0.12);
+        }
+
+        /* ========================================
+            SERVICE TITLE
+        ======================================== */
+
+        .service-card h3 {
+            margin-bottom: 0.75rem;
+            font-size: 1.3rem;
+        }
+
+        /* ========================================
+            SERVICE DESCRIPTION
+        ======================================== */
+
+        .service-card p {
+            margin-bottom: 1.5rem;
+
+            color:
+                var(--muted-color);
+
+            font-size: 0.95rem;
+        }
+
+        /* ========================================
+            SERVICE LINK
+        ======================================== */
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+
+            color: var(--primary-color);
+            font-weight: 600;
+
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .service-link:hover {
+            color: var(--secondary-color);
+
+            transform: translateX(5px);
+        }
     </style>
 </head>
 
@@ -977,6 +1127,149 @@
                         </div>
 
                     </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ========================================
+            SERVICES SECTION
+        ======================================== -->
+
+        <section id="services" class="services-section">
+
+            <div class="container">
+
+                <!-- Section Heading -->
+
+                <div class="section-heading">
+
+                    <p class="section-lable">
+                        Our Services
+                    </p>
+
+                    <h2>
+                        Technology Solutions
+                        For Modern Businesses
+                    </h2>
+
+                    <p>
+                        We create modern, scalable, and
+                        intelligent digital solutions designed
+                        to solve real business problems.
+                    </p>
+
+                </div>
+
+                <!-- Services Grid -->
+
+                <div class="service-grid">
+
+                    <!-- Service 1 -->
+
+                    <article class="service-card">
+
+                        <div class="service-icon">
+                            💻
+                        </div>
+
+                        <h3>
+                            Web Development
+                        </h3>
+
+                        <p>
+                            Build fast, responsive, and modern
+                            websites and web applications using
+                            modern development technologies.
+                        </p>
+
+                        <a href="#contact" class="service-link">
+                            Learn More →
+                        </a>
+
+                    </article>
+
+                    <!-- Service 2 -->
+
+                    <article class="service-card">
+
+                        <div class="service-icon">
+                            ⚡
+                        </div>
+
+                        <h3>
+                            MERN Stack
+                        </h3>
+
+                        <p>
+
+                            Develop powerful full-stack
+                            applications using MongoDB,
+                            Express.js, React, and Node.js.
+
+                        </p>
+
+                        <a href="#contact" class="service-link">
+                            Learn More →
+                        </a>
+
+                    </article>
+
+
+                    <!-- Service 3 -->
+
+                    <article class="service-card">
+
+                        <div class="service-icon">
+                            🤖
+                        </div>
+
+                        <h3>
+                            AI & ML
+                        </h3>
+
+                        <p>
+
+                            Integrate artificial intelligence
+                            and machine learning into applications
+                            and business workflows.
+
+                        </p>
+
+                        <a href="#contact" class="service-link">
+                            Learn More →
+                        </a>
+
+                    </article>
+
+
+                    <!-- Service 4 -->
+
+                    <article class="service-card">
+
+                        <div class="service-icon">
+                            📱
+                        </div>
+
+                        <h3>
+                            Flutter App Development
+                        </h3>
+
+                        <p>
+
+                            Create modern cross-platform mobile
+                            applications with beautiful interfaces
+                            and smooth user experiences.
+
+                        </p>
+
+                        <a href="#contact" class="service-link">
+                            Learn More →
+                        </a>
+
+                    </article>
 
                 </div>
 
