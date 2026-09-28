@@ -1,239 +1,380 @@
+```html
+<!-- ========================================
+     SERVICES SECTION
+======================================== -->
+
+<section id="services" class="services-section">
+
+    <div class="container">
+
+
+        <!-- Section Heading -->
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                Our Services
+            </p>
+
+            <h2>
+                Technology Solutions
+                For Modern Businesses
+            </h2>
+
+            <p>
+
+                We create modern, scalable, and
+                intelligent digital solutions designed
+                to solve real business problems.
+
+            </p>
+
+        </div>
+
+
+        <!-- Services Grid -->
+
+        <div class="services-grid">
+
+
+            <!-- Service 1 -->
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    💻
+                </div>
+
+                <h3>
+                    Web Development
+                </h3>
+
+                <p>
+
+                    Build fast, responsive, and modern
+                    websites and web applications using
+                    modern development technologies.
+
+                </p>
+
+                <a href="#contact" class="service-link">
+                    Learn More →
+                </a>
+
+            </article>
+
+
+            <!-- Service 2 -->
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    MERN Stack
+                </h3>
+
+                <p>
+
+                    Develop powerful full-stack
+                    applications using MongoDB,
+                    Express.js, React, and Node.js.
+
+                </p>
+
+                <a href="#contact" class="service-link">
+                    Learn More →
+                </a>
+
+            </article>
+
+
+            <!-- Service 3 -->
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    🤖
+                </div>
+
+                <h3>
+                    AI & ML
+                </h3>
+
+                <p>
+
+                    Integrate artificial intelligence
+                    and machine learning into applications
+                    and business workflows.
+
+                </p>
+
+                <a href="#contact" class="service-link">
+                    Learn More →
+                </a>
+
+            </article>
+
+
+            <!-- Service 4 -->
+
+            <article class="service-card">
+
+                <div class="service-icon">
+                    📱
+                </div>
+
+                <h3>
+                    Flutter App Development
+                </h3>
+
+                <p>
+
+                    Create modern cross-platform mobile
+                    applications with beautiful interfaces
+                    and smooth user experiences.
+
+                </p>
+
+                <a href="#contact" class="service-link">
+                    Learn More →
+                </a>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
 <style>
-/* ========================================
-   8. ABOUT SECTION
+    /* ========================================
+   9. SERVICES SECTION
 ======================================== */
 
-.about-section {
+    .services-section {
 
-    background-color:
-        var(--surface-color);
+        background-color:
+            var(--background-color);
 
-}
+    }
 
 
-/* ========================================
-   SECTION HEADING
+    /* ========================================
+   SERVICES GRID
 ======================================== */
 
-.section-heading {
+    .services-grid {
 
-    max-width: 750px;
+        display: grid;
 
-    margin-inline: auto;
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
 
-    margin-bottom: var(--spacing-lg);
+        gap: 1.5rem;
 
-    text-align: center;
-
-}
-
-
-.section-label {
-
-    margin-bottom: 0.75rem;
-
-    color: var(--primary-color);
-
-    font-weight: 700;
-
-    text-transform: uppercase;
-
-    letter-spacing: 0.1em;
-
-    font-size: 0.85rem;
-
-}
+    }
 
 
-.section-heading h2 {
-
-    margin-bottom: var(--spacing-sm);
-
-    font-size: clamp(
-        2rem,
-        5vw,
-        3.5rem
-    );
-
-    line-height: 1.1;
-
-}
-
-
-.section-heading > p:last-child {
-
-    color: var(--muted-color);
-
-}
-
-
-/* ========================================
-   ABOUT GRID
+    /* ========================================
+   SERVICE CARD
 ======================================== */
 
-.about-grid {
+    .service-card {
 
-    display: grid;
+        position: relative;
 
-    grid-template-columns:
-        minmax(0, 1fr)
-        minmax(0, 1fr);
+        padding: 2rem;
 
-    gap: clamp(
-        2rem,
-        5vw,
-        5rem
-    );
+        border:
+            1px solid var(--border-color);
 
-    align-items: center;
+        border-radius:
+            var(--border-radius-md);
 
-}
+        background-color:
+            var(--background-color);
+
+        box-shadow:
+            0 10px 30px rgba(15, 23, 42, 0.05);
+
+        overflow: hidden;
+
+        transition:
+            transform 0.35s ease,
+            box-shadow 0.35s ease,
+            border-color 0.35s ease;
+
+    }
 
 
-/* ========================================
-   ABOUT CONTENT
+    /* ========================================
+   CARD TOP BORDER EFFECT
 ======================================== */
 
-.about-content {
+    .service-card::before {
 
-    max-width: 600px;
+        content: "";
 
-}
+        position: absolute;
 
+        top: 0;
 
-.about-content h3 {
+        left: 0;
 
-    margin-bottom: var(--spacing-sm);
+        width: 100%;
 
-    font-size: clamp(
-        1.7rem,
-        4vw,
-        2.5rem
-    );
+        height: 4px;
 
-}
+        background:
+            linear-gradient(90deg,
+                var(--primary-color),
+                var(--secondary-color));
 
+        transform:
+            scaleX(0);
 
-.about-content p {
+        transform-origin:
+            left;
 
-    margin-bottom: var(--spacing-sm);
+        transition:
+            transform 0.35s ease;
 
-    color: var(--muted-color);
-
-}
-
-
-.about-content .btn {
-
-    margin-top: 0.5rem;
-
-}
+    }
 
 
-/* ========================================
-   FEATURE GRID
+    /* ========================================
+   CARD HOVER
 ======================================== */
 
-.about-features {
+    .service-card:hover {
 
-    display: grid;
+        transform:
+            translateY(-8px);
 
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+        border-color:
+            rgba(37, 99, 235, 0.35);
 
-    gap: 1rem;
+        box-shadow:
+            0 20px 40px rgba(15, 23, 42, 0.12);
 
-}
+    }
 
 
-/* ========================================
-   FEATURE CARD
+    .service-card:hover::before {
+
+        transform:
+            scaleX(1);
+
+    }
+
+
+    /* ========================================
+   SERVICE ICON
 ======================================== */
 
-.feature-card {
+    .service-icon {
 
-    padding: 1.5rem;
+        display: flex;
 
-    border:
-        1px solid var(--border-color);
+        align-items: center;
 
-    border-radius:
-        var(--border-radius-md);
+        justify-content: center;
 
-    background-color:
-        var(--background-color);
+        width: 60px;
 
-    box-shadow:
-        0 10px 30px
-        rgba(15, 23, 42, 0.05);
+        height: 60px;
 
-    transition:
-        transform var(--transition),
-        box-shadow var(--transition),
-        border-color var(--transition);
+        margin-bottom: 1.5rem;
 
-}
+        border-radius:
+            var(--border-radius-md);
 
+        background:
+            rgba(37, 99, 235, 0.10);
 
-.feature-card:hover {
+        font-size: 1.7rem;
 
-    transform:
-        translateY(-6px);
+        transition:
+            transform 0.35s ease,
+            background-color 0.35s ease;
 
-    border-color:
-        var(--primary-color);
-
-    box-shadow:
-        0 15px 35px
-        rgba(15, 23, 42, 0.10);
-
-}
+    }
 
 
-/* ========================================
-   FEATURE ICON
+    .service-card:hover .service-icon {
+
+        transform:
+            scale(1.1) rotate(-5deg);
+
+        background:
+            rgba(124, 58, 237, 0.12);
+
+    }
+
+
+    /* ========================================
+   SERVICE TITLE
 ======================================== */
 
-.feature-icon {
+    .service-card h3 {
 
-    display: flex;
+        margin-bottom: 0.75rem;
 
-    align-items: center;
+        font-size: 1.3rem;
 
-    justify-content: center;
-
-    width: 50px;
-
-    height: 50px;
-
-    margin-bottom: 1rem;
-
-    border-radius:
-        var(--border-radius-sm);
-
-    background:
-        rgba(37, 99, 235, 0.10);
-
-    font-size: 1.5rem;
-
-}
+    }
 
 
-.feature-card h3 {
+    /* ========================================
+   SERVICE DESCRIPTION
+======================================== */
 
-    margin-bottom: 0.5rem;
+    .service-card p {
 
-    font-size: 1.15rem;
+        margin-bottom: 1.5rem;
 
-}
+        color:
+            var(--muted-color);
+
+        font-size: 0.95rem;
+
+    }
 
 
-.feature-card p {
+    /* ========================================
+   SERVICE LINK
+======================================== */
 
-    color: var(--muted-color);
+    .service-link {
 
-    font-size: 0.95rem;
+        display: inline-flex;
 
-}
+        align-items: center;
 
+        color:
+            var(--primary-color);
+
+        font-weight: 600;
+
+        transition:
+            color 0.3s ease,
+            transform 0.3s ease;
+
+    }
+
+
+    .service-link:hover {
+
+        color:
+            var(--secondary-color);
+
+        transform:
+            translateX(5px);
+
+    }
 </style>
