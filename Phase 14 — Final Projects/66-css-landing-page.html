@@ -28,7 +28,7 @@
 
             --white-color: #ffffff;
 
-            --conatainer-width: 1200px;
+            --container-width: 1200px;
 
             --spacing-xs: 0.5rem;
             --spacing-sm: 1rem;
@@ -83,64 +83,582 @@
             font: inherit;
         }
 
-                /* ========================================
+        /* ========================================
            3. CONTAINER
+           1rem = 16px
         ======================================== */
 
-        .conatiner{
-            width: min(100% - 2rem, var(--conatainer-width));
+        .container {
+            width: min(100% - 2rem, var(--container-width));
             margin-inline: auto;
         }
 
-                /* ========================================
+        /* ========================================
            4. BASIC SECTION
         ======================================== */
 
-        section{
+        section {
             padding-block: var(--spacing-xl);
         }
 
-                /* ========================================
+        /* ========================================
            5. TEST HEADING
+           font-size: clamp(MINIMUM, PREFERRED, MAXIMUM);
         ======================================== */
 
-        .section-title{
+        .section-title {
             text-align: center;
             font-size: clamp(2rem, 5vw, 3rem);
             margin-bottom: var(--spacing-md);
         }
 
-        .section-description{
+        .section-description {
             max-width: 700px;
             margin-inline: auto;
             text-align: center;
             color: var(--muted-color);
         }
+
+        /* ========================================
+            6. NAVBAR
+        ======================================== */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background-color: var(--background-color);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .navbar-container {
+            min-height: 70px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            gap: var(--spacing-md);
+        }
+
+        /* ========================================
+            LOGO
+        ======================================== */
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-color);
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        /* ========================================
+            NAVIGATION
+        ======================================== */
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            position: relative;
+            color: var(--text-color);
+            font-weight: 500;
+
+            transition: color var(--transition);
+        }
+
+        /* ========================================
+            NAV LINK HOVER
+        ======================================== */
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Underline effect */
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+
+            background-color: var(--primary-color);
+            transition: width var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* ========================================
+            NAVBAR BUTTON
+        ======================================== */
+
+        .nav-button {
+            display: inline-block;
+            padding: 0.6rem 1.1rem;
+
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border-radius: var(--border-radius-sm);
+            font-weight: 500;
+
+            transition: background-color var(--transition) transform var(--transition);
+        }
+
+        .nav-button:hover {
+            background-color: var(--secondary-color);
+            transform: translate(-2px);
+        }
+
+        /* ========================================
+            7. HERO SECTION
+        ======================================== */
+
+        .hero {
+            position: relative;
+            min-height: calc(100vh - 70px);
+
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+
+            background:
+                radial-gradient(circle at 10% 20%,
+                    rgba(37, 99, 235, 0.10),
+                    transparent 30%),
+                radial-gradient(circle at 90% 80%,
+                    rgba(124, 58, 237, 0.10),
+                    transparent 30%);
+        }
+
+        /* ========================================
+            HERO CONTAINER
+        ======================================== */
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+
+            align-items: center;
+            gap: clamp(2rem, 6vw, 5rem);
+
+            padding-block: var(--spacing-xl);
+        }
+
+        /* ========================================
+            HERO CONTENT
+        ======================================== */
+
+        .hero-content {
+
+            max-width: 700px;
+
+        }
+
+        .hero-subtitle {
+            display: inline-block;
+            margin-bottom: var(--spacing-sm);
+            padding: 0.5rem 1rem;
+
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            background-color: var(--surface-color);
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+
+        /* ========================================
+            HERO TITLE
+        ======================================== */
+
+        .hero-title {
+            margin-bottom: var(--spacing-md);
+            font-size: clamp(2.8rem, 7vw, 5.5rem);
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+        }
+
+        .hero-title span {
+            display: block;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* ========================================
+            HERO DESCRIPTION
+        ======================================== */
+
+        .hero-description {
+            max-width: 650px;
+            margin-bottom: var(--spacing-md);
+            color: var(--muted-color);
+            font-size: clamp(1rem, 2vw, 1.2rem);
+        }
+
+        /* ========================================
+            HERO BUTTONS
+        ======================================== */
+
+        .hero-buttons {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 1rem;
+
+        }
+
+        /* ========================================
+            BUTTON
+        ======================================== */
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 50px;
+
+            padding:
+                0.8rem 1.5rem;
+
+            border:
+                2px solid transparent;
+
+            border-radius:
+                var(--border-radius-sm);
+
+            font-weight: 600;
+
+            transition:
+                transform var(--transition),
+                background-color var(--transition),
+                color var(--transition),
+                border-color var(--transition);
+        }
+
+        .btn:hover {
+
+            transform:
+                translateY(-3px);
+
+        }
+
+        /* Primary button */
+
+        .btn-primary {
+
+            background-color:
+                var(--primary-color);
+
+            color:
+                var(--white-color);
+
+        }
+
+
+        .btn-primary:hover {
+
+            background-color:
+                var(--secondary-color);
+
+        }
+
+
+        /* Secondary button */
+
+        .btn-secondary {
+
+            border-color:
+                var(--border-color);
+
+            background-color:
+                var(--background-color);
+
+            color:
+                var(--text-color);
+
+        }
+
+
+        .btn-secondary:hover {
+
+            border-color:
+                var(--primary-color);
+
+            color:
+                var(--primary-color);
+
+        }
+
+        /* ========================================
+            HERO VISUAL
+        ======================================== */
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* ========================================
+            HERO CARD
+        ======================================== */
+
+        .hero-card {
+            width: min(100%, 500px);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-sm);
+            background: #0f172a;
+            color: var(--white-color);
+
+            box-shadow: 0 30px 80px rgba(15, 23, 42, 0.20);
+
+            transform: rotate(2deg);
+
+            transition: transform var(--transition);
+        }
+
+
+        .hero-card:hover {
+
+            transform:
+                rotate(0deg) translateY(-8px);
+
+        }
+
+        /* ========================================
+            CARD HEADER
+        ======================================== */
+
+        .hero-card-header{
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+
+            padding: 1rem 1.2rem;
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+            font-weight: 600px;
+        }
+
+        
     </style>
 </head>
 
 <body>
 
     <!-- ========================================
-         MAIN CONTENT
+                HEADER
     ======================================== -->
 
-    <main>
-        <section>
-            <div class="container">
+    <header class="navbar">
 
-                <h1 class="section-title">
-                    Welcome to Xenoriq Labs 🚀
+        <div class="container navbar-container">
+
+            <!-- Logo -->
+
+            <a href="#" class="logo">
+                Xenoriq <span>Labs</span>
+            </a>
+
+            <!-- Navigation -->
+
+            <nav aria-label="Main Navigation">
+
+                <ul class="nav-links">
+
+                    <li>
+                        <a href="#home">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#about">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#services">
+                            Services
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#projects">
+                            Projects
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#contact">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+            <!-- CTA Button -->
+
+            <a href="#contact" class="nav-button">
+                Get Started
+            </a>
+
+        </div>
+
+    </header>
+
+    <!-- ========================================
+            HERO SECTION      
+    ======================================== -->
+
+    <section id="home" class="hero">
+
+        <div class="container hero-container">
+
+            <!-- ==================================
+                    HERO CONTENT
+            ================================== -->
+
+            <div class="hero-content">
+
+                <p class="hero-subtitle">
+                    🚀 Welcome to Xenoriq Labs
+                </p>
+
+                <h1 class="hero-title">
+                    Turning Ideas Into
+                    <span>Technology</span>
                 </h1>
 
-                <p class="section-description">
+                <p class="hero-description">
                     We build modern web applications,
                     smart AI solutions, and scalable
-                    digital products.
+                    digital products that help businesses
+                    grow faster.
                 </p>
+
+                <!-- ==================================
+                        HERO BUTTONS
+                ================================== -->
+
+                <div class="hero-buttons">
+                    <a href="#services" class="btn btn-primary">
+                        Explore Services
+                    </a>
+
+                    <a href="#projects" class="btn btn-secondary">
+                        View Projects
+                    </a>
+
+                </div>
+
             </div>
-        </section>
-    </main>
+
+            <!-- ==================================
+                    HERO VISUAL
+            ================================== -->
+
+            <div class="hero-visual">
+
+                <div class="hero-card">
+
+                    <div class="hero-card-header">
+
+                        <span class="status-dot"></span>
+
+                        <span>
+                            Xenoriq Labs
+                        </span>
+
+                    </div>
+
+                    <div class="hero-card-code">
+
+                        <p>
+                            <span class="code-blue">
+                                const
+                            </span>
+                            company =
+                            <span class="code-green">
+                                "Xenoriq Labs";
+                            </span>
+                        </p>
+
+                        <p>
+                            <span class="code-blue">
+                                const
+                            </span>
+                            mission =
+                            <span class="code-green">
+                                "Build Smart";
+                            </span>
+                        </p>
+
+                        <p>
+                            <span class="code-blue">
+                                const
+                            </span>
+                            future =
+                            <span class="code-green">
+                                "Innovate";
+                            </span>
+                        </p>
+
+                        <p class="code-comment">
+                            // Turning ideas into technology 🚀
+                        </p>
+
+                    </div>
+
+                    <div class="hero-card-footer">
+
+                        <span>
+                            AI
+                        </span>
+
+                        <span>
+                            Web
+                        </span>
+
+                        <span>
+                            Software
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
 </body>
 
 </html>
