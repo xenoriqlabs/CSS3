@@ -1,9 +1,8 @@
-```html
 <!-- ========================================
-     SERVICES SECTION
+     PROJECTS SECTION
 ======================================== -->
 
-<section id="services" class="services-section">
+<section id="projects" class="projects-section">
 
     <div class="container">
 
@@ -13,134 +12,175 @@
         <div class="section-heading">
 
             <p class="section-label">
-                Our Services
+                Our Projects
             </p>
 
             <h2>
-                Technology Solutions
-                For Modern Businesses
+                Ideas We Turned Into
+                Digital Products
             </h2>
 
             <p>
 
-                We create modern, scalable, and
-                intelligent digital solutions designed
-                to solve real business problems.
+                Explore some of the digital experiences
+                and solutions we build using modern
+                technologies.
 
             </p>
 
         </div>
 
 
-        <!-- Services Grid -->
+        <!-- Projects Grid -->
 
-        <div class="services-grid">
+        <div class="projects-grid">
 
 
-            <!-- Service 1 -->
+            <!-- ==================================
+                 PROJECT 1
+            ================================== -->
 
-            <article class="service-card">
+            <article class="project-card">
 
-                <div class="service-icon">
-                    💻
+
+                <!-- Project Image -->
+
+                <div class="project-image">
+
+                    <img
+                        src="../media/project-1.jpg"
+                        alt="Modern web application project"
+                    >
+
+                    <span class="project-category">
+                        Web Development
+                    </span>
+
                 </div>
 
-                <h3>
-                    Web Development
-                </h3>
 
-                <p>
+                <!-- Project Content -->
 
-                    Build fast, responsive, and modern
-                    websites and web applications using
-                    modern development technologies.
+                <div class="project-content">
 
-                </p>
+                    <h3>
+                        Modern Business Platform
+                    </h3>
 
-                <a href="#contact" class="service-link">
-                    Learn More →
-                </a>
+                    <p>
+
+                        A responsive and scalable web
+                        application designed to provide
+                        businesses with a modern digital
+                        experience.
+
+                    </p>
+
+
+                    <a
+                        href="#contact"
+                        class="project-link"
+                    >
+                        View Project →
+                    </a>
+
+                </div>
 
             </article>
 
 
-            <!-- Service 2 -->
+            <!-- ==================================
+                 PROJECT 2
+            ================================== -->
 
-            <article class="service-card">
+            <article class="project-card">
 
-                <div class="service-icon">
-                    ⚡
+
+                <div class="project-image">
+
+                    <img
+                        src="../media/project-2.jpg"
+                        alt="AI powered application project"
+                    >
+
+                    <span class="project-category">
+                        AI & ML
+                    </span>
+
                 </div>
 
-                <h3>
-                    MERN Stack
-                </h3>
 
-                <p>
+                <div class="project-content">
 
-                    Develop powerful full-stack
-                    applications using MongoDB,
-                    Express.js, React, and Node.js.
+                    <h3>
+                        AI Automation System
+                    </h3>
 
-                </p>
+                    <p>
 
-                <a href="#contact" class="service-link">
-                    Learn More →
-                </a>
+                        An intelligent automation solution
+                        designed to simplify repetitive
+                        business workflows using AI.
+
+                    </p>
+
+
+                    <a
+                        href="#contact"
+                        class="project-link"
+                    >
+                        View Project →
+                    </a>
+
+                </div>
 
             </article>
 
 
-            <!-- Service 3 -->
+            <!-- ==================================
+                 PROJECT 3
+            ================================== -->
 
-            <article class="service-card">
+            <article class="project-card">
 
-                <div class="service-icon">
-                    🤖
+
+                <div class="project-image">
+
+                    <img
+                        src="../media/project-3.jpg"
+                        alt="Mobile application project"
+                    >
+
+                    <span class="project-category">
+                        Mobile App
+                    </span>
+
                 </div>
 
-                <h3>
-                    AI & ML
-                </h3>
 
-                <p>
+                <div class="project-content">
 
-                    Integrate artificial intelligence
-                    and machine learning into applications
-                    and business workflows.
+                    <h3>
+                        Cross-Platform Mobile App
+                    </h3>
 
-                </p>
+                    <p>
 
-                <a href="#contact" class="service-link">
-                    Learn More →
-                </a>
+                        A modern mobile application built
+                        for a smooth experience across
+                        different devices and platforms.
 
-            </article>
+                    </p>
 
 
-            <!-- Service 4 -->
+                    <a
+                        href="#contact"
+                        class="project-link"
+                    >
+                        View Project →
+                    </a>
 
-            <article class="service-card">
-
-                <div class="service-icon">
-                    📱
                 </div>
-
-                <h3>
-                    Flutter App Development
-                </h3>
-
-                <p>
-
-                    Create modern cross-platform mobile
-                    applications with beautiful interfaces
-                    and smooth user experiences.
-
-                </p>
-
-                <a href="#contact" class="service-link">
-                    Learn More →
-                </a>
 
             </article>
 
@@ -151,286 +191,221 @@
 
 </section>
 
+
 <style>
-    /* ========================================
-   9. SERVICES SECTION
+/* ========================================
+   10. PROJECTS SECTION
 ======================================== */
 
-    .services-section {
+.projects-section {
 
-        background-color:
-            var(--background-color);
+    background-color:
+        var(--surface-color);
 
-    }
+}
 
 
-    /* ========================================
-   SERVICES GRID
+/* ========================================
+   PROJECTS GRID
 ======================================== */
 
-    .services-grid {
+.projects-grid {
 
-        display: grid;
+    display: grid;
 
-        grid-template-columns:
-            repeat(4, minmax(0, 1fr));
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
 
-        gap: 1.5rem;
+    gap: 1.5rem;
 
-    }
+}
 
 
-    /* ========================================
-   SERVICE CARD
+/* ========================================
+   PROJECT CARD
 ======================================== */
 
-    .service-card {
+.project-card {
 
-        position: relative;
+    overflow: hidden;
 
-        padding: 2rem;
+    border:
+        1px solid var(--border-color);
 
-        border:
-            1px solid var(--border-color);
+    border-radius:
+        var(--border-radius-md);
 
-        border-radius:
-            var(--border-radius-md);
+    background-color:
+        var(--background-color);
 
-        background-color:
-            var(--background-color);
+    box-shadow:
+        0 10px 30px
+        rgba(15, 23, 42, 0.05);
 
-        box-shadow:
-            0 10px 30px rgba(15, 23, 42, 0.05);
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
 
-        overflow: hidden;
-
-        transition:
-            transform 0.35s ease,
-            box-shadow 0.35s ease,
-            border-color 0.35s ease;
-
-    }
+}
 
 
-    /* ========================================
-   CARD TOP BORDER EFFECT
+.project-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 20px 45px
+        rgba(15, 23, 42, 0.12);
+
+}
+
+
+/* ========================================
+   PROJECT IMAGE
 ======================================== */
 
-    .service-card::before {
+.project-image {
 
-        content: "";
+    position: relative;
 
-        position: absolute;
+    overflow: hidden;
 
-        top: 0;
+    aspect-ratio: 16 / 10;
 
-        left: 0;
-
-        width: 100%;
-
-        height: 4px;
-
-        background:
-            linear-gradient(90deg,
-                var(--primary-color),
-                var(--secondary-color));
-
-        transform:
-            scaleX(0);
-
-        transform-origin:
-            left;
-
-        transition:
-            transform 0.35s ease;
-
-    }
+}
 
 
-    /* ========================================
-   CARD HOVER
+.project-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.5s ease;
+
+}
+
+
+/* Image zoom */
+
+.project-card:hover
+.project-image img {
+
+    transform:
+        scale(1.08);
+
+}
+
+
+/* ========================================
+   PROJECT CATEGORY
 ======================================== */
 
-    .service-card:hover {
+.project-category {
 
-        transform:
-            translateY(-8px);
+    position: absolute;
 
-        border-color:
-            rgba(37, 99, 235, 0.35);
+    top: 1rem;
 
-        box-shadow:
-            0 20px 40px rgba(15, 23, 42, 0.12);
+    left: 1rem;
 
-    }
+    padding:
+        0.4rem 0.8rem;
+
+    border-radius:
+        50px;
+
+    background-color:
+        rgba(15, 23, 42, 0.85);
+
+    color:
+        var(--white-color);
+
+    font-size:
+        0.8rem;
+
+    font-weight:
+        600;
+
+    backdrop-filter:
+        blur(5px);
+
+}
 
 
-    .service-card:hover::before {
-
-        transform:
-            scaleX(1);
-
-    }
-
-
-    /* ========================================
-   SERVICE ICON
+/* ========================================
+   PROJECT CONTENT
 ======================================== */
 
-    .service-icon {
+.project-content {
 
-        display: flex;
+    padding:
+        1.5rem;
 
-        align-items: center;
-
-        justify-content: center;
-
-        width: 60px;
-
-        height: 60px;
-
-        margin-bottom: 1.5rem;
-
-        border-radius:
-            var(--border-radius-md);
-
-        background:
-            rgba(37, 99, 235, 0.10);
-
-        font-size: 1.7rem;
-
-        transition:
-            transform 0.35s ease,
-            background-color 0.35s ease;
-
-    }
+}
 
 
-    .service-card:hover .service-icon {
+.project-content h3 {
 
-        transform:
-            scale(1.1) rotate(-5deg);
+    margin-bottom:
+        0.75rem;
 
-        background:
-            rgba(124, 58, 237, 0.12);
+    font-size:
+        1.3rem;
 
-    }
+}
 
 
-    /* ========================================
-   SERVICE TITLE
+.project-content p {
+
+    margin-bottom:
+        1.2rem;
+
+    color:
+        var(--muted-color);
+
+    font-size:
+        0.95rem;
+
+}
+
+
+/* ========================================
+   PROJECT LINK
 ======================================== */
 
-    .service-card h3 {
+.project-link {
 
-        margin-bottom: 0.75rem;
+    display:
+        inline-flex;
 
-        font-size: 1.3rem;
+    align-items:
+        center;
 
-    }
+    color:
+        var(--primary-color);
 
+    font-weight:
+        600;
 
-    /* ========================================
-   SERVICE DESCRIPTION
-======================================== */
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
 
-    .service-card p {
-
-        margin-bottom: 1.5rem;
-
-        color:
-            var(--muted-color);
-
-        font-size: 0.95rem;
-
-    }
+}
 
 
-    /* ========================================
-   SERVICE LINK
-======================================== */
+.project-link:hover {
 
-    .service-link {
+    color:
+        var(--secondary-color);
 
-        display: inline-flex;
+    transform:
+        translateX(5px);
 
-        align-items: center;
-
-        color:
-            var(--primary-color);
-
-        font-weight: 600;
-
-        transition:
-            color 0.3s ease,
-            transform 0.3s ease;
-
-    }
-
-
-    .service-link:hover {
-
-        color:
-            var(--secondary-color);
-
-        transform:
-            translateX(5px);
-
-    }
-
-
-    .section-heading {
-        max-width: 750px;
-        margin-inline: auto;
-        margin-bottom: var(--spacing-lg);
-        text-align: center;
-    }
-
-    .section-lable {
-        margin-bottom: 0.1rem;
-        color: var(--primary-color);
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.1rem;
-        font-size: 1rem;
-    }
-
-    .section-lable h2 {
-        margin-bottom: var(--spacing-sm);
-        font-size: clamp(2rem, 5vw, 3.5rem);
-        line-height: 1.1;
-    }
-
-    .section-heading>p:last-child {
-        color: var(--muted-color);
-    }
-
-
-
-
-    .section-heading {
-        max-width: 750px;
-        margin-inline: auto;
-        margin-bottom: var(--spacing-lg);
-        text-align: center;
-    }
-
-    .section-lable {
-        margin-bottom: 0.1rem;
-        color: var(--primary-color);
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.1rem;
-        font-size: 1rem;
-    }
-
-    .section-lable h2 {
-        margin-bottom: var(--spacing-sm);
-        font-size: clamp(2rem, 5vw, 3.5rem);
-        line-height: 1.1;
-    }
-
-    .section-heading>p:last-child {
-        color: var(--muted-color);
-    }
+}
 </style>

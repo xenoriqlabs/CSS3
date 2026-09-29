@@ -262,9 +262,7 @@
         ======================================== */
 
         .hero-content {
-
             max-width: 700px;
-
         }
 
         .hero-subtitle {
@@ -649,16 +647,16 @@
         }
 
         /* ========================================
-                9. SERVICES SECTION
-            ======================================== */
+            9. SERVICES SECTION
+        ======================================== */
 
-        .service-section {
+        .services-section {
             background-color: var(--background-color);
         }
 
         /* ========================================
-                SERVICES GRID
-            ======================================== */
+            SERVICES GRID
+        ======================================== */
 
         .service-grid {
             display: grid;
@@ -778,6 +776,7 @@
             font-size: 0.95rem;
         }
 
+
         /* ========================================
             SERVICE LINK
         ======================================== */
@@ -796,6 +795,159 @@
             color: var(--secondary-color);
 
             transform: translateX(5px);
+        }
+
+
+        /* ========================================
+            10. PROJECTS SECTION
+        ======================================== */
+
+        .projects-section {
+            background-color: var(--surface-color);
+        }
+
+
+        /* ========================================
+            PROJECTS GRID
+        ======================================== */
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+
+
+        /* ========================================
+            PROJECT CARD
+        ======================================== */
+
+        .project-card {
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-md);
+            background-color: var(--background-color);
+
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+
+            transition:
+                transform 0.35s ease,
+                box-shadow 0.35s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+        }
+
+
+        /* ========================================
+            PROJECT IMAGE
+        ======================================== */
+
+        .project-image {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 16 / 10;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        /* Image zoom */
+        .project-card:hover .project-image img {
+            transform: scale(1.08);
+        }
+
+
+        /* ========================================
+            PROJECT CATEGORY
+        ======================================== */
+
+        .project-category {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            padding: 0.4rem 0.8rem;
+
+            border-radius: 50px;
+            background-color: rgba(15, 23, 42, 0.85);
+            color: var(--white-color);
+
+            font-size: 0.8rem;
+            font-weight: 600px;
+
+            backdrop-filter: blur(5px);
+        }
+
+
+        /* ========================================
+            PROJECT CONTENT
+        ======================================== */
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            margin-bottom: 0.75rem;
+
+            font-size: 1.3rem;
+        }
+
+
+        .project-content p {
+
+            margin-bottom:
+                1.2rem;
+
+            color:
+                var(--muted-color);
+
+            font-size:
+                0.95rem;
+
+        }
+
+
+        /* ========================================
+            PROJECT LINK
+        ======================================== */
+
+        .project-link {
+
+            display:
+                inline-flex;
+
+            align-items:
+                center;
+
+            color:
+                var(--primary-color);
+
+            font-weight:
+                600;
+
+            transition:
+                color 0.3s ease,
+                transform 0.3s ease;
+
+        }
+
+
+        .project-link:hover {
+
+            color:
+                var(--secondary-color);
+
+            transform:
+                translateX(5px);
+
         }
     </style>
 </head>
@@ -1268,6 +1420,164 @@
                         <a href="#contact" class="service-link">
                             Learn More →
                         </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ========================================
+                PROJECTS SECTION
+            ======================================== -->
+
+        <section id="projects" class="projects-section">
+
+            <div class="container">
+
+                <!-- Section Heading -->
+
+                <div class="section-heading">
+
+                    <p class="section-lable">
+                        Our Projects
+                    </p>
+
+                    <h2>
+                        Ideas We Turned Into
+                        Digital Products
+                    </h2>
+
+                    <p>
+                        Explore some of the digital experiences
+                        and solutions we build using modern
+                        technologies.
+                    </p>
+
+                </div>
+
+                <!-- Projects Grid -->
+
+                <div class="project-grid">
+
+                    <!-- ==================================
+                         PROJECT 1
+                    ================================== -->
+
+                    <article class="project-card">
+
+                        <div class="project-image">
+
+                            <img src="../media/project-01.png" alt="Modern web application project">
+
+                            <span class="project-category">
+                                Web Development
+                            </span>
+
+                        </div>
+
+                        <!-- Project Content -->
+
+                        <div class="project-content">
+
+                            <h3>
+                                Modern Business Platform
+                            </h3>
+
+                            <p>
+                                A responsive and scalable web
+                                application designed to provide
+                                businesses with a modern digital
+                                experience.
+                            </p>
+
+                            <a href="#contact" class="project-link">
+                                View Project →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                    <!-- ==================================
+                            PROJECT 2
+                        ================================== -->
+
+                    <article class="project-card">
+
+                        <div class="project-image">
+
+                            <img src="../media/project-02.png" alt="AI powered application project">
+
+                            <span class="project-category">
+                                AI & ML
+                            </span>
+
+                        </div>
+
+                        <div class="project-content">
+
+                            <h3>
+                                AI Automation System
+                            </h3>
+
+                            <p>
+
+                                An intelligent automation solution
+                                designed to simplify repetitive
+                                business workflows using AI.
+
+                            </p>
+
+
+                            <a href="#contact" class="project-link">
+                                View Project →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                    <!-- ==================================
+                            PROJECT 3
+                        ================================== -->
+
+                    <article class="project-card">
+
+
+                        <div class="project-image">
+
+                            <img src="../media/project-03.png" alt="Mobile application project">
+
+                            <span class="project-category">
+                                Mobile App
+                            </span>
+
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <h3>
+                                Cross-Platform Mobile App
+                            </h3>
+
+                            <p>
+
+                                A modern mobile application built
+                                for a smooth experience across
+                                different devices and platforms.
+
+                            </p>
+
+
+                            <a href="#contact" class="project-link">
+                                View Project →
+                            </a>
+
+                        </div>
 
                     </article>
 
