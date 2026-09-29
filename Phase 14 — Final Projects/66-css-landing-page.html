@@ -315,13 +315,9 @@
         ======================================== */
 
         .hero-buttons {
-
             display: flex;
-
             flex-wrap: wrap;
-
             gap: 1rem;
-
         }
 
         /* ========================================
@@ -353,37 +349,28 @@
         }
 
         .btn:hover {
-
             transform:
                 translateY(-3px);
-
         }
 
         /* Primary button */
 
         .btn-primary {
-
             background-color:
                 var(--primary-color);
 
             color:
                 var(--white-color);
-
         }
-
 
         .btn-primary:hover {
-
             background-color:
                 var(--secondary-color);
-
         }
-
 
         /* Secondary button */
 
         .btn-secondary {
-
             border-color:
                 var(--border-color);
 
@@ -392,18 +379,14 @@
 
             color:
                 var(--text-color);
-
         }
 
-
         .btn-secondary:hover {
-
             border-color:
                 var(--primary-color);
 
             color:
                 var(--primary-color);
-
         }
 
         /* ========================================
@@ -435,12 +418,9 @@
             transition: transform var(--transition);
         }
 
-
         .hero-card:hover {
-
             transform:
                 rotate(0deg) translateY(-8px);
-
         }
 
         /* ========================================
@@ -453,9 +433,7 @@
             gap: 0.6rem;
 
             padding: 1rem 1.2rem;
-
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-
             font-weight: 600px;
         }
 
@@ -628,9 +606,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
+
             width: 50px;
             height: 50px;
             margin-bottom: 0.5rem;
+
             border-radius: var(--border-radius-sm);
             background: rgba(37, 99, 235, 0.10);
             font-size: 1.5rem;
@@ -797,7 +777,6 @@
             transform: translateX(5px);
         }
 
-
         /* ========================================
             10. PROJECTS SECTION
         ======================================== */
@@ -805,7 +784,6 @@
         .projects-section {
             background-color: var(--surface-color);
         }
-
 
         /* ========================================
             PROJECTS GRID
@@ -816,7 +794,6 @@
             grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 1.5rem;
         }
-
 
         /* ========================================
             PROJECT CARD
@@ -841,7 +818,6 @@
             box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
         }
 
-
         /* ========================================
             PROJECT IMAGE
         ======================================== */
@@ -860,10 +836,10 @@
         }
 
         /* Image zoom */
+
         .project-card:hover .project-image img {
             transform: scale(1.08);
         }
-
 
         /* ========================================
             PROJECT CATEGORY
@@ -885,7 +861,6 @@
             backdrop-filter: blur(5px);
         }
 
-
         /* ========================================
             PROJECT CONTENT
         ======================================== */
@@ -896,10 +871,8 @@
 
         .project-content h3 {
             margin-bottom: 0.75rem;
-
             font-size: 1.3rem;
         }
-
 
         .project-content p {
 
@@ -911,56 +884,41 @@
 
             font-size:
                 0.95rem;
-
         }
-
 
         /* ========================================
             PROJECT LINK
         ======================================== */
 
         .project-link {
+            display: inline-flex;
+            align-items: center;
 
-            display:
-                inline-flex;
-
-            align-items:
-                center;
-
-            color:
-                var(--primary-color);
-
-            font-weight:
-                600;
+            color: var(--primary-color);
+            font-weight: 600;
 
             transition:
                 color 0.3s ease,
                 transform 0.3s ease;
-
         }
 
-
         .project-link:hover {
+            color: var(--secondary-color);
 
-            color:
-                var(--secondary-color);
-
-            transform:
-                translateX(5px);
-
+            transform: translateX(5px);
         }
 
         /* ========================================
-                11. WHY CHOOSE US SECTION
-            ======================================== */
+            11. WHY CHOOSE US SECTION
+        ======================================== */
 
         .why-secttion {
             background-color: var(--background-color);
         }
 
         /* ========================================
-                WHY GRID
-            ======================================== */
+            WHY GRID
+        ======================================== */
 
         .why-grid {
             display: grid;
@@ -969,8 +927,8 @@
         }
 
         /* ========================================
-                WHY CARD
-            ======================================== */
+            WHY CARD
+        ======================================== */
 
         .why-card {
             padding: 2rem;
@@ -995,8 +953,8 @@
         }
 
         /* ========================================
-                WHY ICON
-            ======================================== */
+            WHY ICON
+        ======================================== */
 
         .why-icon {
             display: flex;
@@ -1006,6 +964,7 @@
             width: 60px;
             height: 60px;
             margin-bottom: 1.2rem;
+
             border-radius: var(--border-radius-md);
             background-color: rgba(37, 99, 235, 0.10);
 
@@ -1045,8 +1004,8 @@
         }
 
         /* ========================================
-                12. CTA / CONTACT SECTION
-            ======================================== */
+            12. CTA / CONTACT SECTION
+        ======================================== */
 
         .cta-section {
             padding-block:
@@ -1149,89 +1108,51 @@
         }
 
         .footer-logo {
-
-            display:
-                inline-block;
-
-            margin-bottom:
-                1rem;
-
-            font-size:
-                1.7rem;
-
-            font-weight:
-                700;
-
+            display: inline-block;
+            margin-bottom: 1rem;
+            font-size: 1.7rem;
+            font-weight: 700;
         }
-
 
         .footer-logo span {
-
-            color:
-                #60a5fa;
-
+            color: #60a5fa;
         }
-
 
         .footer-brand>p {
-
-            margin-bottom:
-                1.5rem;
-
-            color:
-                #94a3b8;
-
-            font-size:
-                0.95rem;
-
+            margin-bottom: 1.5rem;
+            color: #94a3b8;
+            font-size: 0.95rem;
         }
-
 
         /* ========================================
-    FOOTER SOCIALS
-======================================== */
+            FOOTER SOCIALS
+        ======================================== */
 
         .footer-socials {
-
-            display:
-                flex;
-
-            flex-wrap:
-                wrap;
-
-            gap:
-                0.7rem;
-
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
         }
 
-
         .footer-socials a {
-
             padding:
                 0.4rem 0.7rem;
 
             border:
                 1px solid rgba(255, 255, 255, 0.15);
 
-            border-radius:
-                6px;
+            border-radius: 6px;
+            color:#cbd5e1;
 
-            color:
-                #cbd5e1;
-
-            font-size:
-                0.85rem;
+            font-size: 0.85rem;
 
             transition:
                 background-color 0.3s ease,
                 color 0.3s ease,
                 border-color 0.3s ease;
-
         }
 
-
         .footer-socials a:hover {
-
             background-color:
                 var(--primary-color);
 
@@ -1240,106 +1161,402 @@
 
             color:
                 var(--white-color);
-
         }
 
 
         /* ========================================
-    FOOTER COLUMN
-======================================== */
+            FOOTER COLUMN
+        ======================================== */
 
         .footer-column h3 {
-
-            margin-bottom:
-                1rem;
-
-            font-size:
-                1.05rem;
-
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
         }
-
 
         .footer-column ul {
-
-            display:
-                flex;
-
-            flex-direction:
-                column;
-
-            gap:
-                0.6rem;
-
-            list-style:
-                none;
-
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            list-style: none;
         }
-
 
         .footer-column li {
-
-            color:
-                #94a3b8;
-
-            font-size:
-                0.9rem;
-
+            color:#94a3b8;
+            font-size: 0.9rem;
         }
-
 
         .footer-column a {
-
-            color:
-                #94a3b8;
-
+            color:#94a3b8;
             transition:
                 color 0.3s ease;
-
         }
-
 
         .footer-column a:hover {
-
             color:
                 var(--white-color);
-
         }
 
-
         /* ========================================
-    FOOTER BOTTOM
-======================================== */
+            FOOTER BOTTOM
+        ======================================== */
 
         .footer-bottom {
-
-            display:
-                flex;
-
-            justify-content:
-                center;
-
-            align-items:
-                center;
-
-            gap:
-                1rem;
-
-            padding:
-                1.5rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.5rem 0;
 
             border-top:
                 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-bottom p {
+            color:#64748b;
+            font-size: 0.85rem;
+        }
+
+        /* ========================================
+            14. RESPONSIVE DESIGN
+        ======================================== */
+
+        /* ========================================
+                TABLET
+            1024px and below
+        ======================================== */
+
+        @media (max-width: 1024px) {
+
+            /* Navbar */
+
+            .navbar-container {
+                gap: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            /* Hero */
+
+            .hero-container {
+                grid-template-columns:
+                    1fr 1fr;
+
+                gap: 2rem;
+
+                padding-block: 4rem;
+            }
+
+            .hero-title {
+                font-size:
+                    clamp(2.5rem, 6vw, 4rem);
+            }
+
+            /* Services */
+
+            .service-grid {
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+
+                gap: 1rem;
+            }
+
+            /* Projects */
+
+            .project-grid {
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+
+                gap: 1rem;
+            }
+
+            /* Why Choose Us */
+
+            .why-grid {
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+            }
+
+            /* Footer */
+
+            .footer-grid {
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+            }
 
         }
 
+        /* ========================================
+                MOBILE
+            768px and below
+        ======================================== */
 
-        .footer-bottom p {
+        @media (max-width: 768px) {
 
-            color:
-                #64748b;
+            /* NAVBAR */
 
-            font-size:
-                0.85rem;
+            .navbar-container {
+                min-height: 60px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .nav-button {
+                padding:
+                    0.5rem 0.8rem;
+
+                font-size:
+                    0.85rem;
+            }
+
+            /* ====================================
+                HERO
+            ==================================== */
+
+            .hero-container {
+                grid-template-columns:
+                    1fr;
+
+                text-align:
+                    center;
+
+                padding-block:
+                    3rem;
+            }
+
+            .hero-content {
+                max-width:
+                    100%;
+            }
+
+            .hero-title {
+                font-size:
+                    clamp(2.5rem, 12vw, 4rem);
+
+                white-space:
+                    normal;
+            }
+
+            .hero-description {
+                margin-inline:
+                    auto;
+            }
+
+            .hero-buttons {
+                justify-content:
+                    center;
+            }
+
+            .hero-visual {
+                margin-top:
+                    1rem;
+            }
+
+            .hero-card {
+                width:
+                    min(100%, 400px);
+            }
+
+            /* ====================================
+                SECTION HEADING
+            ==================================== */
+
+            .section-heading {
+                margin-bottom:
+                    2rem;
+            }
+
+
+            .section-heading h2 {
+                font-size:
+                    clamp(1.8rem, 8vw, 2.5rem);
+            }
+
+
+            /* ====================================
+                ABOUT
+            ==================================== */
+
+            .about-grid {
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    2rem;
+            }
+
+            .about-content {
+                max-width:
+                    100%;
+            }
+
+            /* ====================================
+               FEATURES
+            ==================================== */
+
+            .about-features {
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+            }
+
+            /* ====================================
+                SERVICES
+            ==================================== */
+
+            .service-grid {
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    1rem;
+            }
+
+            .service-card {
+                padding:
+                    1.5rem;
+            }
+
+            /* ====================================
+                PROJECTS
+            ==================================== */
+
+            .project-grid {
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    1rem;
+            }
+
+
+            /* ====================================
+                WHY CHOOSE US
+            ==================================== */
+
+            .why-grid {
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    1rem;
+            }
+
+            /* ====================================
+                CTA
+            ==================================== */
+
+            .cta-content {
+                padding:
+                    3rem 1.5rem;
+            }
+
+
+            .cta-content h2 {
+                font-size:
+                    clamp(1.8rem, 8vw, 2.7rem);
+            }
+
+            /* ====================================
+               FOOTER
+            ==================================== */
+
+            .footer-grid {
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    2rem;
+            }
+
+            .footer-brand {
+                max-width:
+                    100%;
+            }
+
+            .footer-bottom {
+                flex-direction:
+                    column;
+
+                text-align:
+                    center;
+            }
+        }
+
+        /* ========================================
+            SMALL MOBILE
+            480px and below
+        ======================================== */
+
+        @media (max-width: 480px) {
+
+            .container {
+                width:
+                    min(100% - 1.5rem, var(--container-width));
+            }
+
+            /* Hero */
+
+            .hero-container {
+                padding-block:
+                    2.5rem;
+            }
+
+            .hero-title {
+                font-size:
+                    2.4rem;
+            }
+
+            .hero-subtitle {
+                font-size:
+                    0.8rem;
+            }
+
+            .hero-buttons {
+                flex-direction:
+                    column;
+            }
+
+            .hero-buttons .btn {
+                width:
+                    100%;
+            }
+
+            /* Features */
+
+            .about-features {
+                grid-template-columns:
+                    1fr;
+            }
+
+            /* Service */
+
+            .service-card {
+                padding:
+                    1.25rem;
+            }
+
+            /* CTA */
+
+            .cta-buttons {
+                flex-direction:
+                    column;
+            }
+
+            .cta-buttons .btn {
+                width:
+                    100%;
+            }
+
+            /* Footer */
+
+            .footer {
+                padding-top:
+                    3rem;
+            }
+
         }
     </style>
 </head>
@@ -2284,7 +2501,6 @@
         </footer>
 
     </main>
-
 
 </body>
 
