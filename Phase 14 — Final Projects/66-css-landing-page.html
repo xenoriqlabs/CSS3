@@ -1020,17 +1020,17 @@
             ICON HOVER
         ======================================== */
 
-        .why-card:hover .why-icon{
+        .why-card:hover .why-icon {
             transform: scale(1.1) rotate(-5deg);
 
-            background-color:  rgba(124, 58, 237, 0.12);
+            background-color: rgba(124, 58, 237, 0.12);
         }
 
         /* ========================================
             WHY TITLE
         ======================================== */
 
-        .why-card h3{
+        .why-card h3 {
             margin-bottom: 0.75rem;
             font-size: 1.3rem;
         }
@@ -1039,9 +1039,90 @@
             WHY DESCRIPTION
         ======================================== */
 
-        .why-card p{
+        .why-card p {
             color: var(--muted-color);
             font-size: 0.95rem;
+        }
+
+        /* ========================================
+                12. CTA / CONTACT SECTION
+            ======================================== */
+
+        .cta-section {
+            padding-block:
+                var(--spacing-lg);
+
+            background:
+                linear-gradient(135deg, #eff6ff, #f5f3ff);
+        }
+
+        /* ========================================
+            CTA CONTENT
+        ======================================== */
+
+        .cta-content {
+            max-width: 850px;
+            margin-inline: auto;
+            padding: 4rem 2rem;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-lg);
+            background-color: rgba(255, 255, 255, 0.75);
+            box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+        }
+
+        /* ========================================
+            CTA LABEL
+        ======================================== */
+
+        .cta-label {
+            margin-bottom: 0.75rem;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.12rem;
+        }
+
+        .cta-content h2 {
+            margin-bottom: var(--spacing-sm);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            line-height: 1.1;
+        }
+
+        .cta-content h2 span {
+            display: block;
+            background:
+                linear-gradient(90deg,
+                    var(--primary-color),
+                    var(--secondary-color));
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* ========================================
+            CTA DESCRIPTION
+        ======================================== */
+
+        .cta-description {
+            max-width: 650px;
+            margin-inline: auto;
+            margin-bottom: var(--spacing-md);
+            color: var(--muted-color);
+            font-size: 1.05rem;
+        }
+
+        /* ========================================
+            CTA BUTTONS
+        ======================================== */
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
     </style>
 </head>
@@ -1762,6 +1843,48 @@
                         </p>
 
                     </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ========================================
+            CTA / CONTACT SECTION
+            ======================================== -->
+
+        <section id="contact" class="cta-section">
+
+            <div class="container">
+
+                <div class="cta-content">
+
+                    <p class="cta-label">
+                        LET'S BUILD SOMETHING
+                    </p>
+
+                    <h2>
+                        Have an Idea?
+                        <span>Let's Turn It Into Reality.</span>
+                    </h2>
+
+                    <p class="cta-description">
+                        Let's work together to create modern,
+                        scalable, and smart digital solutions
+                        for your next project.
+                    </p>
+
+                    <div class="cta-buttons">
+                        <a href="#contact" class="btn btn-primary">
+                            Start a Project →
+                        </a>
+
+                        <a href="mailto:xenoriqlabs@gmail.com" class="btn btn-secondary">
+                            Contact Us
+                        </a>
+
+                    </div>
 
                 </div>
 
