@@ -1,16 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Document</title>
+    <meta name="description" content="Xenoriq Labs professional admin dashboard built with modern CSS3.">
+
+    <title>Xenoriq Labs | Admin Dashboard</title>
 
     <style>
-        
+        /* ========================================
+                1. CSS VARIABLES
+        ======================================== */
+
+        :root {
+
+            /* Primary Colors */
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary-color: #7c3aed;
+
+            /* Background Colors */
+            --background-color: #f8fafc;
+            --surface-color: #ffffff;
+            --sidebar-color: #0f172a;
+
+            /* Text Colors */
+            --text-color: #0f172a;
+            --text-light: #64748b;
+            --text-white: #ffffff;
+
+            /* Border */
+            --border-color: #e2e8f0;
+
+            /* Status Colors */
+            --success-color: #16a34a;
+            --warning-color: #d97706;
+            --danger-color: #dc2626;
+            --info-color: #0891b2;
+
+            /* Typography */
+            --font-family: Arial, Helvetica, sans-serif;
+
+            /* Spacing */
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-2xl: 3rem;
+
+            /* Border Radius */
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 14px;
+
+            /* Shadows */
+            --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.08);
+            --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+            --shadow-lg: 0 10px 25px rgba(15, 23, 42, 0.10);
+
+            /* Layout */
+            --sidebar-width: 260px;
+            --header-height: 70px;
+            --container-width: 1600px;
+
+            /* Transition */
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s ease;
+        }
+
+        /* ========================================
+                2. CSS RESET
+        ======================================== */
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            min-height: 100vh;
+
+            font-family: var(--font-family);
+            font-size: 16px;
+            line-height: 1.6;
+
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+
+        button,
+        input,
+        select,
+        textarea {
+            font: inherit;
+        }
+
+
+        button {
+            border: none;
+            cursor: pointer;
+        }
+
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        ul {
+            list-style: none;
+        }
     </style>
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
