@@ -220,12 +220,11 @@
 
             transition:
                 transform var(--transition),
-                var(--background-color),
                 color var(--transition);
         }
 
         .btn:hover {
-            transform: translateY(-3px);
+            transform: translateY(-5px);
         }
 
         .btn-primary {
@@ -258,7 +257,7 @@
         }
 
         .profile-image {
-            width: 100%, 300px;
+            width: min(100%, 400px);
             aspect-ratio: 1;
             object-fit: cover;
             border-radius: 50%;
@@ -267,12 +266,754 @@
             box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
 
             transition:
-                transform var(--transition) box-shadow var(--transition);
+                transform var(--transition),
+                box-shadow var(--transition);
         }
 
         .profile-image:hover {
             transform: translateY(-8px);
             box-shadow: 0 25px 60px rgba(15, 23, 42, 0.2);
+        }
+
+        /* ========================================
+                7. ABOUT SECTION
+        ======================================== */
+
+        .about {
+            padding-block: var(--spacing-xl);
+            background-color: var(--surface-color);
+        }
+
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        /* ========================================
+                ABOUT TEXT
+        ======================================== */
+
+        .section-subtitle {
+            margin-bottom: var(--spacing-xs);
+            color: var(--primary-color);
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .section-title {
+            margin-bottom: var(--spacing-md);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            line-height: 1.1;
+        }
+
+        .about-text {
+            margin-bottom: var(--spacing-md);
+            color: var(--muted-color);
+            font-size: 1.05rem;
+        }
+
+        .about-text:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ========================================
+                ABOUT STATS
+        ======================================== */
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-md);
+        }
+
+        .stat-card {
+            padding: var(--spacing-lg);
+            background-color: var(--background-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            text-align: center;
+
+            transition:
+                transform var(--transition),
+                box-shadow var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.1);
+        }
+
+        .stat-number {
+            display: block;
+            margin-bottom: var(--spacing-xs);
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+
+        .stat-label {
+            color: var(--muted-color);
+            font-weight: 600;
+        }
+
+        /* ========================================
+                8. SERVICES SECTION
+        ======================================== */
+
+        .services {
+            padding-block: var(--spacing-xl);
+            background-color: var(--surface-color);
+        }
+
+        .services-header {
+            max-width: 700px;
+            margin-bottom: 3rem;
+        }
+
+        /* ========================================
+                SERVICES GRID
+        ======================================== */
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+        }
+
+        /* ========================================
+                SERVICE CARD
+        ======================================== */
+
+        .service-card {
+            padding: var(--spacing-lg);
+            background-color: var(--background-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+
+            transition:
+                transform var(--transition),
+                box-shadow var(--transition),
+                border-color var(--transition);
+        }
+
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-color);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+        }
+
+        /* ========================================
+                SERVICE ICON
+        ======================================== */
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: var(--spacing-md);
+
+            display: grid;
+            place-items: center;
+
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: var(--radius-sm);
+            font-size: 1.6rem;
+        }
+
+        /* ========================================
+                SERVICE CONTENT
+        ======================================== */
+
+        .service-title {
+            margin-bottom: var(--spacing-sm);
+            font-size: 1.4rem;
+        }
+
+        .service-description {
+            margin-bottom: var(--spacing-md);
+            color: var(--muted-color);
+        }
+
+        /* ========================================
+                SERVICE LINK
+        ======================================== */
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            transition: gap var(--transition);
+        }
+
+        .service-link:hover {
+            gap: 0.8rem;
+        }
+
+        /* ========================================
+                9. PROJECTS SECTION
+        ======================================== */
+
+        .projects {
+            padding-block: var(--spacing-xl);
+            background-color: var(--background-color);
+        }
+
+        .projects-header {
+            max-width: 700px;
+            margin-bottom: 3rem;
+        }
+
+        /* ========================================
+                PROJECTS GRID
+        ======================================== */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+        }
+
+        /* ========================================
+                PROJECT CARD
+        ======================================== */
+
+        .project-card {
+            overflow: hidden;
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+
+            transition:
+                transform var(--transition),
+                box-shadow var(--transition),
+                border-color var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-color);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+        }
+
+        /* ========================================
+                PROJECT IMAGE
+        ======================================== */
+
+        .project-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background-color: #e2e8f0;
+        }
+
+        /* ========================================
+                PROJECT CONTENT
+        ======================================== */
+
+        .project-content {
+            padding: var(--spacing-lg);
+        }
+
+        .project-category {
+            display: inline-block;
+            margin-bottom: var(--spacing-xs);
+            color: var(--primary-color);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .project-title {
+            margin-bottom: var(--spacing-sm);
+            font-size: 1.4rem;
+        }
+
+        .project-description {
+            margin-bottom: var(--spacing-md);
+            color: var(--muted-color);
+        }
+
+        /* ========================================
+                PROJECT TECHNOLOGIES
+        ======================================== */
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .project-tag {
+            padding: 0.35rem 0.7rem;
+            background-color: var(--background-color);
+
+            border: 1px solid var(--border-color);
+            border-radius: 999px;
+            color: var(--muted-color);
+
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* ========================================
+                PROJECT LINKS
+        ======================================== */
+
+        .project-links {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+
+        .project-link {
+            color: var(--primary-color);
+            font-weight: 700;
+            transition: color var(--transition);
+        }
+
+        .project-link:hover {
+            color: var(--secondary-color);
+        }
+
+        /* ========================================
+                10. EXPERIENCE SECTION
+        ======================================== */
+
+        .experience {
+            padding-block: var(--spacing-xl);
+            background-color: var(--surface-color);
+        }
+
+        .experience-header {
+            max-width: 700px;
+            margin-bottom: 3rem;
+        }
+
+        /* ========================================
+                EXPERIENCE TIMELINE
+        ======================================== */
+
+        .timeline {
+            max-width: 900px;
+            margin-inline: auto;
+            position: relative;
+        }
+
+        /* Vertical Line */
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            width: 2px;
+            background-color: var(--border-color);
+        }
+
+        /* ========================================
+                TIMELINE ITEM
+        ======================================== */
+
+        .timeline-item {
+            position: relative;
+            padding-left: 70px;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Timeline Dot */
+
+        .timeline-dot {
+            position: absolute;
+            top: 5px;
+            left: 11px;
+            width: 20px;
+            height: 20px;
+            border: 4px solid var(--surface-color);
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            box-shadow: 0 0 0 2px var(--primary-color);
+        }
+
+        /* ========================================
+                TIMELINE CARD
+        ======================================== */
+
+        .timeline-card {
+            padding: var(--spacing-lg);
+            background-color: var(--background-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+
+            transition:
+                transform var(--transition),
+                box-shadow var(--transition),
+                border-color var(--transition);
+        }
+
+        .timeline-card:hover {
+            transform: translateX(6px);
+            border-color: var(--primary-color);
+            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.1);
+        }
+
+        /* ========================================
+            TIMELINE CONTENT
+        ======================================== */
+
+        .timeline-date {
+            display: inline-block;
+            margin-bottom: var(--spacing-xs);
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        .timeline-title {
+            margin-bottom: 0.25rem;
+            font-size: 1.4rem;
+        }
+
+        .timeline-place {
+            margin-bottom: var(--spacing-sm);
+            color: var(--muted-color);
+            font-weight: 600;
+        }
+
+        .timeline-description {
+            color: var(--muted-color);
+        }
+
+        /* ========================================
+                11. CONTACT SECTION
+        ======================================== */
+
+        .contact {
+            padding-block: var(--spacing-xl);
+            background-color: var(--background-color);
+        }
+
+        .contact-header {
+            max-width: 700px;
+            margin-bottom: 3rem;
+        }
+
+        /* ========================================
+                CONTACT GRID
+        ======================================== */
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 4rem;
+
+            align-items: start;
+        }
+
+        /* ========================================
+                CONTACT INFORMATION
+        ======================================== */
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-md);
+
+            padding: var(--spacing-md);
+            background-color: var(--surface-color);
+
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+
+            transition:
+                transform var(--transition),
+                border-color var(--transition),
+                box-shadow var(--transition);
+        }
+
+        .contact-item:hover {
+            transform: translateX(6px);
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+        }
+
+        .contact-icon {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+
+            display: grid;
+            place-items: center;
+
+            background-color: var(--primary-color);
+            color: white;
+
+            border-radius: var(--radius-sm);
+            font-size: 1.2rem;
+        }
+
+        .contact-item h3 {
+            margin-bottom: 0.2rem;
+            font-size: 1rem;
+        }
+
+        .contact-item p,
+        .contact-item a {
+            color: var(--muted-color);
+            transition: color var(--transition);
+        }
+
+        .contact-item a:hover {
+            color: var(--primary-color);
+        }
+
+
+        /* ========================================
+                SOCIAL LINKS
+        ======================================== */
+
+        .social-links {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-sm);
+        }
+
+        .social-link {
+            width: 70px;
+            height: 45px;
+            display: grid;
+            place-items: center;
+            background-color: var(--surface-color);
+
+            border: 1px solid var(--border-color);
+            border-radius: 30%;
+            color: var(--text-color);
+            font-weight: 700;
+
+            transition:
+                transform var(--transition),
+                background-color var(--transition),
+                color var(--transition);
+        }
+
+        .social-link:hover {
+            transform: translateY(-4px);
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* ========================================
+                CONTACT FORM
+        ======================================== */
+
+        .contact-form {
+            padding: var(--spacing-lg);
+            background-color: var(--surface-color);
+
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+        }
+
+        .form-group {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: var(--spacing-xs);
+            font-weight: 700;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.9rem 1rem;
+
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+
+            background-color: var(--background-color);
+            color: var(--text-color);
+
+            font: inherit;
+            outline: none;
+
+            transition:
+                border-color var(--transition),
+                box-shadow var(--transition);
+        }
+
+
+        .form-input:focus,
+        .form-textarea:focus {
+            border-color: var(--primary-color);
+
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+        }
+
+
+        .form-textarea {
+            min-height: 160px;
+            resize: vertical;
+        }
+
+        .form-button {
+            border: none;
+            cursor: pointer;
+            font: inherit;
+        }
+
+        /* ========================================
+                12. FOOTER
+        ======================================== */
+
+        .footer {
+            padding-block: 3rem 1.5rem;
+            background-color: #0f172a;
+            color: white;
+        }
+
+        /* ========================================
+                FOOTER CONTENT
+        ======================================== */
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 3rem;
+
+            padding-bottom: 2rem;
+        }
+
+        /* ========================================
+                FOOTER BRAND
+        ======================================== */
+
+        .footer-logo {
+            display: inline-block;
+            margin-bottom: var(--spacing-sm);
+
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .footer-description {
+            max-width: 400px;
+            color: #94a3b8;
+        }
+
+        /* ========================================
+                FOOTER COLUMNS
+        ======================================== */
+
+        .footer-title {
+            margin-bottom: var(--spacing-sm);
+            font-size: 1.1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+
+            transition:
+                color var(--transition),
+                transform var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(4px);
+        }
+
+        /* ========================================
+                FOOTER SOCIAL
+        ======================================== */
+
+        .footer-social {
+            display: flex;
+            gap: 0.6rem;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            display: grid;
+            place-items: center;
+            border: 1px solid #334155;
+            border-radius: 50%;
+            color: #cbd5e1;
+            font-size: 0.85rem;
+            font-weight: 700;
+
+            transition:
+                background-color var(--transition),
+                color var(--transition),
+                border-color var(--transition),
+                transform var(--transition);
+        }
+
+        .footer-social a:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: white;
+
+            transform: translateY(-3px);
+        }
+
+        /* ========================================
+                FOOTER BOTTOM
+        ======================================== */
+
+        .footer-bottom {
+            padding-top: 1.5rem;
+            border-top: 1px solid #334155;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: var(--spacing-md);
+        }
+
+        .footer-copyright {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .footer-credit {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .footer-credit span {
+            color: white;
+            font-weight: 700;
         }
     </style>
 </head>
@@ -364,6 +1105,993 @@
             </div>
 
         </section>
+
+        <!-- ========================================
+                ABOUT SECTION
+        ======================================== -->
+
+        <section class="about" id="about">
+
+            <div class="container">
+
+                <div class="about-content">
+
+
+                    <!-- About Text -->
+
+                    <div class="about-info">
+
+                        <p class="section-subtitle">
+                            About Me
+                        </p>
+
+                        <h2 class="section-title">
+                            Turning Ideas Into
+                            <span>Technology</span>
+                        </h2>
+
+                        <p class="about-text">
+                            I'm Saif Ur Rahman, an AI Engineer and Founder & CEO
+                            of Xenoriq Labs. I enjoy building modern web
+                            applications and exploring artificial intelligence
+                            and machine learning.
+                        </p>
+
+                        <p class="about-text">
+                            My focus is on creating practical, scalable, and
+                            user-friendly digital solutions while continuously
+                            improving my skills in software development and AI.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Statistics -->
+
+                    <div class="about-stats">
+
+                        <div class="stat-card">
+
+                            <span class="stat-number">
+                                10+
+                            </span>
+
+                            <span class="stat-label">
+                                Projects
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat-card">
+
+                            <span class="stat-number">
+                                5+
+                            </span>
+
+                            <span class="stat-label">
+                                Technologies
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat-card">
+
+                            <span class="stat-number">
+                                1+
+                            </span>
+
+                            <span class="stat-label">
+                                Years Learning
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat-card">
+
+                            <span class="stat-number">
+                                24/7
+                            </span>
+
+                            <span class="stat-label">
+                                Learning Mindset
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ========================================
+                SERVICES SECTION
+        ======================================== -->
+
+        <section class="services" id="services">
+
+            <div class="container">
+
+
+                <!-- Services Header -->
+
+                <div class="services-header">
+
+                    <p class="section-subtitle">
+                        What I Do
+                    </p>
+
+                    <h2 class="section-title">
+                        Services & Solutions
+                    </h2>
+
+                    <p class="about-text">
+                        I focus on building modern digital solutions that
+                        combine clean development, scalable technology,
+                        and intelligent automation.
+                    </p>
+
+                </div>
+
+
+                <!-- Services Grid -->
+
+                <div class="services-grid">
+
+
+                    <!-- Service 1 -->
+
+                    <article class="service-card">
+
+                        <div class="service-icon">
+                            💻
+                        </div>
+
+                        <h3 class="service-title">
+                            Full Stack Development
+                        </h3>
+
+                        <p class="service-description">
+                            Building complete web applications with modern
+                            frontend and backend technologies.
+                        </p>
+
+                        <a href="#contact" class="service-link">
+                            Learn More →
+                        </a>
+
+                    </article>
+
+
+                    <!-- Service 2 -->
+
+                    <article class="service-card">
+
+                        <div class="service-icon">
+                            ⚛️
+                        </div>
+
+                        <h3 class="service-title">
+                            MERN Stack
+                        </h3>
+
+                        <p class="service-description">
+                            Developing scalable applications using MongoDB,
+                            Express.js, React, and Node.js.
+                        </p>
+
+                        <a href="#contact" class="service-link">
+                            Learn More →
+                        </a>
+
+                    </article>
+
+
+                    <!-- Service 3 -->
+
+                    <article class="service-card">
+
+                        <div class="service-icon">
+                            🤖
+                        </div>
+
+                        <h3 class="service-title">
+                            AI & ML Solutions
+                        </h3>
+
+                        <p class="service-description">
+                            Creating AI-powered systems, machine learning
+                            solutions, and intelligent applications.
+                        </p>
+
+                        <a href="#contact" class="service-link">
+                            Learn More →
+                        </a>
+
+                    </article>
+
+
+                    <!-- Service 4 -->
+
+                    <article class="service-card">
+
+                        <div class="service-icon">
+                            📱
+                        </div>
+
+                        <h3 class="service-title">
+                            Flutter App Development
+                        </h3>
+
+                        <p class="service-description">
+                            Building cross-platform mobile applications
+                            with modern Flutter development.
+                        </p>
+
+                        <a href="#contact" class="service-link">
+                            Learn More →
+                        </a>
+
+                    </article>
+
+
+                    <!-- Service 5 -->
+
+                    <article class="service-card">
+
+                        <div class="service-icon">
+                            ⚙️
+                        </div>
+
+                        <h3 class="service-title">
+                            AI Automation
+                        </h3>
+
+                        <p class="service-description">
+                            Automating repetitive workflows and integrating
+                            intelligent systems into business processes.
+                        </p>
+
+                        <a href="#contact" class="service-link">
+                            Learn More →
+                        </a>
+
+                    </article>
+
+
+                    <!-- Service 6 -->
+
+                    <article class="service-card">
+
+                        <div class="service-icon">
+                            🚀
+                        </div>
+
+                        <h3 class="service-title">
+                            Digital Solutions
+                        </h3>
+
+                        <p class="service-description">
+                            Designing scalable software solutions that help
+                            turn ideas into practical digital products.
+                        </p>
+
+                        <a href="#contact" class="service-link">
+                            Learn More →
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ========================================
+                PROJECTS SECTION
+        ======================================== -->
+
+        <section class="projects" id="projects">
+
+            <div class="container">
+
+
+                <!-- Projects Header -->
+
+                <div class="projects-header">
+
+                    <p class="section-subtitle">
+                        My Work
+                    </p>
+
+                    <h2 class="section-title">
+                        Featured Projects
+                    </h2>
+
+                    <p class="about-text">
+                        A collection of projects built while learning,
+                        experimenting, and developing practical software
+                        solutions.
+                    </p>
+
+                </div>
+
+
+                <!-- Projects Grid -->
+
+                <div class="projects-grid">
+
+
+                    <!-- Project 1 -->
+
+                    <article class="project-card">
+
+                        <img src="../media/project-02.png" alt="Xenoriq Labs website project" class="project-image">
+
+                        <div class="project-content">
+
+                            <span class="project-category">
+                                Web Development
+                            </span>
+
+                            <h3 class="project-title">
+                                Xenoriq Labs Website
+                            </h3>
+
+                            <p class="project-description">
+                                A modern software company website designed
+                                to showcase services, projects, and
+                                technology solutions.
+                            </p>
+
+                            <div class="project-tags">
+
+                                <span class="project-tag">
+                                    HTML
+                                </span>
+
+                                <span class="project-tag">
+                                    CSS
+                                </span>
+
+                                <span class="project-tag">
+                                    JavaScript
+                                </span>
+
+                            </div>
+
+                            <div class="project-links">
+
+                                <a href="#" class="project-link">
+                                    GitHub ↗
+                                </a>
+
+                                <a href="#" class="project-link">
+                                    Live Demo ↗
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Project 2 -->
+
+                    <article class="project-card">
+
+                        <img src="../media/project-01.png" alt="AI project" class="project-image">
+
+                        <div class="project-content">
+
+                            <span class="project-category">
+                                AI & ML
+                            </span>
+
+                            <h3 class="project-title">
+                                AI Assistant
+                            </h3>
+
+                            <p class="project-description">
+                                An AI-powered application concept focused
+                                on intelligent interaction and automated
+                                assistance.
+                            </p>
+
+                            <div class="project-tags">
+
+                                <span class="project-tag">
+                                    Python
+                                </span>
+
+                                <span class="project-tag">
+                                    AI
+                                </span>
+
+                                <span class="project-tag">
+                                    Machine Learning
+                                </span>
+
+                            </div>
+
+                            <div class="project-links">
+
+                                <a href="#" class="project-link">
+                                    GitHub ↗
+                                </a>
+
+                                <a href="#" class="project-link">
+                                    Live Demo ↗
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Project 3 -->
+
+                    <article class="project-card">
+
+                        <img src="../media/project-03.png" alt="Full stack project" class="project-image">
+
+                        <div class="project-content">
+
+                            <span class="project-category">
+                                Full Stack
+                            </span>
+
+                            <h3 class="project-title">
+                                Business Application
+                            </h3>
+
+                            <p class="project-description">
+                                A scalable full-stack application designed
+                                to manage business data and provide a
+                                smooth user experience.
+                            </p>
+
+                            <div class="project-tags">
+
+                                <span class="project-tag">
+                                    React
+                                </span>
+
+                                <span class="project-tag">
+                                    Node.js
+                                </span>
+
+                                <span class="project-tag">
+                                    MongoDB
+                                </span>
+
+                            </div>
+
+                            <div class="project-links">
+
+                                <a href="#" class="project-link">
+                                    GitHub ↗
+                                </a>
+
+                                <a href="#" class="project-link">
+                                    Live Demo ↗
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ========================================
+                EXPERIENCE / EDUCATION SECTION
+        ======================================== -->
+
+        <section class="experience" id="experience">
+
+            <div class="container">
+
+
+                <!-- Section Header -->
+
+                <div class="experience-header">
+
+                    <p class="section-subtitle">
+                        My Journey
+                    </p>
+
+                    <h2 class="section-title">
+                        Experience & Education
+                    </h2>
+
+                    <p class="about-text">
+                        My learning journey combines software development,
+                        artificial intelligence, and continuous practical
+                        experience.
+                    </p>
+
+                </div>
+
+
+                <!-- Timeline -->
+
+                <div class="timeline">
+
+
+                    <!-- Timeline Item 1 -->
+
+                    <article class="timeline-item">
+
+                        <span class="timeline-dot"></span>
+
+                        <div class="timeline-card">
+
+                            <span class="timeline-date">
+                                2026 — Present
+                            </span>
+
+                            <h3 class="timeline-title">
+                                Founder & CEO
+                            </h3>
+
+                            <p class="timeline-place">
+                                Xenoriq Labs
+                            </p>
+
+                            <p class="timeline-description">
+                                Building Xenoriq Labs as a modern software
+                                company focused on web development, AI
+                                solutions, and scalable digital products.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Timeline Item 2 -->
+
+                    <article class="timeline-item">
+
+                        <span class="timeline-dot"></span>
+
+                        <div class="timeline-card">
+
+                            <span class="timeline-date">
+                                2025 — Present
+                            </span>
+
+                            <h3 class="timeline-title">
+                                AI Engineering Journey
+                            </h3>
+
+                            <p class="timeline-place">
+                                Self-Directed Learning
+                            </p>
+
+                            <p class="timeline-description">
+                                Learning Python, machine learning,
+                                artificial intelligence, data science,
+                                and practical AI development.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Timeline Item 3 -->
+
+                    <article class="timeline-item">
+
+                        <span class="timeline-dot"></span>
+
+                        <div class="timeline-card">
+
+                            <span class="timeline-date">
+                                Ongoing
+                            </span>
+
+                            <h3 class="timeline-title">
+                                Full Stack Development
+                            </h3>
+
+                            <p class="timeline-place">
+                                Web Development Learning
+                            </p>
+
+                            <p class="timeline-description">
+                                Developing skills in HTML, CSS, JavaScript,
+                                React, Node.js, databases, and modern
+                                full-stack development.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Timeline Item 4 -->
+
+                    <article class="timeline-item">
+
+                        <span class="timeline-dot"></span>
+
+                        <div class="timeline-card">
+
+                            <span class="timeline-date">
+                                Continuous
+                            </span>
+
+                            <h3 class="timeline-title">
+                                Technology & Programming
+                            </h3>
+
+                            <p class="timeline-place">
+                                Continuous Learning
+                            </p>
+
+                            <p class="timeline-description">
+                                Exploring new technologies, building
+                                projects, practicing programming, and
+                                improving software engineering skills.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ========================================
+                CONTACT SECTION
+        ======================================== -->
+
+        <section class="contact" id="contact">
+
+            <div class="container">
+
+
+                <!-- Contact Header -->
+
+                <div class="contact-header">
+
+                    <p class="section-subtitle">
+                        Get In Touch
+                    </p>
+
+                    <h2 class="section-title">
+                        Let's Build Something
+                        <span>Together</span>
+                    </h2>
+
+                    <p class="about-text">
+                        Have an idea, project, or opportunity?
+                        Feel free to get in touch. I'd be happy to
+                        discuss how technology can turn your ideas
+                        into practical solutions.
+                    </p>
+
+                </div>
+
+
+                <!-- Contact Content -->
+
+                <div class="contact-content">
+
+
+                    <!-- Contact Information -->
+
+                    <div class="contact-info">
+
+
+                        <!-- Email -->
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+                                ✉
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Email
+                                </h3>
+
+                                <a href="mailto:xenoriqlabs@gmail.com">
+                                    xenoriqlabs@gmail.com
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Location -->
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+                                📍
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Location
+                                </h3>
+
+                                <p>
+                                    Sahiwal
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Website -->
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+                                🌐
+                            </div>
+
+                            <div>
+
+                                <h3>
+                                    Website
+                                </h3>
+
+                                <a href="#" target="_blank">
+                                    www.xenoriqlabs.com
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Social Links -->
+
+                        <div class="social-links">
+
+                            <a href="#" class="social-link" aria-label="GitHub">
+                                GitHub
+                            </a>
+
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                                LinkdIn
+                            </a>
+
+                            <a href="#" class="social-link" aria-label="X">
+                                Twitter
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Contact Form -->
+
+                    <form class="contact-form">
+
+
+                        <!-- Name -->
+
+                        <div class="form-group">
+
+                            <label for="name" class="form-label">
+                                Name
+                            </label>
+
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Enter your name"
+                                required>
+
+                        </div>
+
+
+                        <!-- Email -->
+
+                        <div class="form-group">
+
+                            <label for="email" class="form-label">
+                                Email
+                            </label>
+
+                            <input type="email" id="email" name="email" class="form-input"
+                                placeholder="Enter your email" required>
+
+                        </div>
+
+
+                        <!-- Subject -->
+
+                        <div class="form-group">
+
+                            <label for="subject" class="form-label">
+                                Subject
+                            </label>
+
+                            <input type="text" id="subject" name="subject" class="form-input"
+                                placeholder="Enter subject" required>
+
+                        </div>
+
+
+                        <!-- Message -->
+
+                        <div class="form-group">
+
+                            <label for="message" class="form-label">
+                                Message
+                            </label>
+
+                            <textarea id="message" name="message" class="form-textarea"
+                                placeholder="Write your message..." required></textarea>
+
+                        </div>
+
+
+                        <!-- Submit -->
+
+                        <button type="submit" class="btn btn-primary form-button">
+                            Send Message
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ========================================
+                FOOTER
+        ======================================== -->
+
+        <footer class="footer">
+
+            <div class="container">
+
+
+                <div class="footer-content">
+
+
+                    <!-- Footer Brand -->
+
+                    <div class="footer-brand">
+
+                        <a href="#home" class="footer-logo">
+                            Xenoriq Labs
+                        </a>
+
+                        <p class="footer-description">
+                            Building modern web applications,
+                            AI-powered solutions, and scalable
+                            digital products.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Quick Links -->
+
+                    <div class="footer-column">
+
+                        <h3 class="footer-title">
+                            Quick Links
+                        </h3>
+
+                        <ul class="footer-links">
+
+                            <li>
+                                <a href="#home">
+                                    Home
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#about">
+                                    About
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#skills">
+                                    Skills
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#projects">
+                                    Projects
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#contact">
+                                    Contact
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <!-- Social Links -->
+
+                    <div class="footer-column">
+
+                        <h3 class="footer-title">
+                            Connect
+                        </h3>
+
+                        <div class="footer-social">
+
+                            <a href="#" aria-label="GitHub">
+                                GH
+                            </a>
+
+                            <a href="#" aria-label="LinkedIn">
+                                in
+                            </a>
+
+                            <a href="#" aria-label="X">
+                                X
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Footer Bottom -->
+
+                <div class="footer-bottom">
+
+                    <p class="footer-copyright">
+                        © 2026 Xenoriq Labs. All rights reserved.
+                    </p>
+
+                    <p class="footer-credit">
+                        Built by
+                        <span>
+                            Saif Ur Rahman
+                        </span>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </footer>
 
     </main>
 
