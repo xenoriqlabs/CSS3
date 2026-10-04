@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>E-Commerce</title>
+    <title>Saifii's Store</title>
+    <link rel="icon" href="../media/saifii-store.png" type="png">
 
     <style>
         /* ========================================
@@ -830,6 +831,61 @@
             background-color: var(--primary-hover);
             transform: translateY(-2px);
         }
+
+        /* ========================================
+                PRODUCT BADGE & WISHLIST
+        ======================================== */
+
+        .product-image {
+            position: relative;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+
+            padding: 5px 10px;
+
+            color: #ffffff;
+            background-color: var(--danger-color);
+
+            border-radius: var(--radius-sm);
+
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .wishlist-button {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: var(--heading-color);
+            background-color: #ffffff;
+
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+
+            font-size: 1.3rem;
+
+            cursor: pointer;
+
+            transition: all var(--transition-fast);
+        }
+
+        .wishlist-button:hover {
+            color: #ffffff;
+            background-color: var(--danger-color);
+            border-color: var(--danger-color);
+        }
     </style>
 </head>
 
@@ -1227,6 +1283,9 @@
                         <div class="product-image">
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC7AnNBoqFjqsoNN3xmyTL7PdNiBJ1Hc1vAzOmGgYKd0g_nogMnQsE5hw&s=10"
                                 alt="Classic T-Shirt">
+
+                            <span class="product-badge">Sale</span>
+                            <button type="button" class="wishlist-button">♡</button>
                         </div>
 
                         <div class="product-info">
@@ -1262,6 +1321,9 @@
                         <div class="product-image">
                             <img src="https://appleman.pk/cdn/shop/files/1_f3c9caa7-e425-4550-98eb-2dc574688250.png?v=1733139373&width=1946"
                                 alt="Wireless Headphones">
+
+                            <span class="product-badge">Sale</span>
+                            <button type="button" class="wishlist-button">♡</button>
                         </div>
 
                         <div class="product-info">
@@ -1297,6 +1359,9 @@
                         <div class="product-image">
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVqICuBJpvwP92PhAanV2qPAhmQ56z8uPSA4_PpChnO6Gmo9GAXx345s8&s=10"
                                 alt="Modern Backpack">
+
+                            <span class="product-badge">Sale</span>
+                            <button type="button" class="wishlist-button">♡</button>
                         </div>
 
                         <div class="product-info">
@@ -1332,6 +1397,9 @@
                         <div class="product-image">
                             <img src="https://img.drz.lazcdn.com/static/pk/p/d1c57075850a144e406b44e40c3c76dc.jpg_720x720q80.jpg"
                                 alt="Running Shoes">
+
+                            <span class="product-badge">Sale</span>
+                            <button type="button" class="wishlist-button">♡</button>
                         </div>
 
                         <div class="product-info">
@@ -1367,6 +1435,9 @@
                         <div class="product-image">
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAKW3FQoEQrdo0_pi_NioHXlfD3Gv3h_5pPC7SfcwRcjcz0VhS5KSkCdK7&s=10"
                                 alt="Smart Watch">
+
+                            <span class="product-badge">Sale</span>
+                            <button type="button" class="wishlist-button">♡</button>
                         </div>
 
                         <div class="product-info">
@@ -1402,6 +1473,9 @@
                         <div class="product-image">
                             <img src="https://static-01.daraz.pk/p/76c9ea3445563b836ef5f9d63187acd9.jpg"
                                 alt="Leather Wallet">
+
+                            <span class="product-badge">Sale</span>
+                            <button type="button" class="wishlist-button">♡</button>
                         </div>
 
                         <div class="product-info">
@@ -1437,6 +1511,9 @@
                         <div class="product-image">
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR44JUiBNLhaycIkIODiweKe-lKlfBi4MY2vo1oeKdA-8B8LyaHp2D9pdgu&s=10"
                                 alt="Home Lamp">
+
+                            <span class="product-badge">Sale</span>
+                            <button type="button" class="wishlist-button">♡</button>
                         </div>
 
                         <div class="product-info">
@@ -1472,6 +1549,9 @@
                         <div class="product-image">
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcLMV2Zp54GMzW7kVg_RhfrNgc0uWIy5TMq7bpuLMsLS3STO-U96KlCK6n&s=10"
                                 alt="Fashion Sunglasses">
+
+                            <span class="product-badge">Sale</span>
+                            <button type="button" class="wishlist-button">♡</button>
                         </div>
 
                         <div class="product-info">
