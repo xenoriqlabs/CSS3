@@ -167,7 +167,11 @@
         ======================================== */
 
         .sidebar {
-            min-height: 100vh;
+            position: sticky;
+            top: 0;
+
+            height: 100vh;
+            overflow: hidden;
 
             display: flex;
             flex-direction: column;
@@ -175,7 +179,7 @@
             background-color: var(--sidebar-color);
             color: var(--text-white);
 
-            padding: var(--spacing-lg);
+            padding: 1.25rem var(--spacing-lg);
         }
 
 
@@ -235,13 +239,14 @@
 
         .sidebar-nav {
             flex: 1;
+            min-height: 0;
 
-            padding-block: var(--spacing-xl);
+            overflow: hidden;
         }
 
 
         .nav-title {
-            margin-bottom: var(--spacing-sm);
+            margin-top: 0.6rem;
 
             color: #64748b;
 
@@ -257,8 +262,6 @@
             flex-direction: column;
 
             gap: 4px;
-
-            margin-bottom: var(--spacing-xl);
         }
 
 
@@ -270,7 +273,7 @@
 
             gap: var(--spacing-md);
 
-            padding: 0 var(--spacing-md);
+            padding: 10px 12px;
 
             color: #94a3b8;
 
@@ -369,9 +372,11 @@
         ======================================== */
 
         .sidebar-footer {
-            padding-top: var(--spacing-lg);
+            margin-top: auto;
 
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            flex-shrink: 0;
+
+            padding-top: 0.75rem;
         }
 
 
@@ -470,6 +475,10 @@
         ======================================== */
 
         .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
             min-height: var(--header-height);
 
             display: flex;
