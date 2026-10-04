@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>E-Commerce</title>
+
+    <style>
+        /* ========================================
+                1. CSS VARIABLES
+        ======================================== */
+
+        :root {
+
+            /* Primary Colors */
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+
+            /* Secondary Colors */
+            --secondary-color: #7c3aed;
+            --accent-color: #f59e0b;
+
+            /* Background Colors */
+            --background-color: #ffffff;
+            --surface-color: #f8fafc;
+            --card-color: #ffffff;
+
+            /* Text Colors */
+            --heading-color: #0f172a;
+            --text-color: #334155;
+            --muted-color: #64748b;
+
+            /* Border */
+            --border-color: #e2e8f0;
+
+            /* Status Colors */
+            --success-color: #16a34a;
+            --danger-color: #dc2626;
+
+            /* Container */
+            --container-width: 1200px;
+
+            /* Spacing */
+            --spacing-xs: 0.25rem;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            --spacing-2xl: 3rem;
+            --spacing-3xl: 4rem;
+            --spacing-4xl: 6rem;
+
+            /* Border Radius */
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+
+            /* Shadow */
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.10);
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+
+            /* Transition */
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s ease;
+
+        }
+
+
+        /* ========================================
+                2. RESET & GLOBAL CSS
+        ======================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+
+            background-color: var(--background-color);
+            color: var(--text-color);
+
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            font: inherit;
+        }
+
+        button {
+            border: none;
+            cursor: pointer;
+        }
+
+        ul,
+        ol {
+            list-style: none;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: var(--heading-color);
+            line-height: 1.2;
+        }
+
+        p {
+            color: var(--text-color);
+        }
+
+        .container {
+            width: min(100% - 2rem, var(--container-width));
+            margin-inline: auto;
+        }
+
+        section {
+            padding-block: var(--spacing-4xl);
+        }
+
+
+        /* ========================================
+                3. HEADER
+        ======================================== */
+
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background-color: rgba(255, 255, 255, 0.95);
+
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .navbar {
+            min-height: 72px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: var(--spacing-xl);
+        }
+
+
+        /* ========================================
+                LOGO
+        ======================================== */
+
+        .logo {
+            flex-shrink: 0;
+
+            color: var(--heading-color);
+
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+
+        /* ========================================
+                NAVIGATION
+        ======================================== */
+
+        .nav-list {
+            display: flex;
+            align-items: center;
+
+            gap: var(--spacing-xl);
+        }
+
+        .nav-link {
+            position: relative;
+
+            color: var(--text-color);
+
+            font-size: 0.95rem;
+            font-weight: 600;
+
+            transition: color var(--transition-fast);
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary-color);
+        }
+
+
+        /* ========================================
+                HEADER ACTIONS
+        ======================================== */
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+
+            gap: var(--spacing-md);
+        }
+
+        .header-action {
+            padding: 8px 12px;
+
+            color: var(--text-color);
+
+            font-size: 0.9rem;
+            font-weight: 600;
+
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+
+            transition:
+                color var(--transition-fast),
+                background-color var(--transition-fast),
+                border-color var(--transition-fast);
+        }
+
+        .header-action:hover {
+            color: var(--primary-color);
+
+            background-color: var(--surface-color);
+
+            border-color: var(--primary-color);
+        }
+
+
+        /* ========================================
+                4. HERO SECTION
+        ======================================== */
+
+        .hero {
+            padding-block: var(--spacing-4xl);
+
+            background-color: var(--surface-color);
+        }
+
+        .hero-content {
+            min-height: 520px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            align-items: center;
+
+            gap: var(--spacing-3xl);
+        }
+
+
+        /* ========================================
+                HERO TEXT
+        ======================================== */
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+
+            margin-bottom: var(--spacing-md);
+            padding: 6px 12px;
+
+            color: var(--primary-color);
+
+            background-color: #eff6ff;
+
+            border: 1px solid #bfdbfe;
+            border-radius: 999px;
+
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .hero-title {
+            margin-bottom: var(--spacing-lg);
+
+            color: var(--heading-color);
+
+            font-size: clamp(3rem, 5vw, 5rem);
+            font-weight: 800;
+
+            line-height: 1.05;
+        }
+
+        .hero-title span {
+            display: block;
+
+            color: var(--primary-color);
+        }
+
+        .hero-description {
+            max-width: 520px;
+
+            margin-bottom: var(--spacing-xl);
+
+            color: var(--muted-color);
+
+            font-size: 1.1rem;
+        }
+
+
+        /* ========================================
+                HERO BUTTONS
+        ======================================== */
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+
+            gap: var(--spacing-md);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 48px;
+
+            padding: 12px 22px;
+
+            border-radius: var(--radius-md);
+
+            font-weight: 700;
+
+            transition:
+                transform var(--transition-fast),
+                background-color var(--transition-fast),
+                color var(--transition-fast);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            color: #ffffff;
+
+            background-color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn-secondary {
+            color: var(--heading-color);
+
+            background-color: var(--background-color);
+
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            color: var(--primary-color);
+
+            border-color: var(--primary-color);
+        }
+
+
+        /* ========================================
+                HERO IMAGE
+        ======================================== */
+
+        .hero-image {
+            height: 500px;
+
+            overflow: hidden;
+
+            border-radius: var(--radius-xl);
+
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+
+        /* ========================================
+                5. CATEGORIES SECTION
+        ======================================== */
+
+        .categories {
+            background-color: var(--background-color);
+        }
+
+        .section-heading {
+            max-width: 700px;
+
+            margin-inline: auto;
+            margin-bottom: var(--spacing-3xl);
+
+            text-align: center;
+        }
+
+        .section-label {
+            display: inline-block;
+
+            margin-bottom: var(--spacing-sm);
+
+            color: var(--primary-color);
+
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .section-title {
+            margin-bottom: var(--spacing-md);
+
+            color: var(--heading-color);
+
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+        }
+
+        .section-description {
+            color: var(--muted-color);
+
+            font-size: 1rem;
+        }
+
+
+        /* ========================================
+                CATEGORY GRID
+        ======================================== */
+
+        .category-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: var(--spacing-lg);
+        }
+
+
+        /* ========================================
+                CATEGORY CARD
+        ======================================== */
+
+        .category-card {
+            padding: var(--spacing-xl);
+
+            background-color: var(--card-color);
+
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+
+            text-align: center;
+
+            box-shadow: var(--shadow-sm);
+
+            transition:
+                transform var(--transition-normal),
+                box-shadow var(--transition-normal),
+                border-color var(--transition-normal);
+        }
+
+        .category-card:hover {
+            transform: translateY(-6px);
+
+            border-color: var(--primary-color);
+
+            box-shadow: var(--shadow-md);
+        }
+
+
+        /* ========================================
+                CATEGORY ICON
+        ======================================== */
+
+        .category-icon {
+            width: 72px;
+            height: 72px;
+
+            margin-inline: auto;
+            margin-bottom: var(--spacing-md);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background-color: var(--surface-color);
+
+            border-radius: 50%;
+
+            font-size: 2rem;
+        }
+
+
+        /* ========================================
+                CATEGORY TITLE
+        ======================================== */
+
+        .category-title {
+            margin-bottom: var(--spacing-xs);
+
+            color: var(--heading-color);
+
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .category-count {
+            color: var(--muted-color);
+
+            font-size: 0.9rem;
+        }
+
+
+        /* ========================================
+                6. PRODUCTS SECTION
+        ======================================== */
+
+        .products {
+            background-color: var(--surface-color);
+        }
+
+        .products-heading {
+            margin-inline: 0;
+            margin-bottom: 0;
+
+            text-align: left;
+        }
+
+        .products-header {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+
+            gap: var(--spacing-2xl);
+
+            margin-bottom: var(--spacing-3xl);
+        }
+
+
+        /* ========================================
+                PRODUCT FILTERS
+        ======================================== */
+
+        .products-controls {
+            display: flex;
+            align-items: center;
+
+            gap: var(--spacing-lg);
+        }
+
+        .filter-buttons {
+            display: flex;
+            align-items: center;
+
+            gap: var(--spacing-sm);
+        }
+
+        .filter-button {
+            padding: 8px 14px;
+
+            color: var(--text-color);
+
+            background-color: var(--background-color);
+
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+
+            font-size: 0.9rem;
+            font-weight: 600;
+
+            transition:
+                color var(--transition-fast),
+                background-color var(--transition-fast),
+                border-color var(--transition-fast);
+        }
+
+        .filter-button:hover,
+        .filter-button.active {
+            color: #ffffff;
+
+            background-color: var(--primary-color);
+
+            border-color: var(--primary-color);
+        }
+
+
+        /* ========================================
+                SORT CONTROL
+        ======================================== */
+
+        .sort-control {
+            display: flex;
+            align-items: center;
+
+            gap: var(--spacing-sm);
+
+            white-space: nowrap;
+        }
+
+        .sort-control label {
+            color: var(--muted-color);
+
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .sort-control select {
+            padding: 8px 12px;
+
+            color: var(--text-color);
+
+            background-color: var(--background-color);
+
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+
+            outline: none;
+
+            cursor: pointer;
+        }
+
+        .sort-control select:focus {
+            border-color: var(--primary-color);
+        }
+
+
+        /* ========================================
+                7. PRODUCT GRID
+        ======================================== */
+
+        .product-grid {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: var(--spacing-lg);
+        }
+
+
+        /* ========================================
+                PRODUCT CARD
+        ======================================== */
+
+        .product-card {
+            overflow: hidden;
+
+            background-color: var(--card-color);
+
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+
+            box-shadow: var(--shadow-sm);
+        }
+
+
+        /* ========================================
+                PRODUCT IMAGE
+        ======================================== */
+
+        .product-image {
+            height: 260px;
+
+            overflow: hidden;
+
+            background-color: var(--surface-color);
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+
+        /* ========================================
+                PRODUCT INFO
+        ======================================== */
+
+        .product-info {
+            padding: var(--spacing-lg);
+        }
+
+        .product-category {
+            margin-bottom: var(--spacing-xs);
+
+            color: var(--muted-color);
+
+            font-size: 0.85rem;
+        }
+
+        .product-title {
+            margin-bottom: var(--spacing-sm);
+
+            color: var(--heading-color);
+
+            font-size: 1.1rem;
+        }
+
+
+        /* ========================================
+                PRODUCT RATING
+        ======================================== */
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+
+            gap: 8px;
+
+            margin-bottom: var(--spacing-md);
+        }
+
+        .stars {
+            color: var(--accent-color);
+
+            font-size: 0.9rem;
+        }
+
+        .rating-count {
+            color: var(--muted-color);
+
+            font-size: 0.85rem;
+        }
+
+
+        /* ========================================
+                PRODUCT PRICE
+        ======================================== */
+
+        .product-price-box {
+            display: flex;
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: var(--spacing-md);
+        }
+
+        .product-price {
+            color: var(--primary-color);
+
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .product-old-price {
+            color: var(--muted-color);
+
+            font-size: 0.9rem;
+
+            text-decoration: line-through;
+        }
+
+
+        /* ========================================
+                ADD TO CART
+        ======================================== */
+
+        .add-to-cart {
+            width: 100%;
+
+            padding: 10px;
+
+            color: #ffffff;
+
+            background-color: var(--primary-color);
+
+            border-radius: var(--radius-md);
+
+            font-weight: 700;
+        }
+
+        /* ========================================
+                PRODUCT CARD HOVER
+        ======================================== */
+
+        .product-card {
+            transition: transform var(--transition-normal),
+                box-shadow var(--transition-normal);
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .product-image img {
+            transition: transform var(--transition-normal);
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .add-to-cart {
+            transition: background-color var(--transition-fast),
+                transform var(--transition-fast);
+        }
+
+        .add-to-cart:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- ========================================
+            HEADER
+    ======================================== -->
+
+    <header class="header">
+
+        <div class="container">
+
+            <nav class="navbar">
+
+                <!-- Logo -->
+                <a href="#" class="logo">
+                    Saifii's Store
+                </a>
+
+
+                <!-- Navigation -->
+                <ul class="nav-list">
+
+                    <li>
+                        <a href="#" class="nav-link active">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#categories" class="nav-link">
+                            Categories
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#products" class="nav-link">
+                            Products
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#new-arrivals" class="nav-link">
+                            New Arrivals
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#contact" class="nav-link">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+
+                <!-- Header Actions -->
+                <div class="header-actions">
+
+                    <a href="#" class="header-action">
+                        Search
+                    </a>
+
+                    <a href="#" class="header-action">
+                        Cart (0)
+                    </a>
+
+                    <a href="#" class="header-action">
+                        Account
+                    </a>
+
+                </div>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ========================================
+            MAIN
+    ======================================== -->
+
+    <main>
+
+
+        <!-- ========================================
+                HERO SECTION
+        ======================================== -->
+
+        <section class="hero">
+
+            <div class="container">
+
+                <div class="hero-content">
+
+
+                    <!-- Hero Text -->
+                    <div class="hero-text">
+
+                        <span class="hero-badge">
+                            New Collection
+                        </span>
+
+                        <h1 class="hero-title">
+                            Discover Products
+                            <span>You’ll Love</span>
+                        </h1>
+
+                        <p class="hero-description">
+                            Explore our latest collection of quality products
+                            designed to make your everyday life better.
+                        </p>
+
+                        <div class="hero-actions">
+
+                            <a href="#products" class="btn btn-primary">
+                                Shop Now
+                            </a>
+
+                            <a href="#categories" class="btn btn-secondary">
+                                Explore Categories
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Hero Image -->
+                    <div class="hero-image">
+
+                        <img src="../media/saifii-store.png" alt="Xenoriq Labs featured products">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================
+                CATEGORIES SECTION
+        ======================================== -->
+
+        <section class="categories" id="categories">
+
+            <div class="container">
+
+
+                <!-- Section Heading -->
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        Shop By Category
+                    </span>
+
+                    <h2 class="section-title">
+                        Explore Our Categories
+                    </h2>
+
+                    <p class="section-description">
+                        Browse our carefully selected categories and
+                        find the products that match your needs.
+                    </p>
+
+                </div>
+
+
+                <!-- Categories Grid -->
+                <div class="category-grid">
+
+
+                    <!-- Category Card -->
+                    <a href="#" class="category-card">
+
+                        <div class="category-icon">
+                            👕
+                        </div>
+
+                        <h3 class="category-title">
+                            Fashion
+                        </h3>
+
+                        <p class="category-count">
+                            120+ Products
+                        </p>
+
+                    </a>
+
+
+                    <!-- Category Card -->
+                    <a href="#" class="category-card">
+
+                        <div class="category-icon">
+                            💻
+                        </div>
+
+                        <h3 class="category-title">
+                            Electronics
+                        </h3>
+
+                        <p class="category-count">
+                            85+ Products
+                        </p>
+
+                    </a>
+
+
+                    <!-- Category Card -->
+                    <a href="#" class="category-card">
+
+                        <div class="category-icon">
+                            🏠
+                        </div>
+
+                        <h3 class="category-title">
+                            Home & Living
+                        </h3>
+
+                        <p class="category-count">
+                            95+ Products
+                        </p>
+
+                    </a>
+
+
+                    <!-- Category Card -->
+                    <a href="#" class="category-card">
+
+                        <div class="category-icon">
+                            👟
+                        </div>
+
+                        <h3 class="category-title">
+                            Shoes
+                        </h3>
+
+                        <p class="category-count">
+                            70+ Products
+                        </p>
+
+                    </a>
+
+
+                    <!-- Category Card -->
+                    <a href="#" class="category-card">
+
+                        <div class="category-icon">
+                            🎧
+                        </div>
+
+                        <h3 class="category-title">
+                            Accessories
+                        </h3>
+
+                        <p class="category-count">
+                            110+ Products
+                        </p>
+
+                    </a>
+
+
+                    <!-- Category Card -->
+                    <a href="#" class="category-card">
+
+                        <div class="category-icon">
+                            👜
+                        </div>
+
+                        <h3 class="category-title">
+                            Bags
+                        </h3>
+
+                        <p class="category-count">
+                            60+ Products
+                        </p>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================
+                PRODUCTS SECTION
+        ======================================== -->
+
+        <section class="products" id="products">
+
+            <div class="container">
+
+
+                <!-- Products Header -->
+                <div class="products-header">
+
+
+                    <!-- Heading -->
+                    <div class="section-heading products-heading">
+
+                        <span class="section-label">
+                            Our Products
+                        </span>
+
+                        <h2 class="section-title">
+                            Featured Products
+                        </h2>
+
+                        <p class="section-description">
+                            Discover our most popular products,
+                            selected for quality, style, and value.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Product Controls -->
+                    <div class="products-controls">
+
+
+                        <!-- Category Filters -->
+                        <div class="filter-buttons">
+
+                            <button type="button" class="filter-button active">
+                                All
+                            </button>
+
+                            <button type="button" class="filter-button">
+                                Fashion
+                            </button>
+
+                            <button type="button" class="filter-button">
+                                Electronics
+                            </button>
+
+                            <button type="button" class="filter-button">
+                                Accessories
+                            </button>
+
+                        </div>
+
+
+                        <!-- Sort -->
+                        <div class="sort-control">
+
+                            <label for="sort-products">
+                                Sort:
+                            </label>
+
+                            <select id="sort-products">
+
+                                <option value="featured">
+                                    Featured
+                                </option>
+
+                                <option value="price-low">
+                                    Price: Low to High
+                                </option>
+
+                                <option value="price-high">
+                                    Price: High to Low
+                                </option>
+
+                                <option value="rating">
+                                    Highest Rated
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ========================================
+                        PRODUCT GRID
+                ======================================== -->
+
+                <div class="product-grid">
+
+                    <!-- Product 1 -->
+                    <article class="product-card">
+
+                        <div class="product-image">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC7AnNBoqFjqsoNN3xmyTL7PdNiBJ1Hc1vAzOmGgYKd0g_nogMnQsE5hw&s=10"
+                                alt="Classic T-Shirt">
+                        </div>
+
+                        <div class="product-info">
+
+                            <p class="product-category">Fashion</p>
+
+                            <h3 class="product-title">
+                                Classic T-Shirt
+                            </h3>
+
+                            <div class="product-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-count">(24)</span>
+                            </div>
+
+                            <div class="product-price-box">
+                                <span class="product-price">$49.99</span>
+                                <span class="product-old-price">$69.99</span>
+                            </div>
+
+                            <button type="button" class="add-to-cart">
+                                Add to Cart
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Product 2 -->
+                    <article class="product-card">
+
+                        <div class="product-image">
+                            <img src="https://appleman.pk/cdn/shop/files/1_f3c9caa7-e425-4550-98eb-2dc574688250.png?v=1733139373&width=1946"
+                                alt="Wireless Headphones">
+                        </div>
+
+                        <div class="product-info">
+
+                            <p class="product-category">Electronics</p>
+
+                            <h3 class="product-title">
+                                Wireless Headphones
+                            </h3>
+
+                            <div class="product-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-count">(38)</span>
+                            </div>
+
+                            <div class="product-price-box">
+                                <span class="product-price">$79.99</span>
+                                <span class="product-old-price">$99.99</span>
+                            </div>
+
+                            <button type="button" class="add-to-cart">
+                                Add to Cart
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Product 3 -->
+                    <article class="product-card">
+
+                        <div class="product-image">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVqICuBJpvwP92PhAanV2qPAhmQ56z8uPSA4_PpChnO6Gmo9GAXx345s8&s=10"
+                                alt="Modern Backpack">
+                        </div>
+
+                        <div class="product-info">
+
+                            <p class="product-category">Bags</p>
+
+                            <h3 class="product-title">
+                                Modern Backpack
+                            </h3>
+
+                            <div class="product-rating">
+                                <span class="stars">★★★★☆</span>
+                                <span class="rating-count">(19)</span>
+                            </div>
+
+                            <div class="product-price-box">
+                                <span class="product-price">$59.99</span>
+                                <span class="product-old-price">$84.99</span>
+                            </div>
+
+                            <button type="button" class="add-to-cart">
+                                Add to Cart
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Product 4 -->
+                    <article class="product-card">
+
+                        <div class="product-image">
+                            <img src="https://img.drz.lazcdn.com/static/pk/p/d1c57075850a144e406b44e40c3c76dc.jpg_720x720q80.jpg"
+                                alt="Running Shoes">
+                        </div>
+
+                        <div class="product-info">
+
+                            <p class="product-category">Shoes</p>
+
+                            <h3 class="product-title">
+                                Running Shoes
+                            </h3>
+
+                            <div class="product-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-count">(42)</span>
+                            </div>
+
+                            <div class="product-price-box">
+                                <span class="product-price">$89.99</span>
+                                <span class="product-old-price">$119.99</span>
+                            </div>
+
+                            <button type="button" class="add-to-cart">
+                                Add to Cart
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Product 5 -->
+                    <article class="product-card">
+
+                        <div class="product-image">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAKW3FQoEQrdo0_pi_NioHXlfD3Gv3h_5pPC7SfcwRcjcz0VhS5KSkCdK7&s=10"
+                                alt="Smart Watch">
+                        </div>
+
+                        <div class="product-info">
+
+                            <p class="product-category">Electronics</p>
+
+                            <h3 class="product-title">
+                                Smart Watch
+                            </h3>
+
+                            <div class="product-rating">
+                                <span class="stars">★★★★☆</span>
+                                <span class="rating-count">(31)</span>
+                            </div>
+
+                            <div class="product-price-box">
+                                <span class="product-price">$129.99</span>
+                                <span class="product-old-price">$159.99</span>
+                            </div>
+
+                            <button type="button" class="add-to-cart">
+                                Add to Cart
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Product 6 -->
+                    <article class="product-card">
+
+                        <div class="product-image">
+                            <img src="https://static-01.daraz.pk/p/76c9ea3445563b836ef5f9d63187acd9.jpg"
+                                alt="Leather Wallet">
+                        </div>
+
+                        <div class="product-info">
+
+                            <p class="product-category">Accessories</p>
+
+                            <h3 class="product-title">
+                                Leather Wallet
+                            </h3>
+
+                            <div class="product-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-count">(27)</span>
+                            </div>
+
+                            <div class="product-price-box">
+                                <span class="product-price">$39.99</span>
+                                <span class="product-old-price">$54.99</span>
+                            </div>
+
+                            <button type="button" class="add-to-cart">
+                                Add to Cart
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Product 7 -->
+                    <article class="product-card">
+
+                        <div class="product-image">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR44JUiBNLhaycIkIODiweKe-lKlfBi4MY2vo1oeKdA-8B8LyaHp2D9pdgu&s=10"
+                                alt="Home Lamp">
+                        </div>
+
+                        <div class="product-info">
+
+                            <p class="product-category">Home & Living</p>
+
+                            <h3 class="product-title">
+                                Modern Table Lamp
+                            </h3>
+
+                            <div class="product-rating">
+                                <span class="stars">★★★★☆</span>
+                                <span class="rating-count">(16)</span>
+                            </div>
+
+                            <div class="product-price-box">
+                                <span class="product-price">$44.99</span>
+                                <span class="product-old-price">$64.99</span>
+                            </div>
+
+                            <button type="button" class="add-to-cart">
+                                Add to Cart
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Product 8 -->
+                    <article class="product-card">
+
+                        <div class="product-image">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcLMV2Zp54GMzW7kVg_RhfrNgc0uWIy5TMq7bpuLMsLS3STO-U96KlCK6n&s=10"
+                                alt="Fashion Sunglasses">
+                        </div>
+
+                        <div class="product-info">
+
+                            <p class="product-category">Accessories</p>
+
+                            <h3 class="product-title">
+                                Fashion Sunglasses
+                            </h3>
+
+                            <div class="product-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-count">(35)</span>
+                            </div>
+
+                            <div class="product-price-box">
+                                <span class="product-price">$34.99</span>
+                                <span class="product-old-price">$49.99</span>
+                            </div>
+
+                            <button type="button" class="add-to-cart">
+                                Add to Cart
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
