@@ -886,6 +886,751 @@
             background-color: var(--danger-color);
             border-color: var(--danger-color);
         }
+
+        /* ========================================
+                12. QUICK VIEW BUTTON
+        ======================================== */
+
+        .quick-view-button {
+            position: absolute;
+            left: 50%;
+            bottom: 15px;
+
+            transform: translateX(-50%);
+
+            padding: 8px 16px;
+
+            color: var(--heading-color);
+            background-color: #ffffff;
+
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+
+            font-size: 0.85rem;
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: all var(--transition-fast);
+        }
+
+        .quick-view-button:hover {
+            color: #ffffff;
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        /* ========================================
+                13. PRODUCT STOCK
+        ======================================== */
+
+        .product-stock {
+            margin-bottom: var(--spacing-md);
+
+            color: var(--success-color);
+
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* ========================================
+                14. PRODUCT DELIVERY
+        ======================================== */
+
+        .product-delivery {
+            margin-bottom: var(--spacing-md);
+
+            color: var(--muted-color);
+
+            font-size: 0.8rem;
+        }
+
+        /* ========================================
+                15. PRODUCT CARD FINAL POLISH
+        ======================================== */
+
+        .product-info {
+            padding: var(--spacing-lg);
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-category {
+            margin-bottom: var(--spacing-xs);
+
+            color: var(--muted-color);
+
+            font-size: 0.85rem;
+        }
+
+        .product-title {
+            margin-bottom: var(--spacing-sm);
+
+            color: var(--heading-color);
+
+            font-size: 1.1rem;
+            line-height: 1.4;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            margin-bottom: var(--spacing-md);
+        }
+
+        .stars {
+            color: var(--accent-color);
+
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .rating-count {
+            color: var(--muted-color);
+
+            font-size: 0.85rem;
+        }
+
+        .product-price-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .product-price {
+            color: var(--primary-color);
+
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .product-old-price {
+            color: var(--muted-color);
+
+            font-size: 0.9rem;
+
+            text-decoration: line-through;
+        }
+
+        .product-stock {
+            margin-bottom: var(--spacing-xs);
+
+            color: var(--success-color);
+
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .product-delivery {
+            margin-bottom: var(--spacing-md);
+
+            color: var(--muted-color);
+
+            font-size: 0.8rem;
+        }
+
+        .add-to-cart {
+            width: 100%;
+
+            padding: 11px 16px;
+
+            color: #ffffff;
+            background-color: var(--primary-color);
+
+            border-radius: var(--radius-md);
+
+            font-size: 0.9rem;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition:
+                background-color var(--transition-fast),
+                transform var(--transition-fast);
+        }
+
+        .add-to-cart:hover {
+            background-color: var(--primary-hover);
+
+            transform: translateY(-2px);
+        }
+
+        /* ========================================
+                16. PRODUCT PAGINATION
+        ======================================== */
+
+        .product-pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+
+            margin-top: var(--spacing-2xl);
+        }
+
+        .pagination-button {
+            min-width: 42px;
+            height: 42px;
+
+            padding: 0 12px;
+
+            color: var(--text-color);
+            background-color: var(--card-color);
+
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+
+            font-size: 0.9rem;
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition:
+                color var(--transition-fast),
+                background-color var(--transition-fast),
+                border-color var(--transition-fast);
+        }
+
+        .pagination-button:hover {
+            color: #ffffff;
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .pagination-button.active {
+            color: #ffffff;
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        /* ========================================
+                17. NEWSLETTER SECTION
+        ======================================== */
+
+        .newsletter-section {
+            padding-block: var(--spacing-3xl);
+        }
+
+        .newsletter {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--spacing-2xl);
+
+            padding: var(--spacing-3xl);
+
+            background-color: var(--surface-color);
+
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-xl);
+        }
+
+        .newsletter-content {
+            max-width: 600px;
+        }
+
+        .newsletter-badge {
+            display: inline-block;
+
+            margin-bottom: var(--spacing-sm);
+
+            color: var(--primary-color);
+
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .newsletter-title {
+            margin-bottom: var(--spacing-sm);
+
+            color: var(--heading-color);
+
+            font-size: 2rem;
+        }
+
+        .newsletter-text {
+            color: var(--muted-color);
+
+            line-height: 1.7;
+        }
+
+        .newsletter-form {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            min-width: 420px;
+        }
+
+        .newsletter-input {
+            flex: 1;
+
+            padding: 12px 14px;
+
+            color: var(--text-color);
+            background-color: var(--card-color);
+
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+
+            outline: none;
+        }
+
+        .newsletter-input:focus {
+            border-color: var(--primary-color);
+        }
+
+        .newsletter-button {
+            padding: 12px 20px;
+
+            color: #ffffff;
+            background-color: var(--primary-color);
+
+            border-radius: var(--radius-md);
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: background-color var(--transition-fast);
+        }
+
+        .newsletter-button:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* ========================================
+                18. FOOTER
+        ======================================== */
+
+        .footer {
+            margin-top: var(--spacing-3xl);
+
+            color: #ffffff;
+            background-color: #0f172a;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+
+            gap: var(--spacing-2xl);
+
+            padding-block: var(--spacing-3xl);
+        }
+
+        .footer-logo {
+            margin-bottom: var(--spacing-md);
+
+            font-size: 1.4rem;
+        }
+
+        .footer-description {
+            max-width: 300px;
+
+            color: #cbd5e1;
+
+            line-height: 1.7;
+        }
+
+        .footer-title {
+            margin-bottom: var(--spacing-md);
+
+            font-size: 1rem;
+        }
+
+        .footer-links,
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+
+            gap: 10px;
+        }
+
+        .footer-links a,
+        .footer-social a {
+            color: #cbd5e1;
+
+            transition: color var(--transition-fast);
+        }
+
+        .footer-links a:hover,
+        .footer-social a:hover {
+            color: #ffffff;
+        }
+
+        .footer-contact li {
+            color: #cbd5e1;
+
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #334155;
+        }
+
+        .footer-bottom-content {
+            min-height: 70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: var(--spacing-lg);
+        }
+
+        .footer-bottom-content p {
+            color: #94a3b8;
+
+            font-size: 0.85rem;
+        }
+
+        .footer-social {
+            display: flex;
+            align-items: center;
+
+            gap: var(--spacing-md);
+        }
+
+        .footer-social a {
+            font-size: 0.85rem;
+        }
+
+        /* ========================================
+                19. BACK TO TOP
+        ======================================== */
+
+        .back-to-top {
+            position: fixed;
+
+            right: 25px;
+            bottom: 25px;
+
+            width: 45px;
+            height: 45px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #ffffff;
+            background-color: var(--primary-color);
+
+            border-radius: 50%;
+
+            font-size: 1.2rem;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            box-shadow: var(--shadow-md);
+
+            transition:
+                background-color var(--transition-fast),
+                transform var(--transition-fast);
+        }
+
+        .back-to-top:hover {
+            background-color: var(--primary-hover);
+
+            transform: translateY(-3px);
+        }
+
+        /* ========================================
+                RESPONSIVE DESIGN
+        ======================================== */
+
+
+        /* ========================================
+                TABLET
+            1024px and below
+        ======================================== */
+
+        @media (max-width: 1024px) {
+
+            /* Container */
+            .container {
+                width: min(100% - 2rem, var(--container-width));
+            }
+
+
+            /* Header */
+
+            .nav-list {
+                gap: var(--spacing-md);
+            }
+
+            .header-actions {
+                gap: 8px;
+            }
+
+
+            /* Hero */
+
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content {
+                max-width: 700px;
+                margin-inline: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image {
+                max-width: 650px;
+                margin-inline: auto;
+            }
+
+
+            /* Categories */
+
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+
+            /* Products */
+
+            .product-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+
+            /* Newsletter */
+
+            .newsletter {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .newsletter-content {
+                max-width: 100%;
+            }
+
+            .newsletter-form {
+                min-width: 0;
+                width: 100%;
+            }
+
+
+            /* Footer */
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        /* ========================================
+                MOBILE
+            768px and below
+        ======================================== */
+
+        @media (max-width: 768px) {
+
+            /* General */
+
+            section {
+                padding-block: var(--spacing-2xl);
+            }
+
+
+            /* Header */
+
+            .navbar {
+                min-height: 60px;
+            }
+
+            .nav-list {
+                display: none;
+            }
+
+            .header-actions {
+                margin-left: auto;
+            }
+
+            .header-action {
+                font-size: 0.85rem;
+            }
+
+
+            /* Hero */
+
+            .hero-title {
+                font-size: clamp(2.3rem, 10vw, 4rem);
+            }
+
+            .hero-description {
+                font-size: 0.95rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+
+            /* Categories */
+
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            /* Products */
+
+            .products-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--spacing-md);
+            }
+
+            .product-controls {
+                width: 100%;
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--spacing-md);
+            }
+
+            .product-image {
+                height: 220px;
+            }
+
+            .product-info {
+                padding: var(--spacing-md);
+            }
+
+
+            /* Newsletter */
+
+            .newsletter {
+                padding: var(--spacing-xl);
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .newsletter-button {
+                width: 100%;
+            }
+
+
+            /* Footer */
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-xl);
+            }
+
+            .footer-bottom-content {
+                flex-direction: column;
+                justify-content: center;
+                padding-block: var(--spacing-md);
+                text-align: center;
+            }
+
+        }
+
+
+        /* ========================================
+                SMALL MOBILE
+                480px and below
+        ======================================== */
+
+        @media (max-width: 480px) {
+
+            /* Container */
+
+            .container {
+                width: min(100% - 1.5rem, var(--container-width));
+            }
+
+
+            /* Header */
+
+            .logo {
+                font-size: 1.1rem;
+            }
+
+            .header-actions {
+                gap: 5px;
+            }
+
+            .header-action {
+                padding: 6px 8px;
+                font-size: 0.75rem;
+            }
+
+
+            /* Hero */
+
+            .hero-title {
+                font-size: 2.3rem;
+            }
+
+            .hero-buttons {
+                gap: 8px;
+            }
+
+
+            /* Products */
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-image {
+                height: 260px;
+            }
+
+
+            /* Product Pagination */
+
+            .product-pagination {
+                flex-wrap: wrap;
+            }
+
+
+            /* Newsletter */
+
+            .newsletter {
+                padding: var(--spacing-lg);
+            }
+
+            .newsletter-title {
+                font-size: 1.6rem;
+            }
+
+
+            /* Back To Top */
+
+            .back-to-top {
+                right: 15px;
+                bottom: 15px;
+
+                width: 40px;
+                height: 40px;
+            }
+
+        }
     </style>
 </head>
 
@@ -1286,6 +2031,10 @@
 
                             <span class="product-badge">Sale</span>
                             <button type="button" class="wishlist-button">♡</button>
+
+                            <button type="button" class="quick-view-button">
+                                Quick View
+                            </button>
                         </div>
 
                         <div class="product-info">
@@ -1306,6 +2055,14 @@
                                 <span class="product-old-price">$69.99</span>
                             </div>
 
+                            <p class="product-stock">
+                                In Stock
+                            </p>
+
+                            <p class="product-delivery">
+                                Free delivery available
+                            </p>
+
                             <button type="button" class="add-to-cart">
                                 Add to Cart
                             </button>
@@ -1324,6 +2081,10 @@
 
                             <span class="product-badge">Sale</span>
                             <button type="button" class="wishlist-button">♡</button>
+
+                            <button type="button" class="quick-view-button">
+                                Quick View
+                            </button>
                         </div>
 
                         <div class="product-info">
@@ -1344,6 +2105,14 @@
                                 <span class="product-old-price">$99.99</span>
                             </div>
 
+                            <p class="product-stock">
+                                In Stock
+                            </p>
+
+                            <p class="product-delivery">
+                                Free delivery available
+                            </p>
+
                             <button type="button" class="add-to-cart">
                                 Add to Cart
                             </button>
@@ -1362,6 +2131,10 @@
 
                             <span class="product-badge">Sale</span>
                             <button type="button" class="wishlist-button">♡</button>
+
+                            <button type="button" class="quick-view-button">
+                                Quick View
+                            </button>
                         </div>
 
                         <div class="product-info">
@@ -1382,6 +2155,14 @@
                                 <span class="product-old-price">$84.99</span>
                             </div>
 
+                            <p class="product-stock">
+                                In Stock
+                            </p>
+
+                            <p class="product-delivery">
+                                Free delivery available
+                            </p>
+
                             <button type="button" class="add-to-cart">
                                 Add to Cart
                             </button>
@@ -1400,6 +2181,10 @@
 
                             <span class="product-badge">Sale</span>
                             <button type="button" class="wishlist-button">♡</button>
+
+                            <button type="button" class="quick-view-button">
+                                Quick View
+                            </button>
                         </div>
 
                         <div class="product-info">
@@ -1420,6 +2205,14 @@
                                 <span class="product-old-price">$119.99</span>
                             </div>
 
+                            <p class="product-stock">
+                                In Stock
+                            </p>
+
+                            <p class="product-delivery">
+                                Free delivery available
+                            </p>
+
                             <button type="button" class="add-to-cart">
                                 Add to Cart
                             </button>
@@ -1438,6 +2231,10 @@
 
                             <span class="product-badge">Sale</span>
                             <button type="button" class="wishlist-button">♡</button>
+
+                            <button type="button" class="quick-view-button">
+                                Quick View
+                            </button>
                         </div>
 
                         <div class="product-info">
@@ -1458,6 +2255,14 @@
                                 <span class="product-old-price">$159.99</span>
                             </div>
 
+                            <p class="product-stock">
+                                In Stock
+                            </p>
+
+                            <p class="product-delivery">
+                                Free delivery available
+                            </p>
+
                             <button type="button" class="add-to-cart">
                                 Add to Cart
                             </button>
@@ -1476,6 +2281,10 @@
 
                             <span class="product-badge">Sale</span>
                             <button type="button" class="wishlist-button">♡</button>
+
+                            <button type="button" class="quick-view-button">
+                                Quick View
+                            </button>
                         </div>
 
                         <div class="product-info">
@@ -1496,6 +2305,14 @@
                                 <span class="product-old-price">$54.99</span>
                             </div>
 
+                            <p class="product-stock">
+                                In Stock
+                            </p>
+
+                            <p class="product-delivery">
+                                Free delivery available
+                            </p>
+
                             <button type="button" class="add-to-cart">
                                 Add to Cart
                             </button>
@@ -1514,6 +2331,10 @@
 
                             <span class="product-badge">Sale</span>
                             <button type="button" class="wishlist-button">♡</button>
+
+                            <button type="button" class="quick-view-button">
+                                Quick View
+                            </button>
                         </div>
 
                         <div class="product-info">
@@ -1534,6 +2355,14 @@
                                 <span class="product-old-price">$64.99</span>
                             </div>
 
+                            <p class="product-stock">
+                                In Stock
+                            </p>
+
+                            <p class="product-delivery">
+                                Free delivery available
+                            </p>
+
                             <button type="button" class="add-to-cart">
                                 Add to Cart
                             </button>
@@ -1552,6 +2381,10 @@
 
                             <span class="product-badge">Sale</span>
                             <button type="button" class="wishlist-button">♡</button>
+
+                            <button type="button" class="quick-view-button">
+                                Quick View
+                            </button>
                         </div>
 
                         <div class="product-info">
@@ -1572,6 +2405,14 @@
                                 <span class="product-old-price">$49.99</span>
                             </div>
 
+                            <p class="product-stock">
+                                In Stock
+                            </p>
+
+                            <p class="product-delivery">
+                                Free delivery available
+                            </p>
+
                             <button type="button" class="add-to-cart">
                                 Add to Cart
                             </button>
@@ -1582,11 +2423,230 @@
 
                 </div>
 
+                <!-- ========================================
+                        9. PRODUCT PAGINATION
+                ======================================== -->
+
+                <div class="product-pagination">
+
+                    <button type="button" class="pagination-button active">
+                        1
+                    </button>
+
+                    <button type="button" class="pagination-button">
+                        2
+                    </button>
+
+                    <button type="button" class="pagination-button">
+                        3
+                    </button>
+
+                    <button type="button" class="pagination-button">
+                        Next
+                    </button>
+
+                </div>
+
+                <!-- ========================================
+                        10. NEWSLETTER SECTION
+                ======================================== -->
+
+                <section class="newsletter-section">
+
+                    <div class="container newsletter">
+
+                        <div class="newsletter-content">
+
+                            <span class="newsletter-badge">
+                                Stay Updated
+                            </span>
+
+                            <h2 class="newsletter-title">
+                                Get the Latest Offers
+                            </h2>
+
+                            <p class="newsletter-text">
+                                Subscribe to our newsletter and receive
+                                updates about new products, special offers,
+                                and exclusive deals.
+                            </p>
+
+                        </div>
+
+                        <form class="newsletter-form">
+
+                            <input type="email" class="newsletter-input" placeholder="Enter your email address"
+                                required>
+
+                            <button type="submit" class="newsletter-button">
+                                Subscribe
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </section>
+
             </div>
 
         </section>
 
     </main>
+
+    <!-- ========================================
+        11. FOOTER
+======================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-grid">
+
+            <!-- Company -->
+            <div class="footer-column">
+
+                <h3 class="footer-logo">
+                    Xenoriq Labs
+                </h3>
+
+                <p class="footer-description">
+                    Discover quality products at great prices.
+                    Shop smarter and enjoy a better shopping
+                    experience.
+                </p>
+
+            </div>
+
+
+            <!-- Quick Links -->
+            <div class="footer-column">
+
+                <h3 class="footer-title">
+                    Quick Links
+                </h3>
+
+                <ul class="footer-links">
+
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Categories</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Products</a>
+                    </li>
+
+                    <li>
+                        <a href="#">New Arrivals</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Customer Service -->
+            <div class="footer-column">
+
+                <h3 class="footer-title">
+                    Customer Service
+                </h3>
+
+                <ul class="footer-links">
+
+                    <li>
+                        <a href="#">My Account</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Order Tracking</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Shipping Information</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Returns & Refunds</a>
+                    </li>
+
+                    <li>
+                        <a href="#">FAQs</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- Contact -->
+            <div class="footer-column">
+
+                <h3 class="footer-title">
+                    Contact Us
+                </h3>
+
+                <ul class="footer-contact">
+
+                    <li>
+                        Email: support@saifiistore.com
+                    </li>
+
+                    <li>
+                        Phone: +92 319 6939560
+                    </li>
+
+                    <li>
+                        Location: Pakistan
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <!-- Footer Bottom -->
+
+        <div class="footer-bottom">
+
+            <div class="container footer-bottom-content">
+
+                <p>
+                    &copy; 2026 Saifii's Store. All rights reserved.
+                </p>
+
+                <div class="footer-social">
+
+                    <a href="#">Facebook</a>
+
+                    <a href="#">Instagram</a>
+
+                    <a href="#">YouTube</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- ========================================
+            19. BACK TO TOP
+    ======================================== -->
+
+    <button type="button" class="back-to-top">
+        ↑
+    </button>
 
 </body>
 
