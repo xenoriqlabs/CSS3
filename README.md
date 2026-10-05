@@ -81,8 +81,6 @@ As I progress through CSS3, I will apply the concepts to real-world projects suc
 * Admin Dashboards
 * E-commerce Interfaces
 * Responsive Web Layouts
-* Animation Showcases
-* Complete Responsive Websites
 
 ## Goals
 
@@ -103,7 +101,7 @@ The main goals of this repository are to:
 
 **Saif Ur Rahman**
 
-Aspiring **MERN Stack Developer** & **AI/ML Enthusiast**
+Aspiring **MERN Stack Developer** & **AI/ML Engineer**
 
 ### Xenoriq Labs
 
